@@ -5,12 +5,12 @@ on:
     branches:
       - main
       - master
-      - develop
+      - dev
   pull_request:
     branches:
       - main
       - master
-      - develop
+      - dev
 
 permissions:
   checks: write
