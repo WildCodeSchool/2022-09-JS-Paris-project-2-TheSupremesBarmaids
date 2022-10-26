@@ -1,5 +1,5 @@
-import Home from "./pages/Home";
-import List from "./pages/List";
+// import Home from "./pages/Home";
+// import List from "./pages/List";
 import Details from "./pages/Details";
 
 import "./Styles/App.css";
