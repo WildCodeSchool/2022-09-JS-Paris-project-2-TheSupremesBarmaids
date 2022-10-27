@@ -1,7 +1,11 @@
-import React from "react";
+import ListLink from "../../components/ListLink";
 
 function LandingBox() {
-  return <div>LandingBox</div>;
+  return (
+    <div>
+      <ListLink />
+    </div>
+  );
 }
 
 export default LandingBox;

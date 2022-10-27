@@ -1,7 +1,11 @@
-import React from "react";
+import Logo from "../../components/Logo";
 
 function HeaderHome() {
-  return <div>HeaderHome</div>;
+  return (
+    <div>
+      <Logo />
+    </div>
+  );
 }
 
 export default HeaderHome;

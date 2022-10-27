@@ -1,7 +1,13 @@
-import React from "react";
+import List from "./List";
+import ActionBlock from "./ActionBlock";
 
 function MainList() {
-  return <div>MainList</div>;
+  return (
+    <div>
+      <ActionBlock />
+      <List />
+    </div>
+  );
 }
 
 export default MainList;
