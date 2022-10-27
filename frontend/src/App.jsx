@@ -1,15 +1,19 @@
-// import Home from "./pages/Home";
-// import List from "./pages/List";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import List from "./pages/List";
 import Home from "./pages/Home";
-// import Details from "./pages/Details";
+import Details from "./pages/Details";
 
 import "./Styles/App.css";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/list" element={<List />} />
+        <Route path="/recipe" element={<Details />} />
+      </Routes>
+    </Router>
   );
 }
 
