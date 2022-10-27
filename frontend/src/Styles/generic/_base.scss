@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Nickainley";
+    src: url("../../assets/font/Nickainley-Normal.woff2")format("woff2"), 
+        url("../../assets/font/Nickainley-Normal.woff") format("woff"),
+        url("../../assets/font/Nickainley-Normal.otf") format("otf"),
+        url("../../assets/font/Nickainley-Normal.ttf") format("ttf");
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    @include pxToRem(16);
+    color: $colorWhite;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+h1, h2, h3{
+    font-weight: normal;
+}
+
+// Button
+button{
+    border: none;
+    &:not(:disabled){
+        cursor: pointer;
+    }
+}
