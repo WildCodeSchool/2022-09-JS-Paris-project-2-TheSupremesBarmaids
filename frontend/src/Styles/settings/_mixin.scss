@@ -1,0 +1,26 @@
+// Pour utiliser un Mixin : @include nomMixin (param)
+//Ex:  @include pxToRem(32)
+
+
+// CONVERTIR PIXEL EN REM (default font-size: 16px)
+// Ex : Using it with font-size (default property) --> @include pxToRem(32);
+// Ex : Using it with padding (custom property) --> @include pxToRem(32, padding);
+@mixin pxToRem(
+  $pxValue: 16,
+  $property: "font-size",
+  $referenceSize: 16
+) {
+  #{$property}: $pxValue + px;
+  #{$property}: calc($pxValue / $referenceSize) + rem;
+}
+
+// RESET UL
+@mixin ulBullet(
+    $paddingUl: 0,
+    $marginUl: 0,
+    $listStyleUl: none
+){
+    padding:$paddingUl;
+    margin:$marginUl;
+    list-style-type:$listStyleUl;
+}
