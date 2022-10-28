@@ -5,6 +5,7 @@ function HeaderHome() {
     <div>
       <Logo />
       <a href="/">test link</a>
+      <p>Huy</p>
     </div>
   );
 }
