@@ -1,12 +1,12 @@
 import Card from "../../components/Card";
 
-function List() {
+function CocktailList() {
   return (
-    <div>
+    <div className="cocktailList">
       <Card />
       <Card />
     </div>
   );
 }
 
-export default List;
+export default CocktailList;
