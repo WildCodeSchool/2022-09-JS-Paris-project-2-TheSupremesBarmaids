@@ -297,9 +297,49 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
-a {
-  font-size: 32px;
-  font-size: 2rem;
+.buttonType {
+  background-color: #da9c41;
+  border: 2px solid #da9c41;
+  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #ffffff;
+  padding: 1rem;
+  text-decoration: none;
+}
+.buttonType__icon {
+  padding-left: 0.5rem;
+}
+.buttonType:hover {
+  border: 2px solid #852e01;
+  color: #852e01;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.linedTitle {
+  position: relative;
+  font-family: "Nickainley", Georgia, Helvetica, sans-serif;
+  position: relative;
+  font-size: 3rem;
+  color: #da9c41;
+  text-align: center;
+}
+.linedTitle::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+  background-color: #da9c41;
+}
+.linedTitle__text {
+  display: inline-block;
+  max-width: calc(100% - 20px);
+  background-color: #362924;
+  padding: 0 1rem;
 }
 
 .landingBox {
