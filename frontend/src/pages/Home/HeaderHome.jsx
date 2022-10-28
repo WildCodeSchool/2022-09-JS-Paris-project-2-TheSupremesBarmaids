@@ -4,7 +4,13 @@ function HeaderHome() {
   return (
     <div>
       <Logo />
-      <a href="/">test link</a>
+      <a className="buttonType" href="/">
+        test button Type
+        <span className="buttonType__icon">X</span>
+      </a>
+      <h1 className="linedTitle">
+        <span className="linedTitle__text ">test lined Title</span>
+      </h1>
     </div>
   );
 }

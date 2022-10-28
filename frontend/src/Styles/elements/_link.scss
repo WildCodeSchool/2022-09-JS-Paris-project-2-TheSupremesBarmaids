@@ -1,3 +1,24 @@
-a{
-    @include pxToRem(32);
+//la balise peut etre un lien <a> ou un bouton d'action <button>
+.buttonType {
+  background-color: $colorCinnamon;
+  border: 2px solid $colorCinnamon;
+  font-family: $fontText;
+  font-weight: 700;
+  font-size: $textMD;
+  color: $colorWhite;
+  padding: 1rem;
+  text-decoration: none;
+
+  &__icon {
+    // pour la span enfant incluant une icone
+    padding-left: 0.5rem;
+  }
+
+  &:hover {
+    // au survol
+    border: 2px solid $colorLeather;
+    color: $colorLeather;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
