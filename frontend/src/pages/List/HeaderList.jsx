@@ -4,11 +4,11 @@ import ActionButton from "./ActionButton";
 
 function HeaderList() {
   return (
-    <div>
+    <header className="header">
       <HomeLink />
       <Logo />
       <ActionButton />
-    </div>
+    </header>
   );
 }
 

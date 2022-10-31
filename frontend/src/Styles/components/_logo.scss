@@ -1,0 +1,17 @@
+.logoImg {
+  display: block;
+  width: 190px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: calc(50% - (190px / 2));
+
+  @media screen and (min-width: 430px) {
+    width: 230px;
+    left: calc(50% - (230px / 2));
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

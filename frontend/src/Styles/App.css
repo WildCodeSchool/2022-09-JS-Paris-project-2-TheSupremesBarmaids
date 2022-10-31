@@ -287,6 +287,11 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  position: relative;
+  background-color: #362924;
+}
+
 h1,
 h2,
 h3 {
@@ -300,7 +305,20 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .buttonType {
+  display: inline-block;
   background-color: #da9c41;
   border: 2px solid #da9c41;
   font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
@@ -310,8 +328,16 @@ button:not(:disabled) {
   padding: 1rem;
   text-decoration: none;
 }
+.buttonType__text,
 .buttonType__icon {
-  padding-left: 0.5rem;
+  display: inline-block;
+}
+.buttonType__icon {
+  margin-left: 0.5rem;
+  width: 27px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-image: url("../../public/icones/cocktail-white-27x24.png");
 }
 .buttonType:hover {
   border: 2px solid #852e01;
@@ -319,11 +345,46 @@ button:not(:disabled) {
   text-decoration: none;
   cursor: pointer;
 }
+.buttonType:hover .buttonType__icon {
+  background-image: url("../../public/icones/cocktail-leather-27x24.png");
+}
+
+.iconAction {
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 4px 4px;
+}
+.iconAction--home {
+  float: left;
+  background-image: url("../../public/images/icones/home-white-32.png");
+}
+.iconAction--home:hover {
+  background-image: url("../../public/images/icones/home-crema-32.png");
+}
+.iconAction--list,
+.iconAction--filterSearch {
+  float: right;
+}
+.iconAction--list {
+  background-image: url("../../public/images/icones/return-white-32.png");
+}
+.iconAction--list:hover {
+  background-image: url("../../public/images/icones/return-crema-32.png");
+}
+.iconAction--filterSearch {
+  background-image: url("../../public/images/icones/filter-search-white-32.png");
+}
+.iconAction--filterSearch:hover {
+  background-image: url("../../public/images/icones/filter-search-crema-32.png");
+}
 
 .linedTitle {
   position: relative;
   font-family: "Nickainley", Georgia, Helvetica, sans-serif;
-  position: relative;
   font-size: 3rem;
   color: #da9c41;
   text-align: center;
@@ -333,7 +394,7 @@ button:not(:disabled) {
   position: absolute;
   width: 100%;
   height: 1px;
-  top: 50%;
+  top: 60%;
   left: 0;
   z-index: -1;
   background-color: #da9c41;
@@ -343,4 +404,50 @@ button:not(:disabled) {
   max-width: calc(100% - 20px);
   background-color: #362924;
   padding: 0 1rem;
+}
+
+.logoImg {
+  display: block;
+  width: 190px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: calc(50% - 95px);
+}
+@media screen and (min-width: 430px) {
+  .logoImg {
+    width: 230px;
+    left: calc(50% - 115px);
+  }
+}
+.logoImg img {
+  max-width: 100%;
+}
+
+.header {
+  position: absolute;
+  z-index: 900;
+  background-color: rgba(54, 41, 36, 0.7);
+  width: 100%;
+  height: 100px;
+  padding: 8px 16px;
+}
+@media screen and (min-width: 430px) {
+  .header {
+    height: 125px;
+    padding: 20px;
+  }
+}
+.header::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.header + .mainList {
+  padding-top: 160px;
+}
+
+.header + .mainDetails {
+  padding-top: 160px;
 } /*# sourceMappingURL=App.css.map */

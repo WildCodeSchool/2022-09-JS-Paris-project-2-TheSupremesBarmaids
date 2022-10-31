@@ -4,11 +4,11 @@ import ReturnSearch from "./ReturnSearch";
 
 function HeaderDetails() {
   return (
-    <div>
+    <header className="header">
       <HomeLink />
       <Logo />
       <ReturnSearch />
-    </div>
+    </header>
   );
 }
 

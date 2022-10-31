@@ -5,11 +5,11 @@ import MainList from "./List/MainList";
 
 function List() {
   return (
-    <div>
+    <>
       <HeaderList />
       <MainList />
       <Footer />
-    </div>
+    </>
   );
 }
 

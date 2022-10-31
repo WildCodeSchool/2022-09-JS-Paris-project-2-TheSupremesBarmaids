@@ -1,5 +1,11 @@
-//la balise peut etre un lien <a> ou un bouton d'action <button>
+//la balise associée à .buttonType peut être un lien <a> ou un bouton d'action <button>
+//Ex HTML :
+// <a className="buttonType" href="/">
+//   <span className="buttonType__text">Tous les cocktails</span>
+//   <span className="buttonType__icon" />
+// </a>
 .buttonType {
+  display: inline-block;
   background-color: $colorCinnamon;
   border: 2px solid $colorCinnamon;
   font-family: $fontText;
@@ -9,9 +15,18 @@
   padding: 1rem;
   text-decoration: none;
 
+  &__text,
   &__icon {
-    // pour la span enfant incluant une icone
-    padding-left: 0.5rem;
+    display: inline-block;
+  }
+
+  &__icon {
+    // pour la span enfant incluant une icone en background
+    margin-left: 0.5rem;
+    width: 27px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-image: url("../../public/icones/cocktail-white-27x24.png");
   }
 
   &:hover {
@@ -20,5 +35,49 @@
     color: $colorLeather;
     text-decoration: none;
     cursor: pointer;
+
+    .buttonType__icon {
+      background-image: url("../../public/icones/cocktail-leather-27x24.png");
+    }
+  }
+}
+
+.iconAction {
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 4px 4px;
+
+  &--home {
+    float: left;
+    background-image: url("../../public/images/icones/home-white-32.png");
+
+    &:hover {
+      background-image: url("../../public/images/icones/home-crema-32.png");
+    }
+  }
+
+  &--list,
+  &--filterSearch {
+    float: right;
+  }
+
+  &--list {
+    background-image: url("../../public/images/icones/return-white-32.png");
+
+    &:hover {
+      background-image: url("../../public/images/icones/return-crema-32.png");
+    }
+  }
+
+  &--filterSearch {
+    background-image: url("../../public/images/icones/filter-search-white-32.png");
+
+    &:hover {
+      background-image: url("../../public/images/icones/filter-search-crema-32.png");
+    }
   }
 }

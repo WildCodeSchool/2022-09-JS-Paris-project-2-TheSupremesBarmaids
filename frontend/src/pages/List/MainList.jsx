@@ -3,10 +3,10 @@ import ActionBlock from "./ActionBlock";
 
 function MainList() {
   return (
-    <div>
+    <main className="mainList">
       <ActionBlock />
       <List />
-    </div>
+    </main>
   );
 }
 

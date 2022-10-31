@@ -1,5 +1,9 @@
 function ListLink() {
-  return <div>ListLink</div>;
+  return (
+    <a href="/" className="iconAction iconAction--list">
+      <span className="srOnly">Back to List</span>
+    </a>
+  );
 }
 
 export default ListLink;
