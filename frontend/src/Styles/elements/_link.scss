@@ -26,7 +26,7 @@
     width: 27px;
     height: 24px;
     background-repeat: no-repeat;
-    background-image: url("../../public/icones/cocktail-white-27x24.png");
+    background-image: url("icones/cocktail-white-27x24.png");
   }
 
   &:hover {
@@ -37,7 +37,7 @@
     cursor: pointer;
 
     .buttonType__icon {
-      background-image: url("../../public/icones/cocktail-leather-27x24.png");
+      background-image: url("icones/cocktail-leather-27x24.png");
     }
   }
 }
@@ -53,10 +53,10 @@
 
   &--home {
     float: left;
-    background-image: url("../../public/images/icones/home-white-32.png");
+    background-image: url("images/icones/home-white-32.png");
 
     &:hover {
-      background-image: url("../../public/images/icones/home-crema-32.png");
+      background-image: url("images/icones/home-crema-32.png");
     }
   }
 
@@ -66,18 +66,18 @@
   }
 
   &--list {
-    background-image: url("../../public/images/icones/return-white-32.png");
+    background-image: url("images/icones/return-white-32.png");
 
     &:hover {
-      background-image: url("../../public/images/icones/return-crema-32.png");
+      background-image: url("images/icones/return-crema-32.png");
     }
   }
 
   &--filterSearch {
-    background-image: url("../../public/images/icones/filter-search-white-32.png");
+    background-image: url("images/icones/filter-search-white-32.png");
 
     &:hover {
-      background-image: url("../../public/images/icones/filter-search-crema-32.png");
+      background-image: url("images/icones/filter-search-crema-32.png");
     }
   }
 }
