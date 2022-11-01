@@ -335,7 +335,7 @@ button:not(:disabled) {
   width: 27px;
   height: 24px;
   background-repeat: no-repeat;
-  background-image: url("icones/cocktail-white-27x24.png");
+  background-image: url("/icones/cocktail-white-27x24.png");
 }
 .buttonType:hover {
   border: 2px solid #852e01;
@@ -344,7 +344,7 @@ button:not(:disabled) {
   cursor: pointer;
 }
 .buttonType:hover .buttonType__icon {
-  background-image: url("icones/cocktail-leather-27x24.png");
+  background-image: url("/icones/cocktail-leather-27x24.png");
 }
 
 .iconAction {
@@ -357,27 +357,22 @@ button:not(:disabled) {
   background-position: 4px 4px;
 }
 .iconAction--home {
-  float: left;
-  background-image: url("images/icones/home-white-32.png");
+  background-image: url("/icones/home-white-32.png");
 }
 .iconAction--home:hover {
-  background-image: url("images/icones/home-crema-32.png");
-}
-.iconAction--list,
-.iconAction--filterSearch {
-  float: right;
+  background-image: url("/icones/home-crema-32.png");
 }
 .iconAction--list {
-  background-image: url("images/icones/return-white-32.png");
+  background-image: url("/icones/return-white-32.png");
 }
 .iconAction--list:hover {
-  background-image: url("images/icones/return-crema-32.png");
+  background-image: url("/icones/return-crema-32.png");
 }
 .iconAction--filterSearch {
-  background-image: url("images/icones/filter-search-white-32.png");
+  background-image: url("/icones/filter-search-white-32.png");
 }
 .iconAction--filterSearch:hover {
-  background-image: url("images/icones/filter-search-crema-32.png");
+  background-image: url("/icones/filter-search-crema-32.png");
 }
 
 .linedTitle {
@@ -425,21 +420,37 @@ button:not(:disabled) {
 .header {
   position: absolute;
   z-index: 900;
-  background-color: rgba(54, 41, 36, 0.7);
+  background-color: rgba(133, 46, 1, 0.7);
   width: 100%;
-  height: 100px;
-  padding: 8px 16px;
+  height: 85px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px 10px;
 }
 @media screen and (min-width: 430px) {
   .header {
-    height: 125px;
-    padding: 20px;
+    height: 110px;
   }
 }
 .header::after {
   content: "";
   display: block;
   clear: both;
+}
+.header .nav {
+  height: 85px;
+  padding: 16px;
+}
+@media screen and (min-width: 430px) {
+  .header .nav {
+    height: 110px;
+    padding: 35px 20px;
+  }
+}
+.header .iconAction--home {
+  float: left;
+}
+.header .iconAction--list,
+.header .iconAction--filterSearch {
+  float: right;
 }
 
 .header + .mainList {
