@@ -5,9 +5,13 @@ import ActionButton from "./ActionButton";
 function HeaderList() {
   return (
     <header className="header">
-      <HomeLink />
-      <Logo />
-      <ActionButton />
+      <nav className="nav">
+        <HomeLink />
+        <ActionButton />
+      </nav>
+      <a href="/" className="logoImg" title="Go Home">
+        <Logo />
+      </a>
     </header>
   );
 }
