@@ -4,11 +4,11 @@ import Top from "./Top";
 
 function MainHome() {
   return (
-    <div>
+    <main>
       <LandingBox />
       <Editorial />
       <Top />
-    </div>
+    </main>
   );
 }
 
