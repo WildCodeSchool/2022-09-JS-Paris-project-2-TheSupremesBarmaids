@@ -4,3 +4,19 @@
   align-items: center;
   background-color: $colorCoffee;
 }
+
+.cocktailListTitle {
+  font-family: $fontTitle;
+  font-size: 60px;
+  padding: 40px 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .CocktailListCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+    gap: 20px 80px;
+  }
+}
