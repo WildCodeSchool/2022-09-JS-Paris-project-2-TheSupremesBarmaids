@@ -5,11 +5,11 @@ import ReturnList from "./ReturnList";
 
 function MainDetails() {
   return (
-    <div>
+    <main className="mainDetails">
       <ReturnList />
       <Recipe />
       <Commentaire />
-    </div>
+    </main>
   );
 }
 
