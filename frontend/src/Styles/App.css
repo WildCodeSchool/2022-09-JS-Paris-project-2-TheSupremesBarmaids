@@ -422,6 +422,7 @@ button:not(:disabled) {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   background-color: #852e01;
+  width: 320px;
 }
 
 .card {
@@ -502,7 +503,6 @@ button:not(:disabled) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #362924;
 }
 
 .cocktailListTitle {
@@ -516,8 +516,8 @@ button:not(:disabled) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 70%;
-    gap: 20px 80px;
+    width: 80%;
+    gap: 20px 41px;
   }
 }
 .header + .mainList {
