@@ -1,8 +1,0 @@
-@font-face {
-  font-family: "Nickainley";
-  src: url("/fonts/Nickainley-Normal.woff2")format("woff2"), 
-       url("/fonts/Nickainley-Normal.woff") format("woff"),
-       url("/fonts/Nickainley-Normal.eot) format("eot"),
-       url("/fonts/Nickainley-Normal.ttf") format("ttf");
-}
-

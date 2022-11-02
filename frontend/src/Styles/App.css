@@ -269,10 +269,8 @@ template {
 
 @font-face {
   font-family: "Nickainley";
-  src: url("../../assets/font/Nickainley-Normal.woff2") format("woff2"),
-    url("../../assets/font/Nickainley-Normal.woff") format("woff"),
-    url("../../assets/font/Nickainley-Normal.otf") format("otf"),
-    url("../../assets/font/Nickainley-Normal.ttf") format("ttf");
+  src: url("font/Nickainley-Normal.woff2") format("woff2"),
+    url("font/Nickainley-Normal.woff") format("woff");
 }
 html {
   box-sizing: border-box;
