@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { PropTypes } from "prop-types";
 import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
 
 const MAX_VISIBILITY = 3;
 
-// eslint-disable-next-line react/prop-types
 function Carousel({ children }) {
   const [active, setActive] = useState(2);
   const count = React.Children.count(children);
@@ -27,7 +27,7 @@ function Carousel({ children }) {
             "--offset": (active - i) / 3,
             "--direction": Math.sign(active - i),
             "--abs-offset": Math.abs(active - i) / 3,
-            "pointer-events": active === i ? "auto" : "none",
+            pointerEvents: active === i ? "auto" : "none",
             opacity: Math.abs(active - i) >= MAX_VISIBILITY ? "0" : "1",
             display: Math.abs(active - i) > MAX_VISIBILITY ? "none" : "block",
           }}
@@ -47,5 +47,9 @@ function Carousel({ children }) {
     </div>
   );
 }
+
+Carousel.propTypes = {
+  children: PropTypes.arrayOf.isRequired,
+};
 
 export default Carousel;
