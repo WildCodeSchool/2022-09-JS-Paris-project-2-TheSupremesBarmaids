@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "../components/Footer";
 import HeaderList from "./List/HeaderList";
 import MainList from "./List/MainList";
