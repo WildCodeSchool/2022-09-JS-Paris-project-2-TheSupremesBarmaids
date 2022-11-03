@@ -1,12 +1,12 @@
-import List from "./List";
+import CocktailList from "./CocktailList";
 import ActionBlock from "./ActionBlock";
 
 function MainList() {
   return (
-    <div>
+    <main className="mainList">
       <ActionBlock />
-      <List />
-    </div>
+      <CocktailList />
+    </main>
   );
 }
 

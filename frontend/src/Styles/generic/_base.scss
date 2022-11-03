@@ -1,9 +1,7 @@
 @font-face {
   font-family: "Nickainley";
-  src: url("../../assets/font/Nickainley-Normal.woff2") format("woff2"),
-    url("../../assets/font/Nickainley-Normal.woff") format("woff"),
-    url("../../assets/font/Nickainley-Normal.otf") format("otf"),
-    url("../../assets/font/Nickainley-Normal.ttf") format("ttf");
+  src: url("font/Nickainley-Normal.woff2") format("woff2"),
+    url("font/Nickainley-Normal.woff") format("woff");
 }
 
 html {
@@ -22,6 +20,11 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  position: relative;
+  background-color: $colorCoffee;
+}
+
 h1,
 h2,
 h3 {
@@ -34,4 +37,17 @@ button {
   &:not(:disabled) {
     cursor: pointer;
   }
+}
+
+//// Masquage d'element restant accessible aux lecteurs d'écran
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

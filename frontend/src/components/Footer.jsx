@@ -2,8 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="footer">
-      {" "}
+    <footer className="footer">
       <div className="logoFooter">
         <img src="/logos/logo-wild.png" alt="logoWild" />
       </div>
@@ -30,7 +29,7 @@ function Footer() {
           </p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 

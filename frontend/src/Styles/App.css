@@ -88,7 +88,7 @@ abbr[title] {
   border-bottom: none;
   text-decoration: underline;
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 b,
@@ -177,24 +177,24 @@ select {
 }
 
 button,
-html [type=button],
-[type=reset],
-[type=submit] {
+html [type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted #362924;
 }
 
@@ -220,24 +220,24 @@ textarea {
   overflow: auto;
 }
 
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type=search]::-webkit-search-cancel-button,
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -269,7 +269,10 @@ template {
 
 @font-face {
   font-family: "Nickainley";
-  src: url("../../assets/font/Nickainley-Normal.woff2") format("woff2"), url("../../assets/font/Nickainley-Normal.woff") format("woff"), url("../../assets/font/Nickainley-Normal.otf") format("otf"), url("../../assets/font/Nickainley-Normal.ttf") format("ttf");
+  src: url("../../assets/font/Nickainley-Normal.woff2") format("woff2"),
+    url("../../assets/font/Nickainley-Normal.woff") format("woff"),
+    url("../../assets/font/Nickainley-Normal.otf") format("otf"),
+    url("../../assets/font/Nickainley-Normal.ttf") format("ttf");
 }
 html {
   box-sizing: border-box;
@@ -282,6 +285,11 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  background-color: #362924;
 }
 
 h1,
@@ -297,7 +305,20 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .buttonType {
+  display: inline-block;
   background-color: #da9c41;
   border: 2px solid #da9c41;
   font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
@@ -316,11 +337,47 @@ button:not(:disabled) {
   text-decoration: none;
   cursor: pointer;
 }
+.buttonType:hover .buttonType__icon {
+  background-image: url("/icones/cocktail-leather-27x24.png");
+}
+
+.iconAction {
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 4px 4px;
+}
+.iconAction--home {
+  background-image: url("/icones/home-white-32.png");
+}
+.iconAction--home:hover {
+  background-image: url("/icones/home-crema-32.png");
+}
+.iconAction--list {
+  background-image: url("/icones/return-white-32.png");
+}
+.iconAction--list:hover {
+  background-image: url("/icones/return-crema-32.png");
+}
+.iconAction--filterSearch {
+  background-image: url("/icones/filter-search-white-32.png");
+}
+.iconAction--filterSearch:hover {
+  background-image: url("/icones/filter-search-crema-32.png");
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 .linedTitle {
   position: relative;
   font-family: "Nickainley", Georgia, Helvetica, sans-serif;
-  position: relative;
   font-size: 3rem;
   color: #da9c41;
   text-align: center;
@@ -330,7 +387,7 @@ button:not(:disabled) {
   position: absolute;
   width: 100%;
   height: 1px;
-  top: 50%;
+  top: 60%;
   left: 0;
   z-index: -1;
   background-color: #da9c41;
@@ -424,4 +481,4 @@ button:not(:disabled) {
 }
 .editoBlock--type2 .editoBlock__title {
   color: #362924;
-}/*# sourceMappingURL=App.css.map */
+} /*# sourceMappingURL=App.css.map */

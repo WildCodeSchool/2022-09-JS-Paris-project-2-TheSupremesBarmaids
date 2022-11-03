@@ -1,0 +1,88 @@
+.commentaireComponent {
+  padding: 0 20px;
+}
+
+.commentaires {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.commentaireTitle {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.commentaireBox {
+  background-color: $colorCinnamon;
+  color: $colorBlack;
+  font-family: $fontText;
+  list-style-type: none;
+  border-radius: 30px;
+  padding: 5px 20px;
+
+  li {
+    border-bottom: 1px solid black;
+    padding: 15px 0;
+
+    .reviewerName {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .reviewTitle {
+    width: 100%;
+  }
+
+  .reviewNote {
+    align-self: flex-end;
+  }
+}
+
+.reviewBox {
+  width: 100%;
+  height: 150px;
+  border-radius: 30px;
+  padding: 15px;
+  background-color: $colorCinnamon;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  input {
+    background-color: $colorCinnamon;
+    border-style: none;
+  }
+
+  button {
+    align-self: flex-end;
+    background-color: $colorCoffee;
+    color: $colorWhite;
+    padding: 5px 30px;
+    border-radius: 30px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .commentaireComponent {
+    padding: 0 40px;
+  }
+
+  .reviewBox {
+    button {
+      margin-right: 10px;
+    }
+  }
+}
