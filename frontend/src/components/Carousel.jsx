@@ -11,8 +11,11 @@ function Carousel({ children }) {
   return (
     <div className="carousel">
       {active > 0 && (
-        // eslint-disable-next-line react/button-has-type
-        <button className="nav left" onClick={() => setActive((i) => i - 1)}>
+        <button
+          type="button"
+          className="actionSlide left"
+          onClick={() => setActive((i) => i - 1)}
+        >
           <TiChevronLeftOutline />
         </button>
       )}
@@ -33,8 +36,11 @@ function Carousel({ children }) {
         </div>
       ))}
       {active < count - 1 && (
-        // eslint-disable-next-line react/button-has-type
-        <button className="nav right" onClick={() => setActive((i) => i + 1)}>
+        <button
+          type="button"
+          className="actionSlide right"
+          onClick={() => setActive((i) => i + 1)}
+        >
           <TiChevronRightOutline />
         </button>
       )}
