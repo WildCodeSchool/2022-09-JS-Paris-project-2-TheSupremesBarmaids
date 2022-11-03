@@ -1,0 +1,54 @@
+.recipe {
+  background: url("/images/landing-1920.jpg");
+  background-position: center;
+  background-size: auto 100%;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__rectangle {
+    background-color: $colorCoffee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95px;
+    width: 100%;
+    position: absolute;
+    bottom: 40px;
+  }
+  &__title {
+    font-family: $fontTitle;
+    font-size: 64px;
+    font-weight: 400;
+  }
+}
+
+.detail {
+  background-color: $colorCoffee;
+  height: 535px;
+  padding: 0 20px;
+}
+.detail__title {
+  font-size: 18px;
+  text-decoration: underline;
+  margin-top: 2rem;
+
+  + p {
+    margin-top: 1rem;
+  }
+}
+
+.ingredientsList {
+  padding-left: 14px;
+  padding-top: 0.5rem;
+}
+.ingredientsList li {
+  margin-top: 0.5rem;
+  flex: 1 0 100px;
+  display: inline-block;
+  width: 140px;
+  padding-right: 20px;
+}
