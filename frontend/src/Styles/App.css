@@ -88,7 +88,7 @@ abbr[title] {
   border-bottom: none;
   text-decoration: underline;
   -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 b,
@@ -177,24 +177,24 @@ select {
 }
 
 button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
+html [type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted #362924;
 }
 
@@ -220,24 +220,24 @@ textarea {
   overflow: auto;
 }
 
-[type="checkbox"],
-[type="radio"] {
+[type=checkbox],
+[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -269,10 +269,7 @@ template {
 
 @font-face {
   font-family: "Nickainley";
-  src: url("../../assets/font/Nickainley-Normal.woff2") format("woff2"),
-    url("../../assets/font/Nickainley-Normal.woff") format("woff"),
-    url("../../assets/font/Nickainley-Normal.otf") format("otf"),
-    url("../../assets/font/Nickainley-Normal.ttf") format("ttf");
+  src: url("../../assets/font/Nickainley-Normal.woff2") format("woff2"), url("../../assets/font/Nickainley-Normal.woff") format("woff"), url("../../assets/font/Nickainley-Normal.otf") format("otf"), url("../../assets/font/Nickainley-Normal.ttf") format("ttf");
 }
 html {
   box-sizing: border-box;
@@ -320,6 +317,12 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .linedTitle {
   position: relative;
   font-family: "Nickainley", Georgia, Helvetica, sans-serif;
@@ -349,21 +352,91 @@ button:not(:disabled) {
   background-image: url("/images/landing-1920.jpg");
   background-position: center;
   background-size: auto 100%;
+  width: 100%;
   height: 100vh;
-  padding: 450px 50px 50px 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 .landingBox__square {
   background-color: #362924;
   justify-content: center;
-  height: 150px;
-  padding-top: 30px;
+  height: 245px;
+  width: 273px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 92px;
+}
+.landingBox__title {
+  font-family: "Nickainley", Georgia, Helvetica, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.landingBox__title span {
+  font-size: 64px;
+  line-height: 100px;
 }
 .landingBox .listLink {
-  background: #da9c41;
   padding: 10px 3px 10px 2px;
-  border-color: rgba(255, 255, 255, 0.8);
   width: 200px;
-  border-style: solid;
   display: flex;
   justify-content: center;
-} /*# sourceMappingURL=App.css.map */
+  margin-bottom: 10%;
+}
+
+.recipe {
+  background: url("/images/landing-1920.jpg");
+  background-position: center;
+  background-size: auto 100%;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.recipe__rectangle {
+  background-color: #362924;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95px;
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+}
+.recipe__title {
+  font-family: "Nickainley", Georgia, Helvetica, sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.detail {
+  background-color: #362924;
+  height: 535px;
+  padding: 0 20px;
+}
+
+.detail__title {
+  font-size: 18px;
+  text-decoration: underline;
+  margin-top: 2rem;
+}
+.detail__title + p {
+  margin-top: 1rem;
+}
+
+.ingredientsList {
+  padding-left: 14px;
+  padding-top: 0.5rem;
+}
+
+.ingredientsList li {
+  margin-top: 0.5rem;
+  flex: 1 0 100px;
+  display: inline-block;
+  width: 140px;
+  padding-right: 20px;
+}/*# sourceMappingURL=App.css.map */
