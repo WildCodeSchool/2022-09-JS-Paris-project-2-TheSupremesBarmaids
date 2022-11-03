@@ -2,9 +2,11 @@ import Logo from "../../components/Logo";
 
 function HeaderHome() {
   return (
-    <div>
-      <Logo />
-    </div>
+    <header className="header">
+      <div className="logoImg">
+        <Logo />
+      </div>
+    </header>
   );
 }
 
