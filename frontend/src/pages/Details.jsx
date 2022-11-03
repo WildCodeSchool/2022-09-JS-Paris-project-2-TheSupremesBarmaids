@@ -5,11 +5,11 @@ import MainDetails from "./Details/MainDetails";
 
 function Details() {
   return (
-    <div>
+    <>
       <HeaderDetails />
       <MainDetails />
       <Footer />
-    </div>
+    </>
   );
 }
 

@@ -4,11 +4,15 @@ import ReturnSearch from "./ReturnSearch";
 
 function HeaderDetails() {
   return (
-    <div>
-      <HomeLink />
-      <Logo />
-      <ReturnSearch />
-    </div>
+    <header className="header">
+      <nav className="nav">
+        <HomeLink />
+        <ReturnSearch />
+      </nav>
+      <a href="/" className="logoImg" title="Go Home">
+        <Logo />
+      </a>
+    </header>
   );
 }
 
