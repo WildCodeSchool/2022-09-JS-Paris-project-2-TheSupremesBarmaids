@@ -1,50 +1,21 @@
-// body {
-//   margin: 0;
-//   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-//     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-//     sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
-
-
 //--- ORDRE IMPORTANT --- NE PAS TOUCHER
 
 // SETTINGS
-@import 
-"settings/_variables",
-"settings/_functions",
-"settings/_mixin",
-"settings/_fonts";
+@import "settings/_variables", "settings/_functions", "settings/_mixin",
+  "settings/_fonts";
 
 // GENERIC
-@import 
-"generic/_reset",
-"generic/_normalize",
-"generic/_base"; // (box-sizing, font size for rem, font-weight Hn, ...)
+@import "generic/_reset", "generic/_normalize", "generic/_base"; // (box-sizing, font size for rem, font-weight Hn, ...)
 
 // ELEMENTS (only one tag components )
-@import
-"elements/_button",
-"elements/_link",
-"elements/_title-text";
+@import "elements/_button", "elements/_link", "elements/_title-text";
 
 //COMPONENTS (multiples tags components)
-@import 
-"components/_logo",
-"components/_card",
-"components/_pagination";
+@import "components/_logo", "components/_card", "components/_pagination";
 
 // OBJECTS (bigs components made of multiples tags components)
-@import 
-"objects/_header",
-"objects/_footer",
-"objects/_search",
-"objects/_filter",
-"objects/_top";
+@import "objects/_header", "objects/_footer", "objects/_search",
+  "objects/_filter", "objects/_top";
 
 // PAGES
-@import
-"pages/_home",
-"pages/_list",
-"pages/_details";
+@import "pages/_home", "pages/_list", "pages/_details";
