@@ -20,6 +20,7 @@
     "husky": "^7.0.0"
   },
   "dependencies": {
-    "node-sass": "^7.0.3"
+    "node-sass": "^7.0.3",
+    "react-icons": "^4.6.0"
   }
 }
