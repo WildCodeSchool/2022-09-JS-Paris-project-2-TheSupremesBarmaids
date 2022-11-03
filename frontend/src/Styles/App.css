@@ -88,7 +88,7 @@ abbr[title] {
   border-bottom: none;
   text-decoration: underline;
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 b,
@@ -177,24 +177,24 @@ select {
 }
 
 button,
-html [type=button],
-[type=reset],
-[type=submit] {
+html [type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted #362924;
 }
 
@@ -220,24 +220,24 @@ textarea {
   overflow: auto;
 }
 
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type=search]::-webkit-search-cancel-button,
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -269,7 +269,8 @@ template {
 
 @font-face {
   font-family: "Nickainley";
-  src: url("font/Nickainley-Normal.woff2") format("woff2"), url("font/Nickainley-Normal.woff") format("woff");
+  src: url("font/Nickainley-Normal.woff2") format("woff2"),
+    url("font/Nickainley-Normal.woff") format("woff");
 }
 html {
   box-sizing: border-box;
@@ -325,7 +326,8 @@ button:not(:disabled) {
   padding: 1rem;
   text-decoration: none;
 }
-.buttonType__text, .buttonType__icon {
+.buttonType__text,
+.buttonType__icon {
   display: inline-block;
 }
 .buttonType__icon {
@@ -438,7 +440,7 @@ a {
 .cardImage {
   width: 100%;
   -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
 }
 
 .notFavorite {
@@ -499,7 +501,8 @@ a {
 .header .iconAction--home {
   float: left;
 }
-.header .iconAction--list, .header .iconAction--filterSearch {
+.header .iconAction--list,
+.header .iconAction--filterSearch {
   float: right;
 }
 
@@ -701,4 +704,4 @@ a {
 
 .header + .mainDetails {
   padding-top: 160px;
-}/*# sourceMappingURL=App.css.map */
+} /*# sourceMappingURL=App.css.map */
