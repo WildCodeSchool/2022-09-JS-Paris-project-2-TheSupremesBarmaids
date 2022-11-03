@@ -343,5 +343,85 @@ button:not(:disabled) {
 }
 
 .footer {
+  display: flex;
+  flex-direction: column;
   background-color: #852e01;
+  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 427px;
+}
+.footer .logoFooter {
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+  width: 100%;
+  height: 30%;
+}
+.footer .creditTexte {
+  display: flex;
+  justify-content: left;
+  font-size: 1rem;
+  padding-top: 10%;
+  padding-left: 12%;
+}
+.footer .creditLink {
+  padding-top: 3%;
+  padding-left: 12%;
+}
+.footer .teamFooter {
+  padding-top: 10%;
+  padding-left: 12%;
+}
+.footer .team {
+  padding-top: 3%;
+}
+
+.editorial {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  background-color: #362924;
+  line-height: 2em;
+}
+.editorial p {
+  margin-top: 12px;
+}
+
+.intro {
+  margin: 16px 12px 0;
+}
+
+.editoBlock__title {
+  display: flex;
+  justify-content: center;
+  color: #ffc65c;
+  font-family: "Nickainley", Georgia, Helvetica, sans-serif;
+  font-size: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+}
+
+.editoBlock__article {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 12px;
+}
+
+.editoBlock__illustration {
+  display: flex;
+  justify-content: center;
+  max-width: 60%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+}
+
+.editoBlock--type2 {
+  background-color: #da9c41;
+}
+.editoBlock--type2 .editoBlock__title {
+  color: #362924;
 }/*# sourceMappingURL=App.css.map */

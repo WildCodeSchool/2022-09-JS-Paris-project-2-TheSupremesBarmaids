@@ -1,0 +1,53 @@
+.editorial {
+  display: flex;
+  flex-direction: column;
+  font-family: $fontText;
+  font-size: $textXS;
+  background-color: $colorCoffee;
+  line-height: 2em;
+
+  p {
+    margin-top: 12px;
+  }
+}
+
+.intro {
+  margin: 16px 12px 0;
+}
+
+.editoBlock__title {
+  display: flex;
+  justify-content: center;
+  color: $colorCrema;
+  font-family: $fontTitle;
+  font-size: $textLG;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+}
+
+.editoBlock__article {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 12px;
+}
+
+.editoBlock__illustration {
+  display: flex;
+  justify-content: center;
+  max-width: 60%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+}
+
+.editoBlock {
+  &--type2 {
+    background-color: $colorCinnamon;
+
+    .editoBlock__title {
+      color: $colorCoffee;
+    }
+  }
+}

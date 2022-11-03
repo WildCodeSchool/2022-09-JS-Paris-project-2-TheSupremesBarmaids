@@ -8,18 +8,27 @@ function Footer() {
         <img src="/logos/logo-wild.png" alt="logoWild" />
       </div>
       <div className="creditsFooter">
-        <h2>© CRÉDITS</h2>
-        <a href="https://fontawesome.com/icons">
-          https://fontawesome.com/icons
-        </a>
-        <a href="https://www.pexels.com">https://www.pexels.com</a>
+        <div className="creditTexte">
+          <h2>© CRÉDITS</h2>
+        </div>
+        <div className="creditLink">
+          <a href="https://fontawesome.com/icons">
+            https://fontawesome.com/icons
+          </a>
+          <br />
+          <a href="https://www.pexels.com">https://www.pexels.com</a>
+        </div>
       </div>
       <div className="teamFooter">
-        <h2>TEAM’S LINKEDINS</h2>
-        <p>
-          Yossef Kasabi, Cyril Leclercq, Pascaline Pierre, Dinh Huy Trinh, Elif
-          Uluengin
-        </p>
+        <div className="teamTitle">
+          <h2>TEAM’S LINKEDINS</h2>
+        </div>
+        <div className="team">
+          <p>
+            Yossef Kasabi, Cyril Leclercq, Pascaline Pierre, <br />
+            Dinh Huy Trinh, Elif Uluengin
+          </p>
+        </div>
       </div>
     </div>
   );
