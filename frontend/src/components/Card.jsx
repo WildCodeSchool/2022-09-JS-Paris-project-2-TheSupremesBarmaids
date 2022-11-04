@@ -1,38 +1,34 @@
 import { PropTypes } from "prop-types";
 
-function Card({ posts, loading }) {
-  if (loading) {
-    return <h2>loading</h2>;
-  }
-
+function Card({ key, imgSrc, imgAlt, name }) {
   return (
-    <div>
-      {posts.map((post) => (
-        <div className="cardContainer" key={post.idDrink}>
-          <div className="card">
-            <img
-              className="cardImage"
-              src={post.strDrinkThumb}
-              alt={post.strDrink}
-            />
-            <div className="notFavorite" />
-            <div className="cardText">
-              <h3 className="cardTitle">{post.strDrink}</h3>
-              <div>*Note*</div>
-            </div>
-          </div>
+    <div className="cardContainer" key={key}>
+      <div className="card">
+        <img className="cardImage" src={imgSrc} alt={imgAlt} />
+        <div className="notFavorite" />
+        <div className="cardText">
+          <h3 className="cardTitle">{name}</h3>
+          <div>*Note*</div>
         </div>
-      ))}
+      </div>
     </div>
   );
 }
 
 Card.propTypes = {
-  posts: PropTypes.arrayOf.isRequired,
+  key: PropTypes.string.isRequired,
 };
 
 Card.propTypes = {
-  loading: PropTypes.bool.isRequired,
+  imgSrc: PropTypes.string.isRequired,
+};
+
+Card.propTypes = {
+  imgAlt: PropTypes.string.isRequired,
+};
+
+Card.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 export default Card;

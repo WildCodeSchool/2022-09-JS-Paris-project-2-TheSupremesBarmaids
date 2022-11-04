@@ -1,35 +1,35 @@
-/* eslint-disable no-unused-vars */
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { PropTypes } from "prop-types";
+
 import Card from "../../components/Card";
 
-function CocktailList() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(10);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setLoading(true);
-      const res = await axios.get(
-        "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin"
-      );
-      setPosts(res.data.drinks);
-      setLoading(false);
-    };
-
-    fetchPosts();
-  }, []);
+function CocktailList({ posts, loading }) {
+  if (loading) {
+    return <h2>loading</h2>;
+  }
 
   return (
     <div className="cocktailList">
       <h2 className="cocktailListTitle">Nos Cocktails</h2>
       <div className="CocktailListCards">
-        <Card posts={posts} loading={loading} />
+        {posts.map((post) => (
+          <Card
+            key={post.idDrink}
+            imgSrc={post.strDrinkThumb}
+            imgAlt={post.strDrink}
+            name={post.strDrink}
+          />
+        ))}
       </div>
     </div>
   );
 }
+
+CocktailList.propTypes = {
+  posts: PropTypes.arrayOf.isRequired,
+};
+
+CocktailList.propTypes = {
+  loading: PropTypes.bool.isRequired,
+};
 
 export default CocktailList;
