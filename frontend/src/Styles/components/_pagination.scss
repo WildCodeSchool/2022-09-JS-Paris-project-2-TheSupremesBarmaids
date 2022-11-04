@@ -1,0 +1,25 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 23px 0;
+  button {
+    color: $colorWhite;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: $textMD;
+    font-family: $fontText;
+    font-weight: 100;
+    border: 1px solid $colorCoffee;
+    background-color: rgba(0, 0, 0, 0.413);
+  }
+  button.active {
+    background-color: #4caf50;
+    color: white;
+  }
+  button:hover:not(.active) {
+    background-color: rgb(0, 0, 0);
+    // border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+}
