@@ -1,0 +1,45 @@
+.cardContainer {
+  padding: 30px 10px 20px;
+  margin: 20px 0;
+  color: $colorWhite;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: $colorLeather;
+  width: 320px;
+}
+
+.card {
+  width: 300px;
+  position: relative;
+}
+
+.cardImage {
+  width: 100%;
+  object-fit: fill;
+}
+
+.notFavorite {
+  position: absolute;
+  background-image: url(../../../public/logos/emptyHeart.png);
+  top: 0px;
+  height: 75px;
+  width: 75px;
+}
+
+.isFavorite {
+  position: absolute;
+  background-image: url(../../../public/logos/fullHeart.png);
+  top: 0px;
+  height: 75px;
+  width: 75px;
+}
+
+.cardText {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardTitle {
+  font-family: $fontText;
+  font-size: 1.5rem;
+  padding-top: 20px;
+}
