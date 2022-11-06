@@ -8,7 +8,8 @@
 @import "generic/_reset", "generic/_normalize", "generic/_base"; // (box-sizing, font size for rem, font-weight Hn, ...)
 
 // ELEMENTS (only one tag components )
-@import "elements/_button", "elements/_link", "elements/_title-text";
+@import "elements/_button", "elements/_link", "elements/_title-text",
+  "elements/_container";
 
 //COMPONENTS (multiples tags components)
 @import "components/_logo", "components/_card", "components/_pagination";

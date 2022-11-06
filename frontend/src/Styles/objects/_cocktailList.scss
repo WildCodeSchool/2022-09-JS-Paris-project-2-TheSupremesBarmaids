@@ -10,12 +10,25 @@
   padding: 40px 0;
 }
 
-@media only screen and (min-width: 600px) {
-  .CocktailListCards {
+.cocktailListCards {
+  @media only screen and (min-width: 600px) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 80%;
     gap: 20px 41px;
   }
+  .cardContainer {
+    margin: 20px 0;
+  }
 }
+
+// @media only screen and (min-width: 600px) {
+//   .CocktailListCards {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     width: 80%;
+//     gap: 20px 41px;
+//   }
+// }

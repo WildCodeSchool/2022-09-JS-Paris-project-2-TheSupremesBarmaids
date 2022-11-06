@@ -9,6 +9,7 @@
   font-size: $textXL;
   color: $colorCinnamon;
   text-align: center;
+  width: 100%;
 
   &::before {
     content: "";
@@ -26,5 +27,9 @@
     max-width: calc(100% - 20px);
     background-color: $colorCoffee;
     padding: 0 1rem;
+
+    @media screen and (max-width: 375px) {
+      max-width: 240px;
+    }
   }
 }

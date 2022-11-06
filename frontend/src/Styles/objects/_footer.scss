@@ -1,36 +1,60 @@
 .footer {
-  display: flex;
-  flex-direction: column;
   background-color: $colorLeather;
   font-family: $fontText;
-  width: 100%;
-  height: 427px;
 
-  .logoFooter {
-    display: flex;
-    justify-content: center;
-    padding-top: 10%;
-    width: 100%;
-    height: 30%;
-  }
+  &__wrapper {
+    padding: 2rem;
 
-  .creditTexte {
-    display: flex;
-    justify-content: left;
-    font-size: $textXS;
-    padding-top: 10%;
-    padding-left: 12%;
-  }
-  .creditLink {
-    padding-top: 3%;
-    padding-left: 12%;
-  }
-  .teamFooter {
-    padding-top: 10%;
-    padding-left: 12%;
+    @media screen and (min-width: 600px) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+    }
   }
 
-  .team {
-    padding-top: 3%;
+  &__block {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+    &:not(.logoFooter) {
+      margin-top: 2rem;
+
+      @media screen and (min-width: 600px) {
+        margin-top: 0;
+        flex: 1 1 auto;
+        width: 40%;
+        padding-left: 2rem;
+      }
+    }
+
+    &.logoFooter {
+      @media screen and (min-width: 600px) {
+        flex: 1 0 auto;
+        width: 20%;
+        min-width: 150px;
+        align-self: center;
+      }
+    }
+  }
+
+  &__block {
+    @media screen and (min-width: 600px) {
+      flex: 1 1 auto;
+      width: 33%;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__text {
+    margin: 1rem 0 0;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 }

@@ -4,7 +4,7 @@ function CocktailList() {
   return (
     <div className="cocktailList">
       <h2 className="cocktailListTitle">Nos Cocktails</h2>
-      <div className="CocktailListCards">
+      <div className="cocktailListCards">
         <Card />
         <Card />
         <Card />

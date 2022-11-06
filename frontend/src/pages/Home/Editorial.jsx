@@ -1,9 +1,10 @@
 import React from "react";
+import ListLink from "../../components/ListLink";
 
 function Editorial() {
   return (
-    <div className="editorial">
-      <div className="intro">
+    <div className="edito containerType1">
+      <div className="edito__intro">
         <p>
           La journée est finie. Avec juste quelques ingrédients à portée de
           main, prenez le temps de savourer un moment de détente privilégié et
@@ -22,16 +23,20 @@ function Editorial() {
         </p>
       </div>
 
-      <h1 className="linedTitle">
-        <span className="linedTitle__text">Découvrez, shakez et dégustez</span>
-      </h1>
+      <div className="edito__listLink">
+        <ListLink />
+      </div>
 
-      <section className="editoBlock editoBlock--type1">
+      <h2 className="linedTitle">
+        <span className="linedTitle__text">Découvrez, shakez et dégustez</span>
+      </h2>
+
+      <section className="editoBlock editoBlock--first">
         <div className="editoBlock__illustration">
           <img src="/images/composition-330.jpg" alt="imageComposition" />
         </div>
         <div className="editoBlock__article">
-          <h2 className="editoBlock__title">Compostion</h2>
+          <h3 className="editoBlock__title">Compostion</h3>
           <p>
             La structure d’un cocktail est toujours la même et se décompose en 3
             parties distinctes : la base, le corps et la touche aromatique.
@@ -54,12 +59,12 @@ function Editorial() {
         </div>
       </section>
 
-      <section className="editoBlock editoBlock--type2">
-        <div className="editoBlock__illustration">
+      <section className="editoBlock editoBlock--second">
+        <div className="editoBlock__illustration editoBlock__noMobile">
           <img src="/images/equilibre-330.jpg" alt="imageEquilibre" />
         </div>
         <div className="editoBlock__article">
-          <h2 className="editoBlock__title">Equilibre</h2>
+          <h3 className="editoBlock__title">Equilibre</h3>
           <p>
             Pour un cocktail réussi, il faut s’assurer que le mélange soit un
             équilibre parfait entre force, douceur et acidité. Il s’agit de la
@@ -79,12 +84,12 @@ function Editorial() {
         </div>
       </section>
 
-      <section className="editoBlock editoBlock--type1">
-        <div className="editoBlock__illustration">
+      <section className="editoBlock editoBlock--third">
+        <div className="editoBlock__illustration editoBlock__noMobile">
           <img src="/images/presentation-330.jpg" alt="imagePresentation" />
         </div>
         <div className="editoBlock__article">
-          <h2 className="editoBlock__title">Présentation</h2>
+          <h3 className="editoBlock__title">Présentation</h3>
           <p>
             Le cocktail est un ravissement pour les papilles mais doit l’être
             aussi pour les yeux! Il mettra en avant votre mélange et le rendra
@@ -101,7 +106,9 @@ function Editorial() {
         </div>
       </section>
 
-      <div>Listlink</div>
+      <div className="edito__listLink">
+        <ListLink />
+      </div>
     </div>
   );
 }

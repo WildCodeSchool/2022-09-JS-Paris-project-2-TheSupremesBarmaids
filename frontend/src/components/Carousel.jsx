@@ -21,7 +21,7 @@ function Carousel({ children }) {
       )}
       {React.Children.map(children, (child, i) => (
         <div
-          className="card-container"
+          className="cardSlide"
           style={{
             "--active": i === active ? 1 : 0,
             "--offset": (active - i) / 3,
