@@ -1,19 +1,17 @@
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import Note from "./Note";
+
 function Card() {
   return (
-    <div className="cardContainer">
-      <div className="card">
-        <img
-          className="cardImage"
-          src="/images/imgCocktail.jpg"
-          alt="cocktail"
-        />
-        <div className="notFavorite" />
-        <div className="cardText">
-          <h3 className="cardTitle">Cocktail Name</h3>
-          <div>*Note*</div>
-        </div>
+    <a href="/recipe" className="card">
+      <img className="cardImage" src="/images/imgCocktail.jpg" alt="cocktail" />
+      <div className="favoriteCocktail">
+        <AiFillHeart className="isFavorite" />
+        <AiOutlineHeart className="notFavorite" />
       </div>
-    </div>
+      <Note />
+      <h3 className="cardTitle">Cocktail Name</h3>
+    </a>
   );
 }
 
