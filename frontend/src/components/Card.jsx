@@ -10,7 +10,7 @@ function Card() {
         <AiOutlineHeart className="notFavorite" />
       </div>
       <Note />
-      <h3 className="cardTitle">Cocktail Name</h3>
+      <p className="cardTitle">Cocktail Name</p>
     </a>
   );
 }

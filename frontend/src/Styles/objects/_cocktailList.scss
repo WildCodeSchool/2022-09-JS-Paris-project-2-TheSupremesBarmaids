@@ -2,18 +2,11 @@
   margin-top: 5rem;
 }
 
-.cocktailListTitle {
-  font-family: $fontTitle;
-  font-size: $textXXL;
-  color: $colorCinnamon;
-  text-align: center;
-}
-
 .cocktailListCards {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 4rem 0;
+  margin: 4rem 0 6rem;
   gap: 5rem;
 
   @media only screen and (min-width: 600px) {

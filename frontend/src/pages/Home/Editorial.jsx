@@ -36,7 +36,7 @@ function Editorial() {
           <img src="/images/composition-330.jpg" alt="imageComposition" />
         </div>
         <div className="editoBlock__article">
-          <h3 className="editoBlock__title">Compostion</h3>
+          <h3 className="subTitle">Composition</h3>
           <p>
             La structure d’un cocktail est toujours la même et se décompose en 3
             parties distinctes : la base, le corps et la touche aromatique.
@@ -64,7 +64,7 @@ function Editorial() {
           <img src="/images/equilibre-330.jpg" alt="imageEquilibre" />
         </div>
         <div className="editoBlock__article">
-          <h3 className="editoBlock__title">Equilibre</h3>
+          <h3 className="subTitle">Equilibre</h3>
           <p>
             Pour un cocktail réussi, il faut s’assurer que le mélange soit un
             équilibre parfait entre force, douceur et acidité. Il s’agit de la
@@ -89,7 +89,7 @@ function Editorial() {
           <img src="/images/presentation-330.jpg" alt="imagePresentation" />
         </div>
         <div className="editoBlock__article">
-          <h3 className="editoBlock__title">Présentation</h3>
+          <h3 className="subTitle">Présentation</h3>
           <p>
             Le cocktail est un ravissement pour les papilles mais doit l’être
             aussi pour les yeux! Il mettra en avant votre mélange et le rendra

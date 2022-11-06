@@ -1,3 +1,10 @@
 .header + .mainDetails {
   padding-top: 160px;
 }
+
+.mainDetails {
+  .cardNote {
+    font-size: 2rem;
+    text-align: center;
+  }
+}

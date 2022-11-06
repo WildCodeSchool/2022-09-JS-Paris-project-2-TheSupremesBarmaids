@@ -21,8 +21,12 @@
     margin: 4rem 0 2rem;
   }
 
+  .subTitle + p {
+    margin-top: 1.5rem;
+  }
+
   p {
-    margin-top: 12px;
+    margin-top: 0.75rem;
     line-height: 1.5rem;
   }
 
@@ -35,17 +39,6 @@
 .editoBlock {
   padding: 2rem;
 
-  &__title {
-    color: $colorCrema;
-    font-family: $fontTitle;
-    font-size: 2.5rem;
-    margin: 0 auto;
-
-    + p {
-      margin-top: 1rem;
-    }
-  }
-
   &--second {
     @media screen and (min-width: 1024px) {
       .editoBlock__article {
@@ -56,7 +49,7 @@
     @media screen and (max-width: 599px) {
       background-color: $colorCinnamon;
 
-      .editoBlock__title {
+      .subTitle {
         color: $colorCoffee;
       }
     }

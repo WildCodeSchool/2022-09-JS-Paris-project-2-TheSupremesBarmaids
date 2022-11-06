@@ -33,3 +33,17 @@
     }
   }
 }
+
+.pageTitle {
+  font-family: $fontTitle;
+  font-size: $textXXL;
+  color: $colorCinnamon;
+  text-align: center;
+}
+
+.subTitle {
+  color: $colorCinnamon;
+  font-family: $fontTitle;
+  font-size: 2.5rem;
+  margin: 0 auto;
+}
