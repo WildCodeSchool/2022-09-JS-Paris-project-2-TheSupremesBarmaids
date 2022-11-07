@@ -21,10 +21,8 @@ function Footer() {
           <h2>TEAM’S LINKEDINS</h2>
         </div>
         <div className="team">
-          <p>
-            Yossef Kasabi, Cyril Leclercq, Pascaline Pierre, <br />
-            Dinh Huy Trinh, Elif Uluengin
-          </p>
+          <p>Yossef Kasabi, Cyril Leclercq, Pascaline Pierre, </p>
+          <p>Dinh Huy Trinh, Elif Uluengin</p>
         </div>
       </div>
     </footer>
