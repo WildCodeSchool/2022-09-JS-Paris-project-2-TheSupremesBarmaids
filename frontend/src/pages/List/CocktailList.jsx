@@ -3,7 +3,7 @@ import Card from "../../components/Card";
 function CocktailList() {
   return (
     <div className="cocktailList">
-      <h2 className="cocktailListTitle">Nos Cocktails</h2>
+      <h2 className="cocktailListTitle">Search Cocktails</h2>
       <div className="CocktailListCards">
         <Card />
         <Card />
