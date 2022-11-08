@@ -2,10 +2,11 @@ import Logo from "../../components/Logo";
 
 function HeaderHome() {
   return (
-    <div>
-      <Logo />
-      <a href="/">test link</a>
-    </div>
+    <header className="header">
+      <div className="logoImg">
+        <Logo />
+      </div>
+    </header>
   );
 }
 

@@ -1,33 +1,53 @@
 @font-face {
-    font-family: "Nickainley";
-    src: url("../../assets/font/Nickainley-Normal.woff2")format("woff2"), 
-        url("../../assets/font/Nickainley-Normal.woff") format("woff"),
-        url("../../assets/font/Nickainley-Normal.otf") format("otf"),
-        url("../../assets/font/Nickainley-Normal.ttf") format("ttf");
+  font-family: "Nickainley";
+  src: url("font/Nickainley-Normal.woff2") format("woff2"),
+    url("font/Nickainley-Normal.woff") format("woff");
 }
 
 html {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    @include pxToRem(16);
-    color: $colorWhite;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  @include pxToRem(16);
+  color: $colorWhite;
 }
 
-*, *:before, *:after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
-h1, h2, h3{
-    font-weight: normal;
+body {
+  position: relative;
+  background-color: $colorCoffee;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
 }
 
 // Button
-button{
-    border: none;
-    &:not(:disabled){
-        cursor: pointer;
-    }
+button {
+  border: none;
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+//// Masquage d'element restant accessible aux lecteurs d'écran
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

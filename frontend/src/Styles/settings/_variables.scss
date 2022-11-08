@@ -1,12 +1,24 @@
 // COLORS
 $colorCoffee: #362924;
-$colorLeather: #852E01;
-$colorCointreau: #FF7D00;
-$colorCinnamon: #DA9C41;
-$colorCrema: #FFC65C;
-$colorWhite: #FFFFFF;
+$colorLeather: #852e01;
+$colorCointreau: #ff7d00;
+$colorCinnamon: #da9c41;
+$colorCrema: #ffc65c;
+$colorWhite: #ffffff;
 $colorBlack: #000000;
 
 // FONTS
 $fontTitle: "Nickainley", Georgia, Helvetica, sans-serif !default;
 $fontText: "Roboto Condensed", Arial, Helvetica, sans-serif !default;
+
+// TEXT AND TITLE SIZE
+$textXS: 1rem; // 16px : footer
+$textSM: 1.25rem; // 20px : standard text
+$textMD: 1.5rem; // 24px : buttons + intro editorial
+$textLG: 2rem; // 32px : titre card + sous titre editorial + Art du Cocktail ( "l'art du" en mobile)
+$textXL: 3rem; // 48px : titre avec ligne
+$textXXL: 4rem; // 64px : Art du Cocktail ("l'art du" en mobile + "Cocktail" en desktop)
+$textXXL: 8rem; // 128px : Art du Cocktail ( "Cocktail" en desktop)
+
+// CARDS
+$card-size: 20rem;

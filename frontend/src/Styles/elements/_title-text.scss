@@ -1,0 +1,30 @@
+// titre avec ligne derrière
+// Ex HTML :
+// <h2 className="linedTitle">
+//   <span className="linedTitle__text ">Notre top 10</span>
+// </h2>
+.linedTitle {
+  position: relative;
+  font-family: $fontTitle;
+  font-size: $textXL;
+  color: $colorCinnamon;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 60%;
+    left: 0;
+    z-index: -1;
+    background-color: $colorCinnamon;
+  }
+
+  &__text {
+    display: inline-block;
+    max-width: calc(100% - 20px);
+    background-color: $colorCoffee;
+    padding: 0 1rem;
+  }
+}
