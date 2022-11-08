@@ -1,9 +1,14 @@
 import React from "react";
+import Intro from "./Intro";
+import Section1 from "./Section1";
+import Section2 from "./Section2";
+import Section3 from "./Section3";
 import ListLink from "../../components/ListLink";
 
 function Editorial() {
   return (
     <div className="edito containerType1">
+      <Intro />
       <div className="edito__intro">
         <p>
           La journée est finie. Avec juste quelques ingrédients à portée de
@@ -31,6 +36,7 @@ function Editorial() {
         <span className="linedTitle__text">Découvrez, shakez et dégustez</span>
       </h2>
 
+      <Section1 />
       <section className="editoBlock editoBlock--first">
         <div className="editoBlock__illustration">
           <img src="/images/composition-330.jpg" alt="imageComposition" />
@@ -59,6 +65,7 @@ function Editorial() {
         </div>
       </section>
 
+      <Section2 />
       <section className="editoBlock editoBlock--second">
         <div className="editoBlock__illustration editoBlock__noMobile">
           <img src="/images/equilibre-330.jpg" alt="imageEquilibre" />
@@ -84,6 +91,7 @@ function Editorial() {
         </div>
       </section>
 
+      <Section3 />
       <section className="editoBlock editoBlock--third">
         <div className="editoBlock__illustration editoBlock__noMobile">
           <img src="/images/presentation-330.jpg" alt="imagePresentation" />
