@@ -1,43 +1,38 @@
 :root {
-  --cover-timing: 0.5s; 
+  --cover-timing: 0.5s;
   --cover-ease: cubic-bezier(0.66, 0.08, 0.19, 0.97);
   --cover-stagger: 0.15s;
-  
-  --text-timing: .75s;
+
+  --text-timing: 0.75s;
   --text-stagger: 0.015s;
   --text-ease: cubic-bezier(0.38, 0.26, 0.05, 1.07);
-  
+
   --title-stagger: 0.05s;
   --highlight: white;
 }
 
 .cardContainer {
   padding: 30px 10px 20px;
-  margin: 20px 0;
-  // color: $colorWhite;
+  margin: auto;
   // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  // background-color: transparent;
-  width: 15rem;
+  // background-color: $colorCoffee;
+  width: 18rem;
 }
 
-
 .card {
-  
   position: relative;
   overflow: hidden;
   aspect-ratio: 10/12;
   display: flex;
   flex-direction: column;
-  
+  justify-content: center;
   border-radius: 7px;
-  box-shadow:
-    rgba(255,255,255,0.3) 0 5vw 6vw -8vw,
-    rgba(255,255,255,0) 0 4.5vw 5vw -6vw,
-    rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw, 
-    rgba(0, 0, 0, 0.8) 0px 4vw 5vw -3vw;
-  
+  box-shadow: rgba(255, 255, 255, 0.3) 0 5vw 6vw -8vw,
+    rgba(255, 255, 255, 0) 0 4.5vw 5vw -6vw,
+    rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw, rgba(0, 0, 0, 0.8) 0px 4vw 5vw -3vw;
+
   transition: box-shadow 1s var(--cover-ease);
-  
+
   // h2{
   //   color: red;
   // }
@@ -45,12 +40,12 @@
   & > * {
     z-index: 2;
   }
-  
+
   & > img {
     z-index: 0;
-    transition: all .8s cubic-bezier(0.66, 0.08, 0.19, 0.97);;
+    transition: all 0.8s cubic-bezier(0.66, 0.08, 0.19, 0.97);
   }
-  
+
   &::before,
   &::after {
     content: "";
@@ -58,54 +53,48 @@
     height: 50%;
     top: 0;
     left: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     position: absolute;
     transform-origin: left;
     transform: scaleX(0);
     transition: all var(--cover-timing) var(--cover-ease);
     z-index: 1;
   }
-  
+
   &::after {
     transition-delay: var(--cover-stagger);
     top: 50%;
   }
-  
+
   &:hover {
-  
-    box-shadow: 
-      white 0 5vw 6vw -9vw,
-      var(--highlight) 0 5.5vw 5vw -7.5vw,
-      rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw, 
+    box-shadow: white 0 5vw 6vw -9vw, var(--highlight) 0 5.5vw 5vw -7.5vw,
+      rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw,
       rgba(0, 0, 0, 0.8) 0px 4vw 5vw -3vw;
-   
+
     &::before,
     &::after {
       transform: scaleX(1);
     }
 
     & h2,
-    & .custom-btn{
+    & .custom-btn {
       opacity: 1;
       transform: translateY(0);
       color: inherit;
     }
 
-    
     & img {
       transform: scale(1.1);
     }
-    
   }
-  
+
   &:nth-of-type(1) {
     --highlight: coral;
   }
-  
+
   &:nth-of-type(2) {
     --highlight: #56ffe5;
   }
-  
 }
 // .card {
 //   width: 300px;
@@ -134,28 +123,36 @@
 // }
 
 .cardText {
-  // display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   // justify-content: space-between;
   position: absolute;
   inset: 20px;
-  top: 5rem;
+  top: 0;
 }
 
-h2, .custom-btn {
+h2 {
+  font-size: 3rem;
+}
+
+h2,
+.custom-btn {
   color: var(--highlight);
   display: inline-block;
   opacity: 0;
   position: relative;
   transform: translateY(20px);
-  transition-property: transform, opacity, color; 
+  transition-property: transform, opacity, color;
   transition-timing-function: var(--text-ease);
-  transition-duration: var(--text-timing), var(--text-timing), calc(var(--text-timing)*2);
+  transition-duration: var(--text-timing), var(--text-timing),
+    calc(var(--text-timing) * 2);
 }
 
 .cardTitle {
   font-family: $fontText;
   font-size: 1.5rem;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   margin-left: 2rem;
 }
-

@@ -1,6 +1,6 @@
 .top {
   width: 100vw;
-  height: 30rem;
+  height: 32rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,19 +14,20 @@
   );
   font-family: $fontTitle;
 }
+
 .carousel {
   position: relative;
-  width: $card-size;
-  height: $card-size;
-  perspective: 500px;
+  width: 30rem;
+  height: 30rem;
+  perspective: 70rem;
   transform-style: preserve-3d;
 }
 
 .card-container {
   position: absolute;
-  margin-left: 2rem;
-  width: 100%;
-  height: 100%;
+  margin-left: 5rem;
+  width: 20rem;
+  height: 20rem;
   transform: rotateY(calc(var(--offset) * 50deg))
     scaleY(calc(1 + var(--abs-offset) * -0.4))
     translateZ(calc(var(--abs-offset) * -30rem))

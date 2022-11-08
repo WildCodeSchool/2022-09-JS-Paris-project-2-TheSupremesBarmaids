@@ -1,21 +1,26 @@
 .cocktailList {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 80vw;
+  padding-bottom: 2rem;
 }
 
 .cocktailListTitle {
   font-family: $fontTitle;
-  font-size: 60px;
-  padding: 40px 0;
+  font-size: 4rem;
+  text-align: center;
+  // padding: 40px 0;
 }
-
-@media only screen and (min-width: 600px) {
-  .CocktailListCards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 80%;
-    gap: 20px 41px;
-  }
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 1rem;
+  grid-row-gap: 2rem;
 }
+// @media only screen and (max-width: 600px) {
+//   .CocktailListCards {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     width: 80%;
+//     gap: 20px 41px;
+//   }
+// }

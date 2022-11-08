@@ -2,15 +2,50 @@ import Carousel from "../../components/Carousel";
 import Card from "../../components/Card";
 
 function Top() {
+  const topCocktails = [
+    {
+      strDrinkThumb: "/top-cocktails/cosmopolitan.jpg",
+      strAlcoholic: "Cosmopolitan",
+      idDrink: "17196",
+    },
+    {
+      strDrinkThumb: "/top-cocktails/daiquiri.jpg",
+      strAlcoholic: "Daiquiri",
+      idDrink: "11006",
+    },
+    {
+      strDrinkThumb: "/top-cocktails/espresso-martini.jpg",
+      strAlcoholic: "Espresso Martini",
+      idDrink: "17212",
+    },
+    {
+      strDrinkThumb: "/top-cocktails/gimlet.jpg",
+      strAlcoholic: "Gimlet",
+      idDrink: "17255",
+    },
+    {
+      strDrinkThumb: "/top-cocktails/margarita.jpg",
+      strAlcoholic: "Margarita",
+      idDrink: "11007",
+    },
+    {
+      strDrinkThumb: "/top-cocktails/manhattan.jpg",
+      strAlcoholic: "Manhattan",
+      idDrink: "11008",
+    },
+    {
+      strDrinkThumb: "/top-cocktails/old-fashion.jpg",
+      strAlcoholic: "Old Fashioned",
+      idDrink: "11001",
+    },
+  ];
   return (
     <div className="top">
       <h1>Top choices here</h1>
       <Carousel>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {topCocktails.map((ele) => (
+          <Card key={ele.idDrink} cocktail={ele} />
+        ))}
       </Carousel>
     </div>
   );
