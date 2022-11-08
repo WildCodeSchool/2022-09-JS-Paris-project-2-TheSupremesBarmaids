@@ -1,8 +1,8 @@
 import { PropTypes } from "prop-types";
 
-function Card({ key, imgSrc, imgAlt, name }) {
+function Card({ id, imgSrc, imgAlt, name }) {
   return (
-    <div className="cardContainer" key={key}>
+    <div className="cardContainer" id={id}>
       <div className="card">
         <img className="cardImage" src={imgSrc} alt={imgAlt} />
         <div className="notFavorite" />
@@ -16,7 +16,7 @@ function Card({ key, imgSrc, imgAlt, name }) {
 }
 
 Card.propTypes = {
-  key: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 Card.propTypes = {
