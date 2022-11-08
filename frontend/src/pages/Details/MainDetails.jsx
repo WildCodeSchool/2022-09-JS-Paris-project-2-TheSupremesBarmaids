@@ -10,14 +10,11 @@ function MainDetails() {
   useEffect(() => {
     // At the mounting phase :
 
-    const searchParam = () => window.location.pathname; // get pathname in the URL
-
-    const idSearchParam = searchParam().slice(-5); // slice the URL to get only the iDDrink | change with strDrink
-
+    const searchParam = () => window.location.pathname; // get pathname in the URL (/recipe/*cocktail name*)
+    const idSearchParam = searchParam().split("/"); // split the URL to get only the strDrink (*cocktail name*)
     const fetchRecipe = async () => {
-      // call API avec iDDrink
       const res = await axios.get(
-        `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idSearchParam}`
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${idSearchParam[2]}`
       );
       setRecipeContent(res.data.drinks[0]); // setRecipeContent with API's response
     };

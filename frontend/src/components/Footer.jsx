@@ -2,7 +2,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="logoFooter">
-        <img src="/logos/logo-wild.png" alt="logoWild" />
+        <img src="/logos/logo-wild-white-HD.png" alt="logoWild" />
       </div>
       <div className="creditsFooter">
         <div className="creditTexte">

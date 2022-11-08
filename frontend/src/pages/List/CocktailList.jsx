@@ -13,8 +13,7 @@ function CocktailList({ posts, loading }) {
       <h2 className="cocktailListTitle">Nos Cocktails</h2>
       <div className="CocktailListCards">
         {posts.map((post) => (
-          <Link to={`/recipe/${post.idDrink}`} key={post.idDrink}>
-            {/* change with strDrin */}
+          <Link to={`/recipe/${post.strDrink}`} key={post.idDrink}>
             <Card
               id={post.idDrink}
               imgSrc={post.strDrinkThumb}
