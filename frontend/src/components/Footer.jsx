@@ -11,7 +11,6 @@ function Footer() {
             <a href="https://fontawesome.com/icons">
               https://fontawesome.com/icons
             </a>
-            <br />
             <a href="https://www.pexels.com">https://www.pexels.com</a>
           </p>
         </div>

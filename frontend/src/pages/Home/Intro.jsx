@@ -1,6 +1,6 @@
 function Intro() {
   return (
-    <div className="intro">
+    <div className="edito__intro">
       <p>
         La journée est finie. Avec juste quelques ingrédients à portée de main,
         prenez le temps de savourer un moment de détente privilégié et bien

@@ -1,11 +1,11 @@
 function Section3() {
   return (
-    <section className="editoBlock editoBlock--type1">
-      <div className="editoBlock__illustration">
+    <section className="editoBlock editoBlock--third">
+      <div className="editoBlock__illustration editoBlock__noMobile">
         <img src="/images/presentation-330.jpg" alt="imagePresentation" />
       </div>
       <div className="editoBlock__article">
-        <h2 className="editoBlock__title">Présentation</h2>
+        <h3 className="subTitle">Présentation</h3>
         <p>
           Le cocktail est un ravissement pour les papilles mais doit l’être
           aussi pour les yeux! Il mettra en avant votre mélange et le rendra

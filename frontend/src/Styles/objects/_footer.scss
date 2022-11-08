@@ -54,7 +54,19 @@
     margin: 1rem 0 0;
   }
 
-  a:hover {
-    text-decoration: underline;
+  .credits_links {
+    a {
+      display: block;
+    }
+  }
+
+  a {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+    :hover {
+      text-decoration: underline;
+    }
   }
 }

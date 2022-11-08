@@ -587,7 +587,16 @@ a {
 .footer__text {
   margin: 1rem 0 0;
 }
-.footer a:hover {
+.footer .credits_links a {
+  display: block;
+}
+.footer a {
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+.footer a :hover {
   text-decoration: underline;
 }
 
@@ -705,10 +714,13 @@ a {
   }
 }
 .landingBox__title span {
+  display: block;
+}
+.landingBox__title__big {
   font-size: 5rem;
 }
 @media screen and (min-width: 768px) {
-  .landingBox__title span {
+  .landingBox__title__big {
     font-size: 7rem;
   }
 }
@@ -854,7 +866,7 @@ a {
 }
 
 .commentaireComponent {
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 .commentaires {
@@ -1001,9 +1013,14 @@ a {
   text-align: center;
   position: relative;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 479px) {
   .editoBlock__illustration {
-    flex: 1 1 60%;
+    padding: 20px 0;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 599px) {
+  .editoBlock__illustration {
+    padding: 30px 0;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1023px) {
@@ -1011,22 +1028,58 @@ a {
     padding: 80px 0 60px;
   }
 }
+@media screen and (min-width: 1024px) {
+  .editoBlock__illustration {
+    flex: 1 1 60%;
+  }
+}
+.editoBlock__illustration::before,
+.editoBlock__illustration::after {
+  content: "";
+  position: absolute;
+  width: 305px;
+  height: 215px;
+  background-color: #852e01;
+  z-index: -1;
+}
+@media screen and (min-width: 480px) {
+  .editoBlock__illustration::before,
+  .editoBlock__illustration::after {
+    width: 350px;
+    height: 245px;
+  }
+}
 @media screen and (min-width: 600px) {
   .editoBlock__illustration::before,
   .editoBlock__illustration::after {
-    content: "";
-    position: absolute;
-    width: 350px;
     height: 270px;
-    background-color: #852e01;
-    z-index: -1;
   }
+}
+.editoBlock__illustration::before {
+  background-color: #852e01;
+  transform: translate(-15px, -30px) rotate(-2deg);
+}
+@media screen and (min-width: 480px) {
   .editoBlock__illustration::before {
-    background-color: #852e01;
+    transform: translate(-40px, -40px) rotate(-4deg);
+  }
+}
+@media screen and (min-width: 600px) {
+  .editoBlock__illustration::before {
     transform: translate(-80px, -60px) rotate(-6deg);
   }
+}
+.editoBlock__illustration::after {
+  background-color: #da9c41;
+  transform: translate(-290px, 5px) rotate(1.5deg);
+}
+@media screen and (min-width: 480px) {
   .editoBlock__illustration::after {
-    background-color: #da9c41;
+    transform: translate(-310px, -20px) rotate(3deg);
+  }
+}
+@media screen and (min-width: 600px) {
+  .editoBlock__illustration::after {
     transform: translate(-280px, -25px) rotate(5deg);
   }
 }
@@ -1049,5 +1102,9 @@ a {
 
 .mainDetails .cardNote {
   font-size: 2rem;
+  text-align: center;
+}
+.mainDetails .listLinkDetails {
+  margin-top: 4rem;
   text-align: center;
 } /*# sourceMappingURL=App.css.map */
