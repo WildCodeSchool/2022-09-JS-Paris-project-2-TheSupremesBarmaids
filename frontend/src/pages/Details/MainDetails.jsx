@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Commentaire from "./Commentaire";
 import Recipe from "./Recipe";
-import ReturnList from "./ReturnList";
+import ListLink from "../../components/ListLink";
 
 function MainDetails() {
   const [recipeContent, setRecipeContent] = useState([]); // Object that contains the cocktail's info
@@ -23,8 +23,10 @@ function MainDetails() {
   }, []);
   return (
     <main className="mainDetails">
-      <ReturnList />
       <Recipe recipeContent={recipeContent} />
+      <div className="listLinkDetails">
+        <ListLink />
+      </div>
       <Commentaire />
     </main>
   );

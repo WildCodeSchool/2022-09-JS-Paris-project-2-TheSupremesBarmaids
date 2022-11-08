@@ -1,8 +1,9 @@
 function ListLink() {
   return (
-    <div className="listLink buttonType">
-      <a href="/list">Tous nos Cocktails</a>
-    </div>
+    <a className="buttonType" href="/list">
+      <span className="buttonType__text">Tous les cocktails</span>
+      <span className="buttonType__icon" />
+    </a>
   );
 }
 

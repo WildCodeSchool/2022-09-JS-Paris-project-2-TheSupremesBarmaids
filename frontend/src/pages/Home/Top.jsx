@@ -4,7 +4,9 @@ import Card from "../../components/Card";
 function Top() {
   return (
     <div className="top">
-      <h1>Top choices here</h1>
+      <h2 className="linedTitle">
+        <span className="linedTitle__text">Notre top 5</span>
+      </h2>
       <Carousel>
         <Card />
         <Card />

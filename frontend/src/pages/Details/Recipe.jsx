@@ -1,31 +1,34 @@
 /* eslint-disable react/prop-types */
+
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import Note from "../../components/Note";
+import Ingredients from "./Ingredients";
+
 function Recipe({ recipeContent }) {
   return (
-    <div>
+    <div className="containerType1 containerType1--padd20">
+      <h1 className="pageTitle">{recipeContent.strDrink}</h1>
+      <Note />
       <div className="recipe">
-        <div className="note"> note</div>
-        <div className="recipe__rectangle">
-          <h1 className="recipe__title linedTitle">
-            <span className="linedTitle__text">{recipeContent.strDrink}</span>
-          </h1>
+        <div className="recipe__card card">
+          <img
+            className="cardImage"
+            src="/images/imgCocktail.jpg"
+            alt="cocktail"
+          />
+          <div className="favoriteCocktail">
+            <AiFillHeart className="isFavorite" />
+            <AiOutlineHeart className="notFavorite" />
+          </div>
         </div>
-      </div>
-      <div className="detail">
-        <p className="detail__title">Ingredients</p>
-        <ul className="ingredientsList">
-          <li>{recipeContent.strIngredient1}</li>
-          <li>{recipeContent.strIngredient2}</li>
-          <li>{recipeContent.strIngredient3}</li>
-          <li>{recipeContent.strIngredient4}</li>
-          <li>{recipeContent.strIngredient5}</li>
-          <li>{recipeContent.strIngredient6}</li>
-          <li>{recipeContent.strIngredient7}</li>
-          <li>{recipeContent.strIngredient8}</li>
-          <li>{recipeContent.strIngredient9}</li>
-        </ul>
-        <p className="detail__title">Recette</p>
-
-        <p>{recipeContent.strInstructions}</p>
+        <div className="recipe__ingredients">
+          <h2 className="subTitle">Ingredients</h2>
+          <Ingredients recipeContent={recipeContent} />
+        </div>
+        <div className="recipe__prepa">
+          <h2 className="subTitle">Preparation</h2>
+          <p className="recipe__text">{recipeContent.strInstructions}</p>
+        </div>
       </div>
     </div>
   );

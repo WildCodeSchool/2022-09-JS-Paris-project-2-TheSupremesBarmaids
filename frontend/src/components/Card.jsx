@@ -1,17 +1,19 @@
+/* eslint-disable react/prop-types */
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { PropTypes } from "prop-types";
+import Note from "./Note";
 
 function Card({ id, imgSrc, imgAlt, name }) {
   return (
-    <div className="cardContainer" id={id}>
-      <div className="card">
-        <img className="cardImage" src={imgSrc} alt={imgAlt} />
-        <div className="notFavorite" />
-        <div className="cardText">
-          <h3 className="cardTitle">{name}</h3>
-          <div>*Note*</div>
-        </div>
+    <a href={`/recipe/${name}`} className="card" id={id}>
+      <img className="cardImage" src={imgSrc} alt={imgAlt} />
+      <div className="favoriteCocktail">
+        <AiFillHeart className="isFavorite" />
+        <AiOutlineHeart className="notFavorite" />
       </div>
-    </div>
+      <Note />
+      <p className="cardTitle">{name}</p>
+    </a>
   );
 }
 
