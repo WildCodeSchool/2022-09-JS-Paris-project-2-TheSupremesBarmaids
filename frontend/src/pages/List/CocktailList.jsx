@@ -1,4 +1,5 @@
 import { PropTypes } from "prop-types";
+import { Link } from "react-router-dom";
 
 import Card from "../../components/Card";
 
@@ -12,12 +13,15 @@ function CocktailList({ posts, loading }) {
       <h2 className="cocktailListTitle">Nos Cocktails</h2>
       <div className="CocktailListCards">
         {posts.map((post) => (
-          <Card
-            key={post.idDrink}
-            imgSrc={post.strDrinkThumb}
-            imgAlt={post.strDrink}
-            name={post.strDrink}
-          />
+          <Link to={`/recipe/${post.idDrink}`} key={post.idDrink}>
+            {/* change with strDrin */}
+            <Card
+              id={post.idDrink}
+              imgSrc={post.strDrinkThumb}
+              imgAlt={post.strDrink}
+              name={post.strDrink}
+            />
+          </Link>
         ))}
       </div>
     </div>
