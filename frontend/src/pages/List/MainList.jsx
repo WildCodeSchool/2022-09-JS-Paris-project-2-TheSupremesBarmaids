@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import CocktailList from "./CocktailList";
 import ActionBlock from "./ActionBlock";
 import Pagination from "./Pagination";
+
+const API = "https://www.thecocktaildb.com/api/json/v1/1/";
 
 function MainList() {
   const [posts, setPosts] = useState([]);
@@ -10,17 +11,18 @@ function MainList() {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 12;
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setLoading(true);
-      const res = await axios.get(
-        "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin"
-      );
-      setPosts(res.data.drinks);
-      setLoading(false);
-    };
+  const callApi = async (filter, category, name) => {
+    setLoading(true);
+    const response = await fetch(`${API}${filter}${category}${name}`);
+    const data = await response.json();
+    setPosts(data.drinks);
+    setLoading(false);
+  };
 
-    fetchPosts();
+  useEffect(() => {
+    setLoading(true);
+    callApi("filter.php?", "i=", "Gin");
+    setLoading(false);
   }, []);
 
   const indexOfLastPost = currentPage * postsPerPage;
@@ -34,7 +36,7 @@ function MainList() {
 
   return (
     <main className="mainList containerType1 containerType1--padd20">
-      <ActionBlock />
+      <ActionBlock callApi={callApi} />
       <CocktailList posts={currentPosts} loading={loading} />
       <Pagination
         postsPerPage={postsPerPage}

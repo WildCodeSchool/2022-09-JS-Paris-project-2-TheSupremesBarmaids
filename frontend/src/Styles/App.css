@@ -633,7 +633,7 @@ a {
 .search input {
   position: relative;
   padding: 15px 40px 15px 20px;
-  width: 30px;
+  width: 15rem;
   color: black;
   box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
   text-transform: uppercase;
@@ -643,11 +643,7 @@ a {
   border: none;
   border-radius: 5px;
   background: #da9c41;
-  transition: width 0.4s ease;
   outline: none;
-}
-.search input:focus {
-  width: 15rem;
 }
 
 .search img {
