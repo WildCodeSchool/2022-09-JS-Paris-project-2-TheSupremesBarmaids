@@ -658,6 +658,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .filter-btn .btn1 {

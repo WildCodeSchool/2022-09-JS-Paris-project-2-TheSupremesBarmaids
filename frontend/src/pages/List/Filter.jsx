@@ -1,41 +1,23 @@
+import FilterAlcohol from "./FilterAlcohol";
+import FilterCategory from "./FilterCategory";
+import FilterIngredient from "./FilterIngredient";
+
 /* eslint-disable react/prop-types */
 function Filter({ callApi }) {
   return (
     <div className="filter-btn">
+      <FilterAlcohol callApi={callApi} />
+      <FilterCategory callApi={callApi} />
+      <FilterIngredient callApi={callApi} />
+
+      {/* RESET BUTTON */}
       <div className="btn1">
         <a
-          href="#0"
+          href="#ingredient_filter"
           className="button"
-          onClick={() => callApi("filter.php?", "a=", "Non_Alcoholic")}
+          onClick={() => callApi("filter.php?", "i=", "Gin")}
         >
-          Non Alcoholic
-        </a>
-      </div>
-      <div className="btn1">
-        <a
-          href="#0"
-          className="button"
-          onClick={() => callApi("filter.php?", "c=", "Ordinary_Drink")}
-        >
-          Original Drink
-        </a>
-      </div>
-      <div className="btn1">
-        <a
-          href="#0"
-          className="button"
-          onClick={() => callApi("filter.php?", "c=", "Cocktail")}
-        >
-          Cocktails
-        </a>
-      </div>
-      <div className="btn1">
-        <a
-          href="#0"
-          className="button"
-          onClick={() => callApi("filter.php?", "g=", "Cocktail_glass")}
-        >
-          Cocktail Glass
+          RESET FILTER
         </a>
       </div>
     </div>
