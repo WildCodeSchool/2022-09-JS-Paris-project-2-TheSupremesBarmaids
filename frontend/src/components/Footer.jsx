@@ -1,28 +1,34 @@
 function Footer() {
   return (
     <footer className="footer">
-      <div className="logoFooter">
-        <img src="/logos/logo-wild.png" alt="logoWild" />
-      </div>
-      <div className="creditsFooter">
-        <div className="creditTexte">
-          <h2>© CRÉDITS</h2>
+      <div className="footer__wrapper containerType1">
+        <div className="footer__block logoFooter">
+          <img src="/logos/logo-wild.png" alt="logoWild" />
         </div>
-        <div className="creditLink">
-          <a href="https://fontawesome.com/icons">
-            https://fontawesome.com/icons
-          </a>
-          <br />
-          <a href="https://www.pexels.com">https://www.pexels.com</a>
+        <div className="footer__block credits">
+          <p className="footer__title">© CRÉDITS</p>
+          <p className="footer__text credits_links">
+            <a href="https://fontawesome.com/icons">
+              https://fontawesome.com/icons
+            </a>
+            <a href="https://www.pexels.com">https://www.pexels.com</a>
+          </p>
         </div>
-      </div>
-      <div className="teamFooter">
-        <div className="teamTitle">
-          <h2>TEAM’S LINKEDINS</h2>
-        </div>
-        <div className="team">
-          <p>Yossef Kasabi, Cyril Leclercq, Pascaline Pierre, </p>
-          <p>Dinh Huy Trinh, Elif Uluengin</p>
+        <div className="footer__block team">
+          <p className="footer__title">TEAM’S LINKEDINS</p>
+          <p className="footer__text team__members">
+            <a href="https://www.linkedin.com">Yossef Kasabi, </a>
+            <a href="https://www.linkedin.com/in/cylecq/">Cyril Leclercq, </a>
+            <a href="https://www.linkedin.com/in/pascalinepierre/">
+              Pascaline Pierre,&nbsp;
+            </a>
+            <a href="https://www.linkedin.com/in/huytrinhlaser/">
+              Dinh Huy Trinh,&nbsp;
+            </a>
+            <a href="https://www.linkedin.com/in/elif-uluengin/">
+              Elif Uluengin.
+            </a>
+          </p>
         </div>
       </div>
     </footer>

@@ -1,11 +1,11 @@
 function Section2() {
   return (
-    <section className="editoBlock editoBlock--type2">
-      <div className="editoBlock__illustration">
+    <section className="editoBlock editoBlock--second">
+      <div className="editoBlock__illustration editoBlock__noMobile">
         <img src="/images/equilibre-330.jpg" alt="imageEquilibre" />
       </div>
       <div className="editoBlock__article">
-        <h2 className="editoBlock__title">Equilibre</h2>
+        <h3 className="subTitle">Equilibre</h3>
         <p>
           Pour un cocktail réussi, il faut s’assurer que le mélange soit un
           équilibre parfait entre force, douceur et acidité. Il s’agit de la

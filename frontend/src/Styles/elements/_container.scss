@@ -1,0 +1,9 @@
+.containerType1 {
+  max-width: 1256px;
+  margin: 0 auto;
+
+  &--padd20 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

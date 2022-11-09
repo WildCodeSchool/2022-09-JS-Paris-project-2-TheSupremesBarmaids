@@ -3,23 +3,28 @@ import Intro from "./Intro";
 import Section1 from "./Section1";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
+import ListLink from "../../components/ListLink";
 
 function Editorial() {
   return (
-    <div className="editorial">
+    <div className="edito containerType1">
       <Intro />
 
-      <h1 className="linedTitle">
+      <div className="edito__listLink">
+        <ListLink />
+      </div>
+
+      <h2 className="linedTitle">
         <span className="linedTitle__text">Découvrez, shakez et dégustez</span>
-      </h1>
+      </h2>
 
       <Section1 />
-
       <Section2 />
-
       <Section3 />
 
-      <div>Listlink</div>
+      <div className="edito__listLink">
+        <ListLink />
+      </div>
     </div>
   );
 }

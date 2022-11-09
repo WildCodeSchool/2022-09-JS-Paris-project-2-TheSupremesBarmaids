@@ -1,11 +1,11 @@
 function Section1() {
   return (
-    <section className="editoBlock editoBlock--type1">
+    <section className="editoBlock editoBlock--first">
       <div className="editoBlock__illustration">
         <img src="/images/composition-330.jpg" alt="imageComposition" />
       </div>
       <div className="editoBlock__article">
-        <h2 className="editoBlock__title">Compostion</h2>
+        <h3 className="subTitle">Composition</h3>
         <p>
           La structure d’un cocktail est toujours la même et se décompose en 3
           parties distinctes : la base, le corps et la touche aromatique.

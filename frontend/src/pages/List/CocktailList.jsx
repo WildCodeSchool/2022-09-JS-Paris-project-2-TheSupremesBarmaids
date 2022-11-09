@@ -3,8 +3,8 @@ import Card from "../../components/Card";
 function CocktailList() {
   return (
     <div className="cocktailList">
-      <h2 className="cocktailListTitle">Nos Cocktails</h2>
-      <div className="CocktailListCards">
+      <h1 className="pageTitle">Nos Cocktails</h1>
+      <div className="cocktailListCards">
         <Card />
         <Card />
         <Card />
