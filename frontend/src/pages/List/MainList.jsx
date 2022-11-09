@@ -10,13 +10,20 @@ function MainList() {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 12;
+  const [wrongApi, setWrongApi] = useState(false);
 
   const callApi = async (filter, category, name) => {
     setLoading(true);
     const response = await fetch(`${API}${filter}${category}${name}`);
     const data = await response.json();
-    setPosts(data.drinks);
-    setLoading(false);
+    if (data.drinks !== null) {
+      setPosts(data.drinks);
+      setLoading(false);
+      setWrongApi(false);
+    } else {
+      setLoading(false);
+      setWrongApi(true);
+    }
   };
 
   useEffect(() => {
@@ -37,7 +44,11 @@ function MainList() {
   return (
     <main className="mainList containerType1 containerType1--padd20">
       <ActionBlock callApi={callApi} />
-      <CocktailList posts={currentPosts} loading={loading} />
+      <CocktailList
+        posts={currentPosts}
+        loading={loading}
+        wrongApi={wrongApi}
+      />
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={posts.length}
