@@ -5,36 +5,48 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  display: flex;
-  justify-content: center;
 
   &__square {
-    background-color: $colorCoffee;
-    justify-content: center;
-    height: 245px;
-    width: 273px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: absolute;
-    bottom: 92px;
+    left: calc(50% - 156px);
+    bottom: 5%;
+    background-color: $colorCoffee;
+    padding: 1.5rem;
+
+    @media screen and (min-width: 430px) {
+      left: 5%;
+    }
+
+    @media screen and (min-width: 768px) {
+      left: 10%;
+      bottom: 10%;
+    }
   }
 
   &__title {
+    margin: 0;
     font-family: $fontTitle;
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: $textLG;
+
+    @media screen and (min-width: 768px) {
+      font-size: $textXXL;
+      padding-right: 2rem;
+    }
 
     span {
-      font-size: 64px;
-      line-height: 100px;
+      display: block;
+    }
+
+    &__big {
+      font-size: 5rem;
+
+      @media screen and (min-width: 768px) {
+        font-size: 7rem;
+      }
     }
   }
-  .listLink {
-    padding: 10px 3px 10px 2px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10%;
+
+  .buttonType {
+    margin-top: 1.5rem;
   }
 }

@@ -1,12 +1,14 @@
 import Commentaire from "./Commentaire";
 import Recipe from "./Recipe";
-import ReturnList from "./ReturnList";
+import ListLink from "../../components/ListLink";
 
 function MainDetails() {
   return (
     <main className="mainDetails">
-      <ReturnList />
       <Recipe />
+      <div className="listLinkDetails">
+        <ListLink />
+      </div>
       <Commentaire />
     </main>
   );

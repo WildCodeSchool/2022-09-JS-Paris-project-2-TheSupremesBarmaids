@@ -1,6 +1,6 @@
 function Commentaire() {
   return (
-    <div className="commentaireComponent">
+    <div className="commentaireComponent containerType1 containerType1--padd20">
       <div className="commentaires">
         <h2 className="commentaireTitle linedTitle">
           <span className="linedTitle__text">Commentaires</span>
