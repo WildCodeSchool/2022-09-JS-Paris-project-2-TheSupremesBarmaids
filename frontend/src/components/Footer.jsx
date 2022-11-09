@@ -20,13 +20,13 @@ function Footer() {
             <a href="https://www.linkedin.com">Yossef Kasabi, </a>
             <a href="https://www.linkedin.com/in/cylecq/">Cyril Leclercq, </a>
             <a href="https://www.linkedin.com/in/pascalinepierre/">
-              Pascaline Pierre,{" "}
+              Pascaline Pierre,&nbsp;
             </a>
             <a href="https://www.linkedin.com/in/huytrinhlaser/">
-              Dinh Huy Trinh,{" "}
+              Dinh Huy Trinh,&nbsp;
             </a>
             <a href="https://www.linkedin.com/in/elif-uluengin/">
-              Elif Uluengin
+              Elif Uluengin.
             </a>
           </p>
         </div>
