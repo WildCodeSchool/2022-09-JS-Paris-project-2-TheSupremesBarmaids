@@ -8,7 +8,7 @@ function MainList() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(12);
+  const postsPerPage = 12;
 
   useEffect(() => {
     const fetchPosts = async () => {

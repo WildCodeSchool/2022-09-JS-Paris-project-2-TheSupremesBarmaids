@@ -13,7 +13,7 @@ function Recipe({ recipeContent }) {
         <div className="recipe__card card">
           <img
             className="cardImage"
-            src="/images/imgCocktail.jpg"
+            src={recipeContent.strDrinkThumb}
             alt="cocktail"
           />
           <div className="favoriteCocktail">
