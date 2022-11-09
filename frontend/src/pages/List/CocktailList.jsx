@@ -1,5 +1,4 @@
-import { PropTypes } from "prop-types";
-
+/* eslint-disable react/prop-types */
 import Card from "../../components/Card";
 
 function CocktailList({ posts, loading }) {
@@ -24,13 +23,5 @@ function CocktailList({ posts, loading }) {
     </div>
   );
 }
-
-CocktailList.propTypes = {
-  posts: PropTypes.arrayOf.isRequired,
-};
-
-CocktailList.propTypes = {
-  loading: PropTypes.bool.isRequired,
-};
 
 export default CocktailList;
