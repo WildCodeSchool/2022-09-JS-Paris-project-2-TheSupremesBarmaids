@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 function FilterIngredient({ callApi }) {
   // INGREDIENT FILTERS
   const ingredientFilter = [
@@ -12,18 +13,22 @@ function FilterIngredient({ callApi }) {
     "Lemon",
     "Yoghurt",
   ]; // Every filters i=
-  return ingredientFilter.map((ele) => (
-    // Create a div for every alcoholic filters
-    <div className="btn1" key={ele}>
-      <a
-        href="#ingredient_filter"
-        className="button"
-        onClick={() => callApi("filter.php?", "i=", ele)}
-      >
-        {ele}
-      </a>
-    </div>
-  ));
+  return (
+    <ul className="filter-list">
+      {ingredientFilter.map((ele) => (
+        // Create a div for every alcoholic filters
+        <li key={ele}>
+          <a
+            href="#ingredient_filter"
+            className="button"
+            onClick={() => callApi("filter.php?", "i=", ele)}
+          >
+            {ele}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default FilterIngredient;
