@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-
+import { PropTypes } from "prop-types";
 import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
 
 const MAX_VISIBILITY = 3;
 
-// eslint-disable-next-line react/prop-types
 function Carousel({ children }) {
   const [active, setActive] = useState(2);
   const count = React.Children.count(children);
@@ -48,5 +47,9 @@ function Carousel({ children }) {
     </div>
   );
 }
+
+Carousel.propTypes = {
+  children: PropTypes.string.isRequired,
+};
 
 export default Carousel;

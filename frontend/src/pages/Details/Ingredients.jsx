@@ -1,39 +1,20 @@
-/* eslint-disable react/prop-types */
-function Ingredients({ recipeContent }) {
+import { PropTypes } from "prop-types";
+
+function Ingredients({ ingredients }) {
   return (
     <ul className="recipe__list">
-      {recipeContent.strIngredient1 === null ? null : (
-        <li>{recipeContent.strIngredient1}</li>
-      )}
-      {recipeContent.strIngredient2 === null ? null : (
-        <li>{recipeContent.strIngredient2}</li>
-      )}
-      {recipeContent.strIngredient3 === null ? null : (
-        <li>{recipeContent.strIngredient3}</li>
-      )}
-      {recipeContent.strIngredient4 === null ? null : (
-        <li>{recipeContent.strIngredient4}</li>
-      )}
-      {recipeContent.strIngredient5 === null ? null : (
-        <li>{recipeContent.strIngredient5}</li>
-      )}
-      {recipeContent.strIngredient6 === null ? null : (
-        <li>{recipeContent.strIngredient6}</li>
-      )}
-      {recipeContent.strIngredient7 === null ? null : (
-        <li>{recipeContent.strIngredient7}</li>
-      )}
-      {recipeContent.strIngredient8 === null ? null : (
-        <li>{recipeContent.strIngredient8}</li>
-      )}
-      {recipeContent.strIngredient9 === null ? null : (
-        <li>{recipeContent.strIngredient9}</li>
-      )}
-      {recipeContent.strIngredient10 === null ? null : (
-        <li>{recipeContent.strIngredient10}</li>
-      )}
+      {/* Filter null values in ingredients array before map */}
+      {ingredients
+        .filter((ingredient) => ingredient !== null)
+        .map((ingredient) => (
+          <li key={ingredient}>{ingredient}</li>
+        ))}
     </ul>
   );
 }
+
+Ingredients.propTypes = {
+  ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Ingredients;

@@ -9,7 +9,7 @@ function MainList() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 12;
+  const POST_PER_PAGE = 12;
   const [wrongApi, setWrongApi] = useState(false);
 
   const callApi = async (filter, category, name) => {
@@ -32,8 +32,8 @@ function MainList() {
     setLoading(false);
   }, []);
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const indexOfLastPost = currentPage * POST_PER_PAGE;
+  const indexOfFirstPost = indexOfLastPost - POST_PER_PAGE;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
   const paginate = (pageNumber) => {
@@ -50,7 +50,7 @@ function MainList() {
         wrongApi={wrongApi}
       />
       <Pagination
-        postsPerPage={postsPerPage}
+        postsPerPage={POST_PER_PAGE}
         totalPosts={posts.length}
         paginate={paginate}
       />

@@ -1,21 +1,17 @@
-/* eslint-disable react/prop-types */
-
+import { PropTypes } from "prop-types";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+
 import Note from "../../components/Note";
 import Ingredients from "./Ingredients";
 
-function Recipe({ recipeContent }) {
+function Recipe({ recipeContent, ingredients }) {
   return (
     <div className="containerType1 containerType1--padd20">
-      <h1 className="pageTitle">{recipeContent.strDrink}</h1>
+      <h1 className="pageTitle">{recipeContent.name}</h1>
       <Note />
       <div className="recipe">
         <div className="recipe__card card">
-          <img
-            className="cardImage"
-            src={recipeContent.strDrinkThumb}
-            alt="cocktail"
-          />
+          <img className="cardImage" src={recipeContent.img} alt="cocktail" />
           <div className="favoriteCocktail">
             <AiFillHeart className="isFavorite" />
             <AiOutlineHeart className="notFavorite" />
@@ -23,15 +19,25 @@ function Recipe({ recipeContent }) {
         </div>
         <div className="recipe__ingredients">
           <h2 className="subTitle">Ingredients</h2>
-          <Ingredients recipeContent={recipeContent} />
+          <Ingredients ingredients={ingredients} />
         </div>
         <div className="recipe__prepa">
           <h2 className="subTitle">Preparation</h2>
-          <p className="recipe__text">{recipeContent.strInstructions}</p>
+          <p className="recipe__text">{recipeContent.recipe}</p>
         </div>
       </div>
     </div>
   );
 }
+
+Recipe.propTypes = {
+  // Warning to check with Gwenaël
+  recipeContent: PropTypes.shape({
+    name: PropTypes.string,
+    img: PropTypes.string,
+    recipe: PropTypes.string,
+  }).isRequired,
+  ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Recipe;

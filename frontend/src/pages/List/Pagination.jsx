@@ -23,13 +23,7 @@ function Pagination({ postsPerPage, totalPosts, paginate }) {
 
 Pagination.propTypes = {
   postsPerPage: PropTypes.number.isRequired,
-};
-
-Pagination.propTypes = {
   totalPosts: PropTypes.number.isRequired,
-};
-
-Pagination.propTypes = {
   paginate: PropTypes.func.isRequired,
 };
 

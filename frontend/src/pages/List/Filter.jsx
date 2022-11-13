@@ -1,9 +1,10 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
+
 import FilterAlcohol from "./FilterAlcohol";
 import FilterCategory from "./FilterCategory";
 import FilterIngredient from "./FilterIngredient";
 
-/* eslint-disable react/prop-types */
 function Filter({ callApi }) {
   const [openAlcoholic, setOpenAlcoholic] = useState(false);
   const [openCategory, setOpenCategory] = useState(false);
@@ -51,5 +52,9 @@ function Filter({ callApi }) {
     </div>
   );
 }
+
+Filter.propTypes = {
+  callApi: PropTypes.func.isRequired,
+};
 
 export default Filter;
