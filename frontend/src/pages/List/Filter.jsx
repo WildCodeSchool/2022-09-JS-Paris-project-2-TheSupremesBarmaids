@@ -1,8 +1,9 @@
+import PropTypes from "prop-types";
+
 import FilterAlcohol from "./FilterAlcohol";
 import FilterCategory from "./FilterCategory";
 import FilterIngredient from "./FilterIngredient";
 
-/* eslint-disable react/prop-types */
 function Filter({ callApi }) {
   return (
     <div className="filter-btn">
@@ -23,5 +24,9 @@ function Filter({ callApi }) {
     </div>
   );
 }
+
+Filter.propTypes = {
+  callApi: PropTypes.func.isRequired,
+};
 
 export default Filter;

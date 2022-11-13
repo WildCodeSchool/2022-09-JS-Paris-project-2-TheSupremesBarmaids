@@ -1,7 +1,4 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line import/no-absolute-path
-import SearchIcon from "/public/icones/search.svg";
+import PropTypes from "prop-types";
 import { useState } from "react";
 
 function SearchBar({ callApi }) {
@@ -16,7 +13,7 @@ function SearchBar({ callApi }) {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <img
-        src={SearchIcon}
+        src="/public/icones/search.svg"
         alt="search"
         onClick={() => callApi("search.php?", "s=", searchTerm)}
         aria-hidden="true"
@@ -24,5 +21,9 @@ function SearchBar({ callApi }) {
     </div>
   );
 }
+
+SearchBar.propTypes = {
+  callApi: PropTypes.func.isRequired,
+};
 
 export default SearchBar;
