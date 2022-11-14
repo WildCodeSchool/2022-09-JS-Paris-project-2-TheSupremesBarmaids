@@ -17,7 +17,7 @@ function FilterCategory({ renderApi }) {
         // Create a div for every alcoholic filters
         <li key={ele}>
           <a
-            href="#category_filter"
+            href={`#${ele}`}
             className="button"
             onClick={() =>
               fetchFilterCategoryApi(ele).then((resPosts) =>

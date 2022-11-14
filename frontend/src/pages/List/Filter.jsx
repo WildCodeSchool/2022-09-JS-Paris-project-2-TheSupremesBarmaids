@@ -40,14 +40,14 @@ function Filter({ renderApi }) {
       </div>
 
       {/* RESET BUTTON */}
-      <a
-        href="#ingredient_filter"
+      <button
+        type="button"
         className="buttonType reset-filter"
         onClick={() => fetchResetApi().then((resPost) => renderApi(resPost))}
       >
         <span className="buttonType__text">RESET FILTER</span>
         <span className="buttonType__icon" />
-      </a>
+      </button>
     </div>
   );
 }

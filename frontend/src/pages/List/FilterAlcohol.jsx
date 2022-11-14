@@ -10,7 +10,7 @@ function FilterAlcohol({ renderApi }) {
         // Create a div for every alcoholic filters
         <li key={ele}>
           <a
-            href="#alcohol_filter"
+            href={`#${ele}`}
             className="button"
             onClick={() =>
               fetchFilterAlcoholicApi(ele).then((resPosts) =>
