@@ -3,7 +3,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer__wrapper containerType1">
         <div className="footer__block logoFooter">
-          <img src="/logos/logo-wild.png" alt="logoWild" />
+          <img src="/logos/logo-wild-white.png" alt="logoWild" />
         </div>
         <div className="footer__block credits">
           <p className="footer__title">© CRÉDITS</p>

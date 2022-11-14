@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { PropTypes } from "prop-types";
 import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
 
 const MAX_VISIBILITY = 3;
@@ -47,9 +46,5 @@ function Carousel({ children }) {
     </div>
   );
 }
-
-Carousel.propTypes = {
-  children: PropTypes.arrayOf.isRequired,
-};
 
 export default Carousel;
