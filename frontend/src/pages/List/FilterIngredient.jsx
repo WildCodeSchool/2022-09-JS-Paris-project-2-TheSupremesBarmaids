@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
-function FilterIngredient({ callApi }) {
+import fetchFilterIngredientApi from "../../utils/fetchFilterIngredientApi";
+
+function FilterIngredient({ renderApi }) {
   // INGREDIENT FILTERS
   const ingredientFilter = [
     "Gin",
@@ -21,7 +22,11 @@ function FilterIngredient({ callApi }) {
           <a
             href="#ingredient_filter"
             className="button"
-            onClick={() => callApi("filter.php?", "i=", ele)}
+            onClick={() =>
+              fetchFilterIngredientApi(ele).then((resPosts) =>
+                renderApi(resPosts)
+              )
+            }
           >
             {ele}
           </a>

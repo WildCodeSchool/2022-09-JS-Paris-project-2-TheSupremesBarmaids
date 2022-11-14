@@ -1,11 +1,10 @@
-import PropTypes from "prop-types";
 import { useState } from "react";
-
+import fetchResetApi from "../../utils/fetchResetApi";
 import FilterAlcohol from "./FilterAlcohol";
 import FilterCategory from "./FilterCategory";
 import FilterIngredient from "./FilterIngredient";
 
-function Filter({ callApi }) {
+function Filter({ renderApi }) {
   const [openAlcoholic, setOpenAlcoholic] = useState(false);
   const [openCategory, setOpenCategory] = useState(false);
   const [openIngredients, setOpenIngredients] = useState(false);
@@ -21,7 +20,7 @@ function Filter({ callApi }) {
         <button type="button" onClick={handleOpenAlcoholic}>
           Alcoholic
         </button>
-        {openAlcoholic ? <FilterAlcohol callApi={callApi} /> : null}
+        {openAlcoholic ? <FilterAlcohol renderApi={renderApi} /> : null}
       </div>
 
       {/* CACTEGORIES FILTER BUTTON */}
@@ -29,7 +28,7 @@ function Filter({ callApi }) {
         <button type="button" onClick={handleOpenCategory}>
           Categories
         </button>
-        {openCategory ? <FilterCategory callApi={callApi} /> : null}
+        {openCategory ? <FilterCategory renderApi={renderApi} /> : null}
       </div>
 
       {/* INGREDIENTS FILTER BUTTON */}
@@ -37,14 +36,14 @@ function Filter({ callApi }) {
         <button type="button" onClick={handleOpenIngredients}>
           Ingredients
         </button>
-        {openIngredients ? <FilterIngredient callApi={callApi} /> : null}
+        {openIngredients ? <FilterIngredient renderApi={renderApi} /> : null}
       </div>
 
       {/* RESET BUTTON */}
       <a
         href="#ingredient_filter"
         className="buttonType reset-filter"
-        onClick={() => callApi("filter.php?", "i=", "Gin")}
+        onClick={() => fetchResetApi().then((resPost) => renderApi(resPost))}
       >
         <span className="buttonType__text">RESET FILTER</span>
         <span className="buttonType__icon" />
@@ -52,9 +51,5 @@ function Filter({ callApi }) {
     </div>
   );
 }
-
-Filter.propTypes = {
-  callApi: PropTypes.func.isRequired,
-};
 
 export default Filter;

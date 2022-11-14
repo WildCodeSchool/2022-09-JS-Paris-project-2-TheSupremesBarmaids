@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
-function FilterAlcohol({ callApi }) {
+import fetchFilterAlcoholicApi from "../../utils/fetchFilterAlcoholicApi";
+
+function FilterAlcohol({ renderApi }) {
   // ALCOHOLIC FILTERS
   const alcoholicFilters = ["Alcoholic", "Non_alcoholic", "Optional_alcohol"]; // Every filters a=
 
@@ -11,7 +12,11 @@ function FilterAlcohol({ callApi }) {
           <a
             href="#alcohol_filter"
             className="button"
-            onClick={() => callApi("filter.php?", "a=", ele)}
+            onClick={() =>
+              fetchFilterAlcoholicApi(ele).then((resPosts) =>
+                renderApi(resPosts)
+              )
+            }
           >
             {ele.replace("_", " ")}
           </a>

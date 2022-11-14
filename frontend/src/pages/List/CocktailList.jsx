@@ -1,12 +1,11 @@
-/* eslint-disable react/prop-types */
 import Card from "../../components/Card";
 
-function CocktailList({ posts, loading, wrongApi }) {
+function CocktailList({ posts, loading, wrongFetch }) {
   if (loading) {
     return <h2>loading</h2>;
   }
 
-  return wrongApi ? (
+  return wrongFetch ? (
     <div>Cocktail not found</div>
   ) : (
     <div className="cocktailList">

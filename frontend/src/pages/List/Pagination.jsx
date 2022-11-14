@@ -1,5 +1,3 @@
-import { PropTypes } from "prop-types";
-
 function Pagination({ postsPerPage, totalPosts, paginate }) {
   const pageNumbers = [];
 
@@ -20,11 +18,5 @@ function Pagination({ postsPerPage, totalPosts, paginate }) {
     </nav>
   );
 }
-
-Pagination.propTypes = {
-  postsPerPage: PropTypes.number.isRequired,
-  totalPosts: PropTypes.number.isRequired,
-  paginate: PropTypes.func.isRequired,
-};
 
 export default Pagination;

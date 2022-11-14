@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
-function FilterCategory({ callApi }) {
+import fetchFilterCategoryApi from "../../utils/fetchFilterCategoryApi";
+
+function FilterCategory({ renderApi }) {
   // CATEGORY FILTERS
   const categoryFilters = [
     "Cocktail",
@@ -18,7 +19,11 @@ function FilterCategory({ callApi }) {
           <a
             href="#category_filter"
             className="button"
-            onClick={() => callApi("filter.php?", "c=", ele)}
+            onClick={() =>
+              fetchFilterCategoryApi(ele).then((resPosts) =>
+                renderApi(resPosts)
+              )
+            }
           >
             {ele.replace("_/_", " / ").replace("_", " ")}
           </a>

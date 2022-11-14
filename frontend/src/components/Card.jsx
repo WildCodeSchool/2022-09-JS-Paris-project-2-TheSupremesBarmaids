@@ -1,4 +1,3 @@
-import { PropTypes } from "prop-types";
 import { Link } from "react-router-dom";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
@@ -17,12 +16,5 @@ function Card({ id, imgSrc, imgAlt, name }) {
     </Link>
   );
 }
-
-Card.propTypes = {
-  id: PropTypes.string.isRequired,
-  imgSrc: PropTypes.string.isRequired,
-  imgAlt: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-};
 
 export default Card;

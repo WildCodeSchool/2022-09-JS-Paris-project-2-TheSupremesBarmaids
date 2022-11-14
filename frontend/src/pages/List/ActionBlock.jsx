@@ -1,19 +1,13 @@
-import { PropTypes } from "prop-types";
-
 import SearchBar from "./SearchBar";
 import Filter from "./Filter";
 
-function ActionBlock({ callApi }) {
+function ActionBlock({ renderApi }) {
   return (
     <div className="action-block">
-      <SearchBar callApi={callApi} />
-      <Filter callApi={callApi} />
+      <SearchBar renderApi={renderApi} />
+      <Filter renderApi={renderApi} />
     </div>
   );
 }
-
-ActionBlock.propTypes = {
-  callApi: PropTypes.func.isRequired,
-};
 
 export default ActionBlock;

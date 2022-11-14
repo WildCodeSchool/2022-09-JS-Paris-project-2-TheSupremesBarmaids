@@ -1,18 +1,18 @@
-/* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import fetchSearchApi from "../../utils/fetchSearchApi";
+import fetchResetApi from "../../utils/fetchResetApi";
 
-function SearchBar({ callApi }) {
+function SearchBar({ renderApi }) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    callApi("search.php?", "s=", searchTerm);
+  const handleSubmitClick = () => {
+    fetchSearchApi(searchTerm).then((resPost) => renderApi(resPost));
   };
 
   const isSearchBarEmpty = searchTerm.length === 0;
 
   useEffect(() => {
-    if (isSearchBarEmpty) callApi("filter.php?", "i=", "Gin");
+    if (isSearchBarEmpty) fetchResetApi().then((resPost) => renderApi(resPost));
   }, [isSearchBarEmpty]); // Reset list if the search bar is empty
 
   return (
@@ -27,11 +27,14 @@ function SearchBar({ callApi }) {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <button className="search-button" type="submit" onClick={handleSubmit}>
+      <button
+        className="search-button"
+        type="submit"
+        onClick={handleSubmitClick}
+      >
         <img src="/public/icones/searchColorLeather.svg" alt="searchIcon" />
       </button>
     </form>
   );
 }
-
 export default SearchBar;
