@@ -5,7 +5,8 @@ import fetchResetApi from "../../utils/fetchResetApi";
 function SearchBar({ renderApi }) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSubmitClick = () => {
+  const handleSubmitClick = (event) => {
+    event.preventDefault();
     fetchSearchApi(searchTerm).then((resPost) => renderApi(resPost));
   };
 
