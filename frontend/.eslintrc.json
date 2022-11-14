@@ -25,6 +25,7 @@
         "message": "You can only call the error() and warn() functions from the console object"
       }
     ],
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/no-unescaped-entities": "off",
