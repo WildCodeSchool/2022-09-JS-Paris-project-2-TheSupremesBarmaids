@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import Card from "../../components/Card";
 
 function CocktailList({ posts, loading, wrongApi }) {

@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useState } from "react";
 
 function SearchBar({ callApi }) {
@@ -21,9 +20,5 @@ function SearchBar({ callApi }) {
     </div>
   );
 }
-
-SearchBar.propTypes = {
-  callApi: PropTypes.func.isRequired,
-};
 
 export default SearchBar;

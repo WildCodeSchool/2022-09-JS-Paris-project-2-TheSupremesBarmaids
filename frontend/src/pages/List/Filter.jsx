@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 import FilterAlcohol from "./FilterAlcohol";
 import FilterCategory from "./FilterCategory";
 import FilterIngredient from "./FilterIngredient";
@@ -24,9 +22,5 @@ function Filter({ callApi }) {
     </div>
   );
 }
-
-Filter.propTypes = {
-  callApi: PropTypes.func.isRequired,
-};
 
 export default Filter;

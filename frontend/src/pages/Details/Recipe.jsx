@@ -1,4 +1,3 @@
-import { PropTypes } from "prop-types";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 import Note from "../../components/Note";
@@ -29,15 +28,5 @@ function Recipe({ recipeContent, ingredients }) {
     </div>
   );
 }
-
-Recipe.propTypes = {
-  // Warning to check with Gwenaël
-  recipeContent: PropTypes.shape({
-    name: PropTypes.string,
-    img: PropTypes.string,
-    recipe: PropTypes.string,
-  }).isRequired,
-  ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
 
 export default Recipe;

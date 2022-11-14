@@ -1,5 +1,3 @@
-import { PropTypes } from "prop-types";
-
 function Ingredients({ ingredients }) {
   return (
     <ul className="recipe__list">
@@ -12,9 +10,5 @@ function Ingredients({ ingredients }) {
     </ul>
   );
 }
-
-Ingredients.propTypes = {
-  ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
 
 export default Ingredients;
