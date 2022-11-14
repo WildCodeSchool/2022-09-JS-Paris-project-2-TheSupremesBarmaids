@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import fetchRecipeApi from "../../utils/fetchRecipeApi";
 
 import Commentaire from "./Commentaire";
 import Recipe from "./Recipe";
@@ -29,15 +29,7 @@ function MainDetails() {
 
   useEffect(() => {
     // At the mounting phase :
-
-    const fetchRecipe = async () => {
-      const res = await axios.get(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${slugCocktail}`
-      );
-      mapApi(res.data.drinks[0]); // Organize data received from API
-    };
-
-    fetchRecipe();
+    fetchRecipeApi(slugCocktail).then((resPost) => mapApi(resPost));
   }, []);
 
   return (
