@@ -28,8 +28,7 @@ function MainList() {
 
   useEffect(() => {
     setLoading(true);
-    callApi("filter.php?", "i=", "Gin");
-    setLoading(false);
+    callApi("filter.php?", "i=", "Gin").then(() => setLoading(false));
   }, []);
 
   const indexOfLastPost = currentPage * POST_PER_PAGE;
