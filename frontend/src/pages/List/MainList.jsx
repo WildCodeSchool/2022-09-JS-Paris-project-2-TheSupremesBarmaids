@@ -1,34 +1,33 @@
 import { useState, useEffect } from "react";
+import fetchResetApi from "../../utils/fetchResetApi";
 import CocktailList from "./CocktailList";
 import ActionBlock from "./ActionBlock";
 import Pagination from "./Pagination";
-
-const API = "https://www.thecocktaildb.com/api/json/v1/1/";
 
 function MainList() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const POST_PER_PAGE = 12;
-  const [wrongApi, setWrongApi] = useState(false);
+  const [wrongFetch, setWrongFetch] = useState(false);
 
-  const callApi = async (filter, category, name) => {
+  // Put the result of the fetch in posts and handle wrong fetch
+  const renderApi = (data) => {
     setLoading(true);
-    const response = await fetch(`${API}${filter}${category}${name}`);
-    const data = await response.json();
-    if (data.drinks !== null) {
-      setPosts(data.drinks);
+
+    if (data !== null) {
+      setPosts(data);
       setLoading(false);
-      setWrongApi(false);
+      setWrongFetch(false);
     } else {
       setLoading(false);
-      setWrongApi(true);
+      setWrongFetch(true);
     }
   };
 
   useEffect(() => {
     setLoading(true);
-    callApi("filter.php?", "i=", "Gin").then(() => setLoading(false));
+    fetchResetApi().then((resPosts) => renderApi(resPosts));
   }, []);
 
   const indexOfLastPost = currentPage * POST_PER_PAGE;
@@ -42,11 +41,11 @@ function MainList() {
 
   return (
     <main className="mainList containerType1 containerType1--padd20">
-      <ActionBlock callApi={callApi} />
+      <ActionBlock renderApi={renderApi} />
       <CocktailList
         posts={currentPosts}
         loading={loading}
-        wrongApi={wrongApi}
+        wrongFetch={wrongFetch}
       />
       <Pagination
         postsPerPage={POST_PER_PAGE}

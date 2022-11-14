@@ -1,6 +1,7 @@
 import { useState } from "react";
+import fetchSearchApi from "../../utils/fetchSearchApi";
 
-function SearchBar({ callApi }) {
+function SearchBar({ renderApi }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
@@ -14,7 +15,9 @@ function SearchBar({ callApi }) {
       <img
         src="/public/icones/search.svg"
         alt="search"
-        onClick={() => callApi("search.php?", "s=", searchTerm)}
+        onClick={() =>
+          fetchSearchApi(searchTerm).then((resPosts) => renderApi(resPosts))
+        }
         aria-hidden="true"
       />
     </div>
