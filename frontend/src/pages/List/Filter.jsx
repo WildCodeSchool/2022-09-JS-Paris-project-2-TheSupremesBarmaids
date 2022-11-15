@@ -1,8 +1,8 @@
 import { useState } from "react";
-import fetchResetApi from "../../utils/fetchResetApi";
 import FilterAlcohol from "./FilterAlcohol";
 import FilterCategory from "./FilterCategory";
 import FilterIngredient from "./FilterIngredient";
+import ResetButton from "./ResetButton";
 
 function Filter({ renderApi }) {
   const [isAlcoholicOpened, setIsAlcoholicOpened] = useState(false);
@@ -43,14 +43,7 @@ function Filter({ renderApi }) {
       </div>
 
       {/* RESET BUTTON */}
-      <button
-        type="button"
-        className="buttonType reset-filter"
-        onClick={() => fetchResetApi().then((resPost) => renderApi(resPost))}
-      >
-        <span className="buttonType__text">RESET FILTER</span>
-        <span className="buttonType__icon" />
-      </button>
+      <ResetButton renderApi={renderApi} />
     </div>
   );
 }
