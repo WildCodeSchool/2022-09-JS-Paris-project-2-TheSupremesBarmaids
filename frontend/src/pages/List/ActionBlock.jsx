@@ -1,11 +1,11 @@
 import SearchBar from "./SearchBar";
 import Filter from "./Filter";
 
-function ActionBlock({ renderApi }) {
+function ActionBlock() {
   return (
     <div className="action-block">
-      <SearchBar renderApi={renderApi} />
-      <Filter renderApi={renderApi} />
+      <SearchBar />
+      <Filter />
     </div>
   );
 }
