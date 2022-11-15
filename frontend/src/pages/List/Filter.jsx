@@ -5,13 +5,14 @@ import FilterCategory from "./FilterCategory";
 import FilterIngredient from "./FilterIngredient";
 
 function Filter({ renderApi }) {
-  const [openAlcoholic, setOpenAlcoholic] = useState(false);
-  const [openCategory, setOpenCategory] = useState(false);
-  const [openIngredients, setOpenIngredients] = useState(false);
+  const [isAlcoholicOpened, setIsAlcoholicOpened] = useState(false);
+  const [isCategoryOpened, setIsCategoryOpened] = useState(false);
+  const [isIngredientsOpened, setIsIngredientsOpened] = useState(false);
 
-  const handleOpenAlcoholic = () => setOpenAlcoholic(!openAlcoholic);
-  const handleOpenCategory = () => setOpenCategory(!openCategory);
-  const handleOpenIngredients = () => setOpenIngredients(!openIngredients);
+  const handleOpenAlcoholic = () => setIsAlcoholicOpened(!isAlcoholicOpened);
+  const handleOpenCategory = () => setIsCategoryOpened(!isCategoryOpened);
+  const handleOpenIngredients = () =>
+    setIsIngredientsOpened(!isIngredientsOpened);
 
   return (
     <div className="filter-btn">
@@ -20,7 +21,7 @@ function Filter({ renderApi }) {
         <button type="button" onClick={handleOpenAlcoholic}>
           Alcoholic
         </button>
-        {openAlcoholic ? <FilterAlcohol renderApi={renderApi} /> : null}
+        {isAlcoholicOpened ? <FilterAlcohol renderApi={renderApi} /> : null}
       </div>
 
       {/* CACTEGORIES FILTER BUTTON */}
@@ -28,7 +29,7 @@ function Filter({ renderApi }) {
         <button type="button" onClick={handleOpenCategory}>
           Categories
         </button>
-        {openCategory ? <FilterCategory renderApi={renderApi} /> : null}
+        {isCategoryOpened ? <FilterCategory renderApi={renderApi} /> : null}
       </div>
 
       {/* INGREDIENTS FILTER BUTTON */}
@@ -36,7 +37,9 @@ function Filter({ renderApi }) {
         <button type="button" onClick={handleOpenIngredients}>
           Ingredients
         </button>
-        {openIngredients ? <FilterIngredient renderApi={renderApi} /> : null}
+        {isIngredientsOpened ? (
+          <FilterIngredient renderApi={renderApi} />
+        ) : null}
       </div>
 
       {/* RESET BUTTON */}
