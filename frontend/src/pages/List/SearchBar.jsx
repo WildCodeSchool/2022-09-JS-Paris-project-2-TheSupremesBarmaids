@@ -10,11 +10,10 @@ function SearchBar({ renderApi }) {
     fetchSearchApi(searchTerm).then((resPost) => renderApi(resPost));
   };
 
-  const isSearchBarEmpty = searchTerm.length === 0;
-
   useEffect(() => {
-    if (isSearchBarEmpty) fetchResetApi().then((resPost) => renderApi(resPost));
-  }, [isSearchBarEmpty]); // Reset list if the search bar is empty
+    if (searchTerm.length === 0)
+      fetchResetApi().then((resPost) => renderApi(resPost));
+  }, [searchTerm]); // Reset list if the search bar is empty
 
   return (
     <form className="search-box" role="search">
