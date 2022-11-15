@@ -4,7 +4,7 @@ import FilterCategory from "./FilterCategory";
 import FilterIngredient from "./FilterIngredient";
 import ResetButton from "./ResetButton";
 
-function Filter({ renderApi }) {
+function Filter() {
   const [isAlcoholicOpened, setIsAlcoholicOpened] = useState(false);
   const [isCategoryOpened, setIsCategoryOpened] = useState(false);
   const [isIngredientsOpened, setIsIngredientsOpened] = useState(false);
@@ -21,7 +21,7 @@ function Filter({ renderApi }) {
         <button type="button" onClick={handleOpenAlcoholic}>
           Alcoholic
         </button>
-        {isAlcoholicOpened ? <FilterAlcohol renderApi={renderApi} /> : null}
+        {isAlcoholicOpened ? <FilterAlcohol /> : null}
       </div>
 
       {/* CACTEGORIES FILTER BUTTON */}
@@ -29,7 +29,7 @@ function Filter({ renderApi }) {
         <button type="button" onClick={handleOpenCategory}>
           Categories
         </button>
-        {isCategoryOpened ? <FilterCategory renderApi={renderApi} /> : null}
+        {isCategoryOpened ? <FilterCategory /> : null}
       </div>
 
       {/* INGREDIENTS FILTER BUTTON */}
@@ -37,13 +37,11 @@ function Filter({ renderApi }) {
         <button type="button" onClick={handleOpenIngredients}>
           Ingredients
         </button>
-        {isIngredientsOpened ? (
-          <FilterIngredient renderApi={renderApi} />
-        ) : null}
+        {isIngredientsOpened ? <FilterIngredient /> : null}
       </div>
 
       {/* RESET BUTTON */}
-      <ResetButton renderApi={renderApi} />
+      <ResetButton />
     </div>
   );
 }

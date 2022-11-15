@@ -1,8 +1,28 @@
+import { useContext } from "react";
+import PostContext from "../../services/Context";
 import fetchFilterAlcoholicApi from "../../utils/fetchFilterAlcoholicApi";
 
-function FilterAlcohol({ renderApi }) {
+function FilterAlcohol() {
+  const { setPosts } = useContext(PostContext);
+  const { setLoading } = useContext(PostContext);
+  const { setWrongFetch } = useContext(PostContext);
+
   // ALCOHOLIC FILTERS
   const alcoholicFilters = ["Alcoholic", "Non_alcoholic", "Optional_alcohol"]; // Every filters a=
+
+  const handleClick = (e) => {
+    setLoading(true);
+    fetchFilterAlcoholicApi(e)
+      .then((resPosts) => {
+        setPosts(resPosts);
+        setLoading(false);
+        setWrongFetch(false);
+      })
+      .catch(() => {
+        setLoading(false);
+        setWrongFetch(true);
+      });
+  };
 
   return (
     <ul className="filter-list">
@@ -12,11 +32,7 @@ function FilterAlcohol({ renderApi }) {
           <a
             href={`#${ele}`}
             className="button"
-            onClick={() =>
-              fetchFilterAlcoholicApi(ele).then((resPosts) =>
-                renderApi(resPosts)
-              )
-            }
+            onClick={() => handleClick(ele)}
           >
             {ele.replace("_", " ")}
           </a>

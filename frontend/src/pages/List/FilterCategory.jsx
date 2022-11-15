@@ -1,6 +1,12 @@
+import { useContext } from "react";
+import PostContext from "../../services/Context";
 import fetchFilterCategoryApi from "../../utils/fetchFilterCategoryApi";
 
-function FilterCategory({ renderApi }) {
+function FilterCategory() {
+  const { setPosts } = useContext(PostContext);
+  const { setLoading } = useContext(PostContext);
+  const { setWrongFetch } = useContext(PostContext);
+
   // CATEGORY FILTERS
   const categoryFilters = [
     "Cocktail",
@@ -11,6 +17,20 @@ function FilterCategory({ renderApi }) {
     "Soft_Drink",
   ]; // Every filters c=
 
+  const handleClick = (e) => {
+    setLoading(true);
+    fetchFilterCategoryApi(e)
+      .then((resPosts) => {
+        setPosts(resPosts);
+        setLoading(false);
+        setWrongFetch(false);
+      })
+      .catch(() => {
+        setLoading(false);
+        setWrongFetch(true);
+      });
+  };
+
   return (
     <ul className="filter-list">
       {categoryFilters.map((ele) => (
@@ -19,11 +39,7 @@ function FilterCategory({ renderApi }) {
           <a
             href={`#${ele}`}
             className="button"
-            onClick={() =>
-              fetchFilterCategoryApi(ele).then((resPosts) =>
-                renderApi(resPosts)
-              )
-            }
+            onClick={() => handleClick(ele)}
           >
             {ele.replace("_/_", " / ").replace("_", " ")}
           </a>

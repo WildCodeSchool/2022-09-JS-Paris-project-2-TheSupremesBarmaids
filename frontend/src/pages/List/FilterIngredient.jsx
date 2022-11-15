@@ -1,6 +1,12 @@
+import { useContext } from "react";
+import PostContext from "../../services/Context";
 import fetchFilterIngredientApi from "../../utils/fetchFilterIngredientApi";
 
-function FilterIngredient({ renderApi }) {
+function FilterIngredient() {
+  const { setPosts } = useContext(PostContext);
+  const { setLoading } = useContext(PostContext);
+  const { setWrongFetch } = useContext(PostContext);
+
   // INGREDIENT FILTERS
   const ingredientFilter = [
     "Gin",
@@ -14,6 +20,21 @@ function FilterIngredient({ renderApi }) {
     "Lemon",
     "Yoghurt",
   ]; // Every filters i=
+
+  const handleClick = (e) => {
+    setLoading(true);
+    fetchFilterIngredientApi(e)
+      .then((resPosts) => {
+        setPosts(resPosts);
+        setLoading(false);
+        setWrongFetch(false);
+      })
+      .catch(() => {
+        setLoading(false);
+        setWrongFetch(true);
+      });
+  };
+
   return (
     <ul className="filter-list">
       {ingredientFilter.map((ele) => (
@@ -22,11 +43,7 @@ function FilterIngredient({ renderApi }) {
           <a
             href={`#${ele}`}
             className="button"
-            onClick={() =>
-              fetchFilterIngredientApi(ele).then((resPosts) =>
-                renderApi(resPosts)
-              )
-            }
+            onClick={() => handleClick(ele)}
           >
             {ele}
           </a>
