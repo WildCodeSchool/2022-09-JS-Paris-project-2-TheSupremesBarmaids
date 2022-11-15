@@ -3,9 +3,7 @@ import PostContext from "../../services/Context";
 import fetchFilterIngredientApi from "../../utils/fetchFilterIngredientApi";
 
 function FilterIngredient() {
-  const { setPosts } = useContext(PostContext);
-  const { setLoading } = useContext(PostContext);
-  const { setWrongFetch } = useContext(PostContext);
+  const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
 
   // INGREDIENT FILTERS
   const ingredientFilter = [

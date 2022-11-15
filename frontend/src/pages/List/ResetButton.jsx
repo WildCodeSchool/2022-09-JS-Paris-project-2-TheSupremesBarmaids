@@ -3,9 +3,7 @@ import PostContext from "../../services/Context";
 import fetchResetApi from "../../utils/fetchResetApi";
 
 function ResetButton() {
-  const { setPosts } = useContext(PostContext);
-  const { setLoading } = useContext(PostContext);
-  const { setWrongFetch } = useContext(PostContext);
+  const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
 
   const handleClick = () => {
     setLoading(true);

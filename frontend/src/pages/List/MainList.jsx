@@ -6,9 +6,8 @@ import ActionBlock from "./ActionBlock";
 import Pagination from "./Pagination";
 
 function MainList() {
-  const { posts, setPosts } = useContext(PostContext);
-  const { loading, setLoading } = useContext(PostContext);
-  const { wrongFetch, setWrongFetch } = useContext(PostContext);
+  const { posts, setPosts, loading, setLoading, wrongFetch, setWrongFetch } =
+    useContext(PostContext);
   const [currentPage, setCurrentPage] = useState(1);
   const POST_PER_PAGE = 12;
 

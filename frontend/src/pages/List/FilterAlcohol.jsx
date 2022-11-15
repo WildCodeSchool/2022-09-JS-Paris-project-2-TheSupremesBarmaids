@@ -3,9 +3,7 @@ import PostContext from "../../services/Context";
 import fetchFilterAlcoholicApi from "../../utils/fetchFilterAlcoholicApi";
 
 function FilterAlcohol() {
-  const { setPosts } = useContext(PostContext);
-  const { setLoading } = useContext(PostContext);
-  const { setWrongFetch } = useContext(PostContext);
+  const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
 
   // ALCOHOLIC FILTERS
   const alcoholicFilters = ["Alcoholic", "Non_alcoholic", "Optional_alcohol"]; // Every filters a=

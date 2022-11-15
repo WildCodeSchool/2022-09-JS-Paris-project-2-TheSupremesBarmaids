@@ -3,9 +3,7 @@ import PostContext from "../../services/Context";
 import fetchFilterCategoryApi from "../../utils/fetchFilterCategoryApi";
 
 function FilterCategory() {
-  const { setPosts } = useContext(PostContext);
-  const { setLoading } = useContext(PostContext);
-  const { setWrongFetch } = useContext(PostContext);
+  const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
 
   // CATEGORY FILTERS
   const categoryFilters = [

@@ -5,9 +5,7 @@ import fetchResetApi from "../../utils/fetchResetApi";
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
-  const { setPosts } = useContext(PostContext);
-  const { setLoading } = useContext(PostContext);
-  const { setWrongFetch } = useContext(PostContext);
+  const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
 
   const handleSubmitClick = (event) => {
     event.preventDefault();
