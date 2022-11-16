@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import PostContext from "../../services/Context";
+import { PostContext } from "../../services/Context";
 import fetchFilterAlcoholicApi from "../../utils/fetchFilterAlcoholicApi";
 
 function FilterAlcohol() {
