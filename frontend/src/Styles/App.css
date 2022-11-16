@@ -522,6 +522,64 @@ a {
   transition: background-color 0.3s;
 }
 
+.search-box {
+  position: relative;
+  width: 100%;
+  background-color: #ffc65c;
+  margin: 1rem 0;
+}
+.search-box input {
+  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  border: 0;
+  width: 100%;
+  height: 60px;
+  padding: 0 1rem;
+  background-color: #ffc65c;
+  transition: all 0.5s cubic-bezier(0, 0, 0.43, 1.049);
+  transition-property: width;
+  z-index: 1;
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+}
+.search-box button {
+  border: 0;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: #ffc65c;
+}
+.search-box input:not(:-moz-placeholder-shown) {
+  width: calc(100% - 60px);
+}
+.search-box input:not(:-ms-input-placeholder) {
+  width: calc(100% - 60px);
+}
+.search-box input:not(:placeholder-shown) {
+  width: calc(100% - 60px);
+}
+.search-box input:not(:-moz-placeholder-shown) + button {
+  display: block;
+}
+.search-box input:not(:-ms-input-placeholder) + button {
+  display: block;
+}
+.search-box input:not(:placeholder-shown) + button {
+  display: block;
+}
+
+@media screen and (min-width: 600px) {
+  .search-box {
+    width: 560px;
+    left: calc(50% - 280px);
+  }
+}
 .header {
   position: absolute;
   z-index: 900;
@@ -622,171 +680,59 @@ a {
   text-decoration: underline;
 }
 
-.search {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.search input {
-  position: relative;
-  padding: 15px 40px 15px 20px;
-  width: 15rem;
-  color: black;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: bolder;
-  letter-spacing: 2px;
-  border: none;
-  border-radius: 5px;
-  background: #da9c41;
-  outline: none;
-}
-
-.search img {
-  position: relative;
-  left: -2.2rem;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-}
-
 .filter-btn {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.filter-btn .btn1 {
-  height: 50px;
-  margin: 20px;
-  margin-bottom: 40px;
   position: relative;
-  width: 155px;
 }
 
-.filter-btn .btn1 a {
-  align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 30px;
-  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
-  color: #fff;
+.dropdown-filter {
   display: flex;
-  font-size: 18px;
-  font-weight: 700;
-  left: 0;
-  top: 0;
-  position: absolute;
-  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100%;
-  justify-content: center;
-  letter-spacing: 1px;
-  text-decoration: none;
-  overflow: hidden;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(15px);
-  z-index: 1;
-  transition: 0.5s;
+}
+.dropdown-filter button {
+  border: 0;
+  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
+  background: #ffc65c;
+  border-bottom: 1px solid #362924;
+  padding: 10px 17px;
+  width: 100%;
+  text-align: left;
+  font-size: 1.5rem;
+}
+.dropdown-filter .filter-list {
+  width: 100%;
+  list-style-type: none;
+}
+.dropdown-filter .filter-list li {
+  margin: 0;
+  background-color: #852e01;
+  display: flex;
+  justify-content: flex-start;
+}
+.dropdown-filter .filter-list li a {
+  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  padding: 7px 28px;
+  width: 100%;
+}
+.dropdown-filter .filter-list li:hover {
+  background-color: #672200;
 }
 
-.filter-btn .btn1:hover a {
-  letter-spacing: 2px;
+.reset-filter {
+  margin: 1rem 0 1rem 0;
 }
 
-.filter-btn .btn1 a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
-  transform: skewX(45deg) translateX(0);
-  transition: 0.5s;
+@media screen and (min-width: 600px) {
+  .filter-btn {
+    width: 560px;
+    left: calc(50% - 280px);
+  }
 }
-
-.filter-btn .btn1:hover a::before {
-  transform: skewX(45deg) translateX(200%);
-}
-
-.filter-btn .btn1::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -5px;
-  height: 10px;
-  width: 30px;
-  background: #f00;
-  border-radius: 10px;
-  transition: 0.5s;
-  transition-delay: 0s;
-}
-
-.filter-btn .btn1:hover::before {
-  bottom: 0;
-  height: 50%;
-  width: 80%;
-  border-radius: 30px;
-  transition-delay: 0.5s;
-}
-
-.filter-btn .btn1::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -5px;
-  height: 10px;
-  width: 30px;
-  background: #f00;
-  border-radius: 10px;
-  transition: 0.5s;
-  transition-delay: 0s;
-}
-
-.filter-btn .btn1:hover::after {
-  top: 0;
-  height: 50%;
-  width: 80%;
-  border-radius: 30px;
-  transition-delay: 0.5s;
-}
-
-.filter-btn .btn1:nth-child(1):before,
-.filter-btn .btn1:nth-child(1)::after {
-  background: #ff1f71;
-  box-shadow: 0 0 5px #ff1f71, 0 0 15px #ff1f71, 0 0 30px #ff1f71, 0 0 60px #ff1f71;
-}
-
-.filter-btn .btn1:nth-child(2):before,
-.filter-btn .btn1:nth-child(2)::after {
-  background: #2bd2ff;
-  box-shadow: 0 0 5px #2bd2ff, 0 0 15px #2bd2ff, 0 0 30px #2bd2ff, 0 0 60px #2bd2ff;
-}
-
-.filter-btn .btn1:nth-child(3):before,
-.filter-btn .btn1:nth-child(3)::after {
-  background: #1eff45;
-  box-shadow: 0 0 5px #1eff45, 0 0 15px #1eff45, 0 0 30px #1eff45, 0 0 60px #1eff45;
-}
-
-.filter-btn .btn1:nth-child(4):before,
-.filter-btn .btn1:nth-child(4)::after {
-  background: #1e53ff;
-  box-shadow: 0 0 5px #1e53ff, 0 0 15px #1e53ff, 0 0 30px #1e53ff, 0 0 60px #1e53ff;
-}
-
-.filter-btn .btn1:active a {
-  color: #000;
-}
-
 .top {
   display: flex;
   flex-direction: column;
@@ -1393,6 +1339,13 @@ a {
   .editoBlock__noMobile {
     display: none;
   }
+}
+
+.action-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.268);
 }
 
 .header + .mainList {

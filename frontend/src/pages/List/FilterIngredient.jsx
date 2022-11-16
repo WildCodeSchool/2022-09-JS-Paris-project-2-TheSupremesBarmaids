@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import PostContext from "../../services/Context";
 import fetchFilterIngredientApi from "../../utils/fetchFilterIngredientApi";
 
-function FilterIngredient({ renderApi }) {
+function FilterIngredient() {
+  const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
+
   // INGREDIENT FILTERS
   const ingredientFilter = [
     "Gin",
@@ -14,20 +18,37 @@ function FilterIngredient({ renderApi }) {
     "Lemon",
     "Yoghurt",
   ]; // Every filters i=
-  return ingredientFilter.map((ele) => (
-    // Create a div for every alcoholic filters
-    <div className="btn1" key={ele}>
-      <a
-        href="#ingredient_filter"
-        className="button"
-        onClick={() =>
-          fetchFilterIngredientApi(ele).then((resPosts) => renderApi(resPosts))
-        }
-      >
-        {ele}
-      </a>
-    </div>
-  ));
+
+  const handleClick = (e) => {
+    setLoading(true);
+    fetchFilterIngredientApi(e)
+      .then((resPosts) => {
+        setPosts(resPosts);
+        setLoading(false);
+        setWrongFetch(false);
+      })
+      .catch(() => {
+        setLoading(false);
+        setWrongFetch(true);
+      });
+  };
+
+  return (
+    <ul className="filter-list">
+      {ingredientFilter.map((ele) => (
+        // Create a div for every alcoholic filters
+        <li key={ele}>
+          <a
+            href={`#${ele}`}
+            className="button"
+            onClick={() => handleClick(ele)}
+          >
+            {ele}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default FilterIngredient;
