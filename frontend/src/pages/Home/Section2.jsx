@@ -15,8 +15,8 @@ function Section2() {
         <p>
           To find that fine balance that will make the unique flavor of your
           cocktail and will seduce your taste buds, limit the number of
-          ingredients. HAS from 5, it becomes very difficult to manage the
-          different flavors.
+          ingredients. From 5 ingredients, it becomes very difficult to manage
+          the different flavors.
         </p>
         <p>
           Also pay attention to their texture and their compatibility because
