@@ -779,7 +779,6 @@ a {
       -ms-user-select: none;
           user-select: none;
   background: unset;
-  background-color: rgba(0, 0, 0, 0.364);
   border-radius: 100%;
   border: unset;
   transition: ease all 0.5s;
@@ -792,6 +791,11 @@ a {
     transform: translateX(-100%) translateY(-50%);
   }
 }
+@media screen and (max-width: 500px) {
+  .actionSlide.left {
+    background-color: rgba(0, 0, 0, 0.364);
+  }
+}
 .actionSlide.right {
   right: 0;
   transform: translateX(30%) translateY(-50%);
@@ -799,6 +803,11 @@ a {
 @media screen and (min-width: 500px) {
   .actionSlide.right {
     transform: translateX(100%) translateY(-50%);
+  }
+}
+@media screen and (max-width: 500px) {
+  .actionSlide.right {
+    background-color: rgba(0, 0, 0, 0.364);
   }
 }
 

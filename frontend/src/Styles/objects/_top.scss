@@ -53,7 +53,6 @@
   cursor: pointer;
   user-select: none;
   background: unset;
-  background-color: rgba(0, 0, 0, 0.364);
   border-radius: 100%;
   border: unset;
   transition: ease all 0.5s;
@@ -63,6 +62,9 @@
     @media screen and (min-width: 500px) {
       transform: translateX(-100%) translateY(-50%);
     }
+    @media screen and (max-width: 500px) {
+      background-color: rgba(0, 0, 0, 0.364);
+    }
   }
 
   &.right {
@@ -70,6 +72,9 @@
     transform: translateX(30%) translateY(-50%);
     @media screen and (min-width: 500px) {
       transform: translateX(100%) translateY(-50%);
+    }
+    @media screen and (max-width: 500px) {
+      background-color: rgba(0, 0, 0, 0.364);
     }
   }
 }
