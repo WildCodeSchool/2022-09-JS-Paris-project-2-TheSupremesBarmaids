@@ -1,5 +1,5 @@
 .top {
-  //width: 100vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,8 +23,8 @@
 
 .carousel {
   position: relative;
-  width: 300px;
-  height: 367px;
+  width: 45vh;
+  height: 65vh;
   perspective: 500px;
   transform-style: preserve-3d;
 }
