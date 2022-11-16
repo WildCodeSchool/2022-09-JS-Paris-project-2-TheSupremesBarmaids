@@ -55,7 +55,7 @@ function SearchBar() {
         type="submit"
         onClick={handleSubmitClick}
       >
-        <img src="/public/icones/searchColorLeather.svg" alt="searchIcon" />
+        <img src="/icones/searchColorLeather.svg" alt="searchIcon" />
       </button>
     </form>
   );
