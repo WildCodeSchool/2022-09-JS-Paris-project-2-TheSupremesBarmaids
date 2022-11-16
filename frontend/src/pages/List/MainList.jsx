@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import PostContext from "../../services/Context";
+import { PostContext } from "../../services/Context";
 import fetchResetApi from "../../utils/fetchResetApi";
 import CocktailList from "./CocktailList";
 import ActionBlock from "./ActionBlock";
@@ -10,8 +10,6 @@ function MainList() {
     useContext(PostContext);
   const [currentPage, setCurrentPage] = useState(1);
   const POST_PER_PAGE = 12;
-
-  // Put the result of the fetch in posts and handle wrong fetch
 
   useEffect(() => {
     setLoading(true);

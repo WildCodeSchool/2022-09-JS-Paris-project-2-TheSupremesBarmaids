@@ -5,7 +5,7 @@ function LandingBox() {
     <div className="landingBox">
       <div className="landingBox__square">
         <h1 className="landingBox__title">
-          <span>L'art du</span>
+          <span>The art of</span>
           <span className="landingBox__title__big">Cocktail</span>
         </h1>
         <ListLink />
