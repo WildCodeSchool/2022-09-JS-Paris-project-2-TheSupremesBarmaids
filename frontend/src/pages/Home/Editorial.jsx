@@ -16,7 +16,7 @@ function Editorial() {
       </div>
 
       <h2 className="linedTitle">
-        <span className="linedTitle__text">Découvrez, shakez et dégustez</span>
+        <span className="linedTitle__text">Discover, shake and taste</span>
       </h2>
 
       <Section1 />
