@@ -23,24 +23,37 @@
 
 .carousel {
   position: relative;
-  width: 45vh;
-  height: 65vh;
+  width: 35vh;
+  height: 40vh;
   perspective: 500px;
   transform-style: preserve-3d;
 }
-
 .cardSlide {
   position: absolute;
+  margin-left: 1.1rem;
   width: 100%;
   height: 100%;
   transform: rotateY(calc(var(--offset) * 50deg))
-    scaleY(calc(1 + var(--abs-offset) * -0.4))
-    translateZ(calc(var(--abs-offset) * -30rem))
-    translateX(calc(var(--direction) * -5rem));
+  scaleY(calc(1 + var(--abs-offset) * -0.4))
+  translateZ(calc(var(--abs-offset) * -30rem))
+  translateX(calc(var(--direction) * -5rem));
   filter: blur(calc(var(--abs-offset) * 1rem));
   transition: all 0.3s ease-out;
 }
 
+@media screen and (max-width: 600px) {
+  .carousel {
+    width: 80%;
+    height: 55vh;
+  }
+
+  .cardSlide {
+    width: 60%;
+    height: 60%;
+    margin-left: .1rem;
+  }
+
+}
 .actionSlide {
   color: $colorCrema;
   font-size: 5rem;
