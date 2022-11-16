@@ -1,18 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import List from "./pages/List";
-import Home from "./pages/Home";
-import Details from "./pages/Details";
-
+import { BrowserRouter as Router } from "react-router-dom";
 import "./Styles/App.css";
+import AnimatedRoutes from "./services/AnimatedRoutes";
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/list" element={<List />} />
-        <Route path="/recipe/:slugCocktail" element={<Details />} />
-      </Routes>
+      <AnimatedRoutes />
     </Router>
   );
 }
