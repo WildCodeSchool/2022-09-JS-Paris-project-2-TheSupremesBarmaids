@@ -10,7 +10,9 @@ function DropdownFilterCategory() {
       <button type="button" onClick={handleOpenCategory}>
         Categories
       </button>
-      {isCategoryOpened ? <FilterCategory /> : null}
+      {isCategoryOpened ? (
+        <FilterCategory setIsCategoryOpened={setIsCategoryOpened} />
+      ) : null}
     </div>
   );
 }
