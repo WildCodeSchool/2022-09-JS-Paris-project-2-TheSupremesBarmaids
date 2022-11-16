@@ -9,7 +9,7 @@ function CocktailList({ posts, loading, wrongFetch }) {
     <div>Cocktail not found</div>
   ) : (
     <div className="cocktailList">
-      <h1 className="pageTitle">Nos Cocktails</h1>
+      <h1 className="pageTitle">Our Cocktails</h1>
       <div className="cocktailListCards">
         {posts.map((post) => (
           <Card

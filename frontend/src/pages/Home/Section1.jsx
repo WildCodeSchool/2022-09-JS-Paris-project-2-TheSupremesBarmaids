@@ -7,23 +7,22 @@ function Section1() {
       <div className="editoBlock__article">
         <h3 className="subTitle">Composition</h3>
         <p>
-          La structure d’un cocktail est toujours la même et se décompose en 3
-          parties distinctes : la base, le corps et la touche aromatique.
+          The structure of a cocktail is always the same and is broken down into
+          3 distinct parts: the base, the body and the aromatic touch.
         </p>
         <p>
-          La base, le plus souvent un alcool fort comme le rhum, la vodka ou le
-          gin. donne le ton du cocktail. Elle est la première brique du mélange,
-          celle sur laquelle les autres briques vont s’adosser.
+          The base, most often a strong alcohol such as rum, vodka or the gin.
+          sets the tone for the cocktail. She is the first brick of the mixture,
+          the one on which the other bricks will lean.
         </p>
         <p>
-          Le corps peut lui être composé de plusieurs ingrédients. Il est là
-          pour l’allonger et lui donner plus de texture. Celle-ci peut-être par
-          exemple pétillante (soda), crémeuse (oeufs) ou épaisse (purée de
-          fruits).
+          The body can be composed of several ingredients. He's there to
+          lengthen it and give it more texture. This one maybe fizzy (soda),
+          creamy (eggs) or thick (pureed fruits).
         </p>
         <p>
-          La touche aromatique quant à elle permet d’affirmer son caractère
-          et/ou de lui apporter une note d’originalité.
+          The aromatic touch, on the other hand, makes it possible to affirm its
+          character and/or to bring it a note of originality.
         </p>
       </div>
     </section>
