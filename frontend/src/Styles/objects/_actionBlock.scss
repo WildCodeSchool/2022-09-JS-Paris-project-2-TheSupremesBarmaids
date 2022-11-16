@@ -3,4 +3,9 @@
   flex-direction: column;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.268);
+  display: none;
+
+  &.actionBlockOpened {
+    display: block;
+  }
 }
