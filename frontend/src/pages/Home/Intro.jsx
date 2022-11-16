@@ -2,19 +2,19 @@ function Intro() {
   return (
     <div className="edito__intro">
       <p>
-        La journée est finie. Avec juste quelques ingrédients à portée de main,
-        prenez le temps de savourer un moment de détente privilégié et bien
-        mérité.
+        The day is over. With just a few ingredients at your fingertips hand,
+        take the time to savor a privileged moment of relaxation and
+        well-deserved.
       </p>
       <p>
-        Découvrez avec nous l’art du Cocktail pour des moments suspendus et hors
-        du temps à siroter des mélanges surprenants ou plus classiques. Ravissez
-        vos papilles avec nos recettes aux influences exotiques et européennes
-        alliant fraicheur des produits, saveurs subtiles et épices du monde.
+        Discover with us the art of Cocktail for suspended moments and out of
+        time sipping surprising or more classic blends. Delight your taste buds
+        with our recipes with exotic influences and European combining freshness
+        of products, subtle flavors and spices of the world.
       </p>
       <p>
-        Le cocktail est avant tout un créateur d’émotions, un art de
-        convivialité. Promis, pas besoin de savoir jongler.
+        The cocktail is above all a creator of emotions, an art of friendliness.
+        I promise, no need to know how to juggle.
       </p>
     </div>
   );

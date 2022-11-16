@@ -14,7 +14,7 @@ function LandingBox() {
         exit={{ width: "-100%", transition: { duration: 0.6 } }}
       >
         <h1 className="landingBox__title">
-          <span>L'art du</span>
+          <span>The art of</span>
           <span className="landingBox__title__big">Cocktail</span>
         </h1>
         <ListLink />

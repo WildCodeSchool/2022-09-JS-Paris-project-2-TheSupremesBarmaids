@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import PostContext from "../../services/Context";
+import { PostContext } from "../../services/Context";
 import fetchResetApi from "../../utils/fetchResetApi";
 
 function ResetButton() {

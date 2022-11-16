@@ -1,5 +1,4 @@
 import { createContext } from "react";
 
-const PostContext = createContext({});
-
-export default PostContext;
+export const PostContext = createContext({});
+export const ToggleContext = createContext({});

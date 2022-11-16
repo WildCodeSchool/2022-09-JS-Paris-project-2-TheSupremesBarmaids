@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import PostContext from "../../services/Context";
+import { PostContext } from "../../services/Context";
 import fetchSearchApi from "../../utils/fetchSearchApi";
 import fetchResetApi from "../../utils/fetchResetApi";
 
