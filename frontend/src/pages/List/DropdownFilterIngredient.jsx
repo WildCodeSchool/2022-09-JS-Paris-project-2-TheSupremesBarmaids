@@ -11,7 +11,9 @@ function DropodownFilterIngredient() {
       <button type="button" onClick={handleOpenIngredients}>
         Ingredients
       </button>
-      {isIngredientsOpened ? <FilterIngredient /> : null}
+      {isIngredientsOpened ? (
+        <FilterIngredient setIsIngredientsOpened={setIsIngredientsOpened} />
+      ) : null}
     </div>
   );
 }
