@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import { PostContext } from "../../services/Context";
+import { PostContext, ToggleContext } from "../../services/Context";
 import fetchFilterCategoryApi from "../../utils/fetchFilterCategoryApi";
 
-function FilterCategory() {
+function FilterCategory({ setIsCategoryOpened }) {
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
+  const { setIsActionBlockOpened } = useContext(ToggleContext);
 
   // CATEGORY FILTERS
   const categoryFilters = [
@@ -27,6 +28,8 @@ function FilterCategory() {
         setLoading(false);
         setWrongFetch(true);
       });
+    setIsCategoryOpened(false);
+    setIsActionBlockOpened(false);
   };
 
   return (

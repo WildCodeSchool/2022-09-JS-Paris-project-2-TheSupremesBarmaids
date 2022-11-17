@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { ToggleContext } from "../../services/Context";
 
 function ActionButton() {
-  const { isActionBlockOpened, setIsActionblockOpened } =
+  const { isActionBlockOpened, setIsActionBlockOpened } =
     useContext(ToggleContext);
   const handleclick = () => {
-    setIsActionblockOpened(!isActionBlockOpened);
+    setIsActionBlockOpened(!isActionBlockOpened);
   };
   return (
     <button

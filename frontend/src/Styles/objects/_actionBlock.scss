@@ -30,7 +30,6 @@
     margin: 1rem 0;
 
     input {
-      font-family: $fontText;
       font-size: $textLG;
       border: 0;
       width: 100%;
@@ -86,7 +85,6 @@
 
     button {
       border: 0;
-      font-family: $fontText;
       background: $colorCrema;
       border-bottom: 1px solid $colorCoffee;
       padding: 10px 17px;
@@ -106,7 +104,6 @@
         justify-content: flex-start;
 
         a {
-          font-family: $fontText;
           font-size: $textSM;
           padding: 7px 28px;
           width: 100%;
