@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import { PostContext } from "../../services/Context";
+import { PostContext, ToggleContext } from "../../services/Context";
 import fetchFilterAlcoholicApi from "../../utils/fetchFilterAlcoholicApi";
 
-function FilterAlcohol() {
+function FilterAlcohol({ setIsAlcoholicOpened }) {
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
+  const { setIsActionBlockOpened } = useContext(ToggleContext);
 
   // ALCOHOLIC FILTERS
   const alcoholicFilters = ["Alcoholic", "Non_alcoholic", "Optional_alcohol"]; // Every filters a=
@@ -20,6 +21,8 @@ function FilterAlcohol() {
         setLoading(false);
         setWrongFetch(true);
       });
+    setIsAlcoholicOpened(false);
+    setIsActionBlockOpened(false);
   };
 
   return (

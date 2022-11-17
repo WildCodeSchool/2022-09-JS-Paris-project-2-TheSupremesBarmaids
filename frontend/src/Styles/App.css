@@ -160,7 +160,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: sans-serif;
+  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
@@ -288,6 +288,7 @@ html {
 body {
   position: relative;
   background-color: #362924;
+  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
 }
 
 h1,
@@ -319,7 +320,6 @@ button:not(:disabled) {
   display: inline-block;
   background-color: #da9c41;
   border: 2px solid #da9c41;
-  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
   color: #ffffff;
@@ -515,7 +515,6 @@ a {
   text-decoration: none;
   padding: 5px 10px;
   font-size: 1.5rem;
-  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
   font-weight: 100;
   border: 1px solid #362924;
   background-color: rgba(0, 0, 0, 0.413);
@@ -567,7 +566,6 @@ a {
 
 .footer {
   background-color: #852e01;
-  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
 }
 .footer__wrapper {
   padding: 2rem;
@@ -927,7 +925,6 @@ a {
 .commentaireBox {
   background-color: #da9c41;
   color: #000000;
-  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
   list-style-type: none;
   border-radius: 30px;
   padding: 5px 20px;
@@ -984,7 +981,6 @@ a {
   }
 }
 .edito {
-  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
   font-size: 1.25rem;
   margin-top: 4rem;
 }
@@ -1167,7 +1163,6 @@ a {
   margin: 1rem 0;
 }
 .action-block .search-box input {
-  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
   font-size: 2rem;
   border: 0;
   width: 100%;
@@ -1231,7 +1226,6 @@ a {
 }
 .action-block .dropdown-filter button {
   border: 0;
-  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
   background: #ffc65c;
   border-bottom: 1px solid #362924;
   padding: 10px 17px;
@@ -1250,7 +1244,6 @@ a {
   justify-content: flex-start;
 }
 .action-block .dropdown-filter .filter-list li a {
-  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
   font-size: 1.25rem;
   padding: 7px 28px;
   width: 100%;

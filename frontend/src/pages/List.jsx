@@ -10,7 +10,7 @@ function List() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [wrongFetch, setWrongFetch] = useState(false);
-  const [isActionBlockOpened, setIsActionblockOpened] = useState(false);
+  const [isActionBlockOpened, setIsActionBlockOpened] = useState(false);
 
   return (
     <motion.div
@@ -19,7 +19,7 @@ function List() {
       exit={{ width: "-100%", transition: { duration: 0.3 } }}
     >
       <ToggleContext.Provider
-        value={{ isActionBlockOpened, setIsActionblockOpened }}
+        value={{ isActionBlockOpened, setIsActionBlockOpened }}
       >
         <HeaderList />
         <PostContext.Provider
