@@ -1,11 +1,12 @@
 import { useState, useEffect, useContext } from "react";
-import { PostContext } from "../../services/Context";
+import { PostContext, ToggleContext } from "../../services/Context";
 import fetchSearchApi from "../../utils/fetchSearchApi";
 import fetchResetApi from "../../utils/fetchResetApi";
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
+  const { setIsActionblockOpened } = useContext(ToggleContext);
 
   const handleSubmitClick = (event) => {
     event.preventDefault();
@@ -20,6 +21,7 @@ function SearchBar() {
         setWrongFetch(true);
       }
     });
+    setIsActionblockOpened(false);
   };
 
   useEffect(() => {

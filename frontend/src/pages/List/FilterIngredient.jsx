@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import { PostContext } from "../../services/Context";
+import { PostContext, ToggleContext } from "../../services/Context";
 import fetchFilterIngredientApi from "../../utils/fetchFilterIngredientApi";
 
-function FilterIngredient() {
+function FilterIngredient({ setIsIngredientsOpened }) {
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
+  const { setIsActionblockOpened } = useContext(ToggleContext);
 
   // INGREDIENT FILTERS
   const ingredientFilter = [
@@ -31,6 +32,8 @@ function FilterIngredient() {
         setLoading(false);
         setWrongFetch(true);
       });
+    setIsIngredientsOpened(false);
+    setIsActionblockOpened(false);
   };
 
   return (
