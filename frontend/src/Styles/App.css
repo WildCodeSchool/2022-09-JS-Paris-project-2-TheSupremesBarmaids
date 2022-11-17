@@ -852,15 +852,16 @@ a {
     gap: 5rem 0;
   }
 }
-@media only screen and (min-width: 972px) {
+@media only screen and (min-width: 1060px) {
   .cocktailListCards {
     justify-content: flex-start;
-    gap: 5rem calc((100% - 900px) / 2);
+    gap: 5rem calc((100% - 1020px) / 2);
   }
 }
 .cocktailListCards .card {
   flex: 0 0 auto;
   transition: all 5s ease-in;
+  margin: 0 20px;
 }
 .cocktailListCards .card::before, .cocktailListCards .card::after {
   content: "";
