@@ -53,20 +53,28 @@
   cursor: pointer;
   user-select: none;
   background: unset;
+  border-radius: 100%;
   border: unset;
+  transition: ease all 0.5s;
 
   &.left {
     transform: translateX(-30%) translateY(-50%);
-    @media screen and (min-width: 430px) {
+    @media screen and (min-width: 500px) {
       transform: translateX(-100%) translateY(-50%);
+    }
+    @media screen and (max-width: 500px) {
+      background-color: rgba(0, 0, 0, 0.364);
     }
   }
 
   &.right {
     right: 0;
     transform: translateX(30%) translateY(-50%);
-    @media screen and (min-width: 430px) {
+    @media screen and (min-width: 500px) {
       transform: translateX(100%) translateY(-50%);
+    }
+    @media screen and (max-width: 500px) {
+      background-color: rgba(0, 0, 0, 0.364);
     }
   }
 }
