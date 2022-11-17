@@ -4,7 +4,7 @@ import ListLink from "../../components/ListLink";
 function LandingBox() {
   return (
     <div className="landingBox">
-      <motion.div 
+      <motion.div
         className="landingBox__square"
         initial="visible"
         animate={{
