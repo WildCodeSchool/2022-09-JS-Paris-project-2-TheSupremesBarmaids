@@ -6,7 +6,7 @@ import fetchResetApi from "../../utils/fetchResetApi";
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
-  const { setIsActionblockOpened } = useContext(ToggleContext);
+  const { setIsActionBlockOpened } = useContext(ToggleContext);
 
   const handleSubmitClick = (event) => {
     event.preventDefault();
@@ -21,7 +21,7 @@ function SearchBar() {
         setWrongFetch(true);
       }
     });
-    setIsActionblockOpened(false);
+    setIsActionBlockOpened(false);
   };
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import fetchFilterCategoryApi from "../../utils/fetchFilterCategoryApi";
 
 function FilterCategory({ setIsCategoryOpened }) {
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
-  const { setIsActionblockOpened } = useContext(ToggleContext);
+  const { setIsActionBlockOpened } = useContext(ToggleContext);
 
   // CATEGORY FILTERS
   const categoryFilters = [
@@ -29,7 +29,7 @@ function FilterCategory({ setIsCategoryOpened }) {
         setWrongFetch(true);
       });
     setIsCategoryOpened(false);
-    setIsActionblockOpened(false);
+    setIsActionBlockOpened(false);
   };
 
   return (
