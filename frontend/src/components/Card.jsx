@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 import Note from "./Note";
