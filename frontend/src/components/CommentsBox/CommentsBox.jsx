@@ -1,6 +1,9 @@
 import React, { useRef, useState } from "react";
+// eslint-disable-next-line import/no-cycle
+import { useOpenReply } from "../Message/Message";
 
-function TopCommentsBox(props) {
+function CommentsBox(props) {
+  const changeOpenReply = useOpenReply();
   const message = useRef(null);
   const [showCommentLine, setShowCommentLine] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
@@ -28,7 +31,7 @@ function TopCommentsBox(props) {
     <form>
       <section className="commentBox">
         <input
-          // autoFocus={props.autoFocus}
+          autoFocus={props.autoFocus}
           type="text"
           placeholder="Add your comments here..."
           ref={message}
@@ -52,10 +55,10 @@ function TopCommentsBox(props) {
           <button
             className="commentButton"
             type="button"
-            style={{ color: "gray", backgroundColor: "transparent" }}
+            style={{ color: "grey", backgroundColor: "transparent" }}
             onClick={() => {
               setShowButtons(false);
-              message.current.value = "";
+              changeOpenReply();
             }}
           >
             CANCEL
@@ -66,4 +69,4 @@ function TopCommentsBox(props) {
   );
 }
 
-export default TopCommentsBox;
+export default CommentsBox;

@@ -1,40 +1,46 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext, createContext } from "react";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
-import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs"
+// eslint-disable-next-line import/no-cycle
+import SubCommentsBox from "../../CommentsBox/SubCommentsBox/SubCommentsBox";
+
+const showReply = createContext();
+
+export function useOpenReply() {
+  return useContext(showReply);
+}
 // eslint-disable-next-line no-unused-vars
-function Message(props) {
-  const likeIcon = useRef();
+function SubMessage(props) {
   const numLikes = useRef();
 
-  const [arrowUp, setArrowUp] = useState(false);
   const [openReply, setOpenReply] = useState(false);
+  const [likeIcon, setLikeIcon] = useState(false);
 
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
   const changeOpenReply = () => {
     // eslint-disable-next-line no-return-assign, no-param-reassign
     setOpenReply((prevState) => (prevState = !prevState));
   };
 
-  let arrow = <BsCaretDownFill className="caret-down" />;
-
-  const changeArrow = () => {
-    // eslint-disable-next-line no-return-assign, no-param-reassign
-    setArrowUp((prevState) => (prevState = !prevState));
-  };
-
-  if (arrowUp) {
-    arrow = <BsCaretUpFill className="caret-up" />;
-  } else {
-    arrow = <BsCaretDownFill className="caret-down" />;
-  };
-
+  let toggleLike = false;
+  // eslint-disable-next-line prefer-destructuring, react/destructuring-assignment
+  let { likes } = props;
   const likeComment = () => {
-
+    toggleLike = !toggleLike;
+    setLikeIcon(toggleLike);
+    if (toggleLike) {
+      // eslint-disable-next-line no-plusplus
+      likes++;
+      // likeIcon.current.style.color = "blue";
+    } else {
+      // eslint-disable-next-line no-plusplus
+      likes--;
+      // likeIcon.current.style.color = "gray";
+    }
+    numLikes.current.innerHTML = likes;
   };
 
-  const deleteMessage = () => {
-
-  };
+  const deleteMessage = () => {};
 
   return (
     <section className="messageContainer">
@@ -46,8 +52,9 @@ function Message(props) {
       <section className="messageIconsContainer">
         <AiFillLike
           className="thumbs-up"
-          ref={likeIcon}
           onClick={likeComment}
+          // ref={likeIcon}
+          style={likeIcon ? { color: "#4688de" } : { color: "gray" }}
         />
         <div ref={numLikes}>{props.likes}</div>
         <AiFillDislike className="thumbs-down" />
@@ -69,15 +76,11 @@ function Message(props) {
           </div>
         )}
       </section>
-      <section
-        className="arrowReplies"
-        onClick={changeArrow}
-        aria-hidden="true"
-      >
-        {arrow}
-        <div>View 4 replies</div>
-      </section>
+      <showReply.Provider value={changeOpenReply}>
+        {openReply && <SubCommentsBox autoFocus />}
+      </showReply.Provider>
     </section>
   );
 }
-export default Message;
+
+export default SubMessage;

@@ -1,13 +1,13 @@
 import React from "react";
-import Message from "../../components/Message/SubMessage/Message";
+import Message from "../../components/Message/Message";
 // eslint-disable-next-line no-unused-vars
 function MessageScroll(props) {
   return (
     <>
       <Message
-        user="Noob user"
+        user="Drunken user"
         editable={false}
-        message="Noob message"
+        message="I want to drink all your cocktails"
         likes={19}
       />
       <div className="bottomBar">
