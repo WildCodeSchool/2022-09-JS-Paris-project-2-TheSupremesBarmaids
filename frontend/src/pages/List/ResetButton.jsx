@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import PostContext from "../../services/Context";
+import { PostContext, ToggleContext } from "../../services/Context";
 import fetchResetApi from "../../utils/fetchResetApi";
 
 function ResetButton() {
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
+  const { setIsActionblockOpened } = useContext(ToggleContext);
 
   const handleClick = () => {
     setLoading(true);
@@ -17,6 +18,7 @@ function ResetButton() {
         setLoading(false);
         setWrongFetch(true);
       });
+    setIsActionblockOpened(false);
   };
 
   return (

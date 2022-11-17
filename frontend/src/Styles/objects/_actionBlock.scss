@@ -2,5 +2,131 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.268);
+  height: 0;
+  min-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: min-height 1s, opacity 1s, visibility 0s linear;
+
+  @media screen and (min-width: 600px) {
+    visibility: initial;
+    height: initial;
+    min-height: initial;
+    opacity: initial;
+  }
+
+  &.actionBlockOpened {
+    height: initial;
+    min-height: 336px;
+    max-height: 1050px;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .search-box {
+    position: relative;
+    width: 100%;
+    background-color: $colorCrema;
+    margin: 1rem 0;
+
+    input {
+      font-family: $fontText;
+      font-size: $textLG;
+      border: 0;
+      width: 100%;
+      height: $heightSearchBar;
+      padding: 0 1rem;
+      background-color: $colorCrema;
+      transition: all 0.5s cubic-bezier(0, 0, 0.43, 1.049);
+      transition-property: width;
+      z-index: 1;
+      position: relative;
+      appearance: none;
+      outline: none;
+    }
+
+    button {
+      border: 0;
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: $heightSearchBar;
+      background: $colorCrema;
+    }
+
+    input:not(:placeholder-shown) {
+      width: calc(100% - 60px);
+      + button {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .search-box {
+      width: 560px;
+      left: calc(50% - (560px / 2));
+    }
+  }
+
+  .filter-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .dropdown-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    button {
+      border: 0;
+      font-family: $fontText;
+      background: $colorCrema;
+      border-bottom: 1px solid $colorCoffee;
+      padding: 10px 17px;
+      width: 100%;
+      text-align: left;
+      font-size: $textMD;
+    }
+
+    .filter-list {
+      width: 100%;
+      list-style-type: none;
+
+      li {
+        margin: 0;
+        background-color: $colorLeather;
+        display: flex;
+        justify-content: flex-start;
+
+        a {
+          font-family: $fontText;
+          font-size: $textSM;
+          padding: 7px 28px;
+          width: 100%;
+        }
+      }
+
+      li:hover {
+        background-color: #672200;
+      }
+    }
+  }
+
+  .reset-filter {
+    margin: 1rem 0 1rem 0;
+  }
+
+  @media screen and (min-width: 600px) {
+    .filter-btn {
+      width: 560px;
+      left: calc(50% - (560px / 2));
+    }
+  }
 }
