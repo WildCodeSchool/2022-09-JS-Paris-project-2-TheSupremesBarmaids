@@ -11,6 +11,7 @@ function List() {
   const [loading, setLoading] = useState(false);
   const [wrongFetch, setWrongFetch] = useState(false);
   const [isActionBlockOpened, setIsActionBlockOpened] = useState(false);
+  const [filterSelected, setFilterSelected] = useState("");
 
   return (
     <motion.div
@@ -19,7 +20,12 @@ function List() {
       exit={{ width: "-100%", transition: { duration: 0.3 } }}
     >
       <ToggleContext.Provider
-        value={{ isActionBlockOpened, setIsActionBlockOpened }}
+        value={{
+          isActionBlockOpened,
+          setIsActionBlockOpened,
+          filterSelected,
+          setFilterSelected,
+        }}
       >
         <HeaderList />
         <PostContext.Provider
