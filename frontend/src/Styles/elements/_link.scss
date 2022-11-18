@@ -67,14 +67,12 @@
   }
 
   &--filterSearch {
-    background-image: url("/icones/filter-search-white-32.png");
+    background-image: url("/icones/filter-white.png");
+    background-size: contain;
 
     &:hover {
-      background-image: url("/icones/filter-search-crema-32.png");
-    }
-
-    @media only screen and (min-width: 600px) {
-      display: none;
+      background-image: url("/icones/filter-crema.png");
+      background-size: contain;
     }
   }
 }

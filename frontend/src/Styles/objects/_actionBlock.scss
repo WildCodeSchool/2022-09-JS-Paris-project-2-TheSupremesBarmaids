@@ -2,32 +2,21 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 0;
-  min-height: 0;
-  visibility: hidden;
-  opacity: 0;
-  transition: min-height 1s, opacity 1s, visibility 0s linear;
-
-  @media screen and (min-width: 600px) {
-    visibility: initial;
-    height: initial;
-    min-height: initial;
-    opacity: initial;
-  }
-
-  &.actionBlockOpened {
-    height: initial;
-    min-height: 336px;
-    max-height: 1050px;
-    visibility: visible;
-    opacity: 1;
-  }
 
   .search-box {
     position: relative;
     width: 100%;
     background-color: $colorCrema;
     margin: 1rem 0;
+
+    @media screen and (max-width: 430px) {
+      margin: 0 0 1rem 0;
+    }
+
+    @media screen and (min-width: 600px) {
+      width: 560px;
+      left: calc(50% - (560px / 2));
+    }
 
     input {
       font-size: $textLG;
@@ -63,18 +52,24 @@
     }
   }
 
-  @media screen and (min-width: 600px) {
-    .search-box {
-      width: 560px;
-      left: calc(50% - (560px / 2));
-    }
-  }
-
   .filter-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    height: 0;
+    min-height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: min-height 1s, opacity 1s, visibility 0s linear;
+
+    &.filterBlockOpened {
+      height: initial;
+      min-height: 244px;
+      max-height: 1050px;
+      visibility: visible;
+      opacity: 1;
+    }
   }
 
   .dropdown-filter {
