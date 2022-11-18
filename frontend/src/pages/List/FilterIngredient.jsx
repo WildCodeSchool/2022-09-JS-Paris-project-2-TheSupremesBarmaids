@@ -4,7 +4,7 @@ import fetchFilterIngredientApi from "../../utils/fetchFilterIngredientApi";
 
 function FilterIngredient({ setIsIngredientsOpened }) {
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
-  const { setIsActionBlockOpened, setFilterSelected } =
+  const { setIsActionBlockOpened, setFilterSelected, setSearchTerm } =
     useContext(ToggleContext);
 
   // INGREDIENT FILTERS
@@ -36,6 +36,7 @@ function FilterIngredient({ setIsIngredientsOpened }) {
     setIsIngredientsOpened(false);
     setIsActionBlockOpened(false);
     setFilterSelected(e);
+    setSearchTerm("");
   };
 
   return (

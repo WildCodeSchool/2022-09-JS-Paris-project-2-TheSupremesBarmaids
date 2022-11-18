@@ -4,7 +4,7 @@ import fetchFilterCategoryApi from "../../utils/fetchFilterCategoryApi";
 
 function FilterCategory({ setIsCategoryOpened }) {
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
-  const { setIsActionBlockOpened, setFilterSelected } =
+  const { setIsActionBlockOpened, setFilterSelected, setSearchTerm } =
     useContext(ToggleContext);
 
   // CATEGORY FILTERS
@@ -32,6 +32,7 @@ function FilterCategory({ setIsCategoryOpened }) {
     setIsCategoryOpened(false);
     setIsActionBlockOpened(false);
     setFilterSelected(e.replace("_/_", " / ").replace("_", " "));
+    setSearchTerm("");
   };
 
   return (

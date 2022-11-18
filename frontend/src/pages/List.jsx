@@ -12,6 +12,7 @@ function List() {
   const [wrongFetch, setWrongFetch] = useState(false);
   const [isActionBlockOpened, setIsActionBlockOpened] = useState(false);
   const [filterSelected, setFilterSelected] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <motion.div
@@ -25,6 +26,8 @@ function List() {
           setIsActionBlockOpened,
           filterSelected,
           setFilterSelected,
+          searchTerm,
+          setSearchTerm,
         }}
       >
         <HeaderList />

@@ -4,7 +4,7 @@ import fetchFilterAlcoholicApi from "../../utils/fetchFilterAlcoholicApi";
 
 function FilterAlcohol({ setIsAlcoholicOpened }) {
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
-  const { setIsActionBlockOpened, setFilterSelected } =
+  const { setIsActionBlockOpened, setFilterSelected, setSearchTerm } =
     useContext(ToggleContext);
 
   // ALCOHOLIC FILTERS
@@ -25,6 +25,7 @@ function FilterAlcohol({ setIsAlcoholicOpened }) {
     setIsAlcoholicOpened(false);
     setIsActionBlockOpened(false);
     setFilterSelected(e.replace("_", " "));
+    setSearchTerm("");
   };
 
   return (
