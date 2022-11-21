@@ -269,7 +269,7 @@ template {
 
 @font-face {
   font-family: "Nickainley";
-  src: url("/public/font/Nickainley-Normal.woff2") format("woff2"), url("/public/font/Nickainley-Normal.woff") format("woff");
+  src: url("/font/Nickainley-Normal.woff2") format("woff2"), url("/font/Nickainley-Normal.woff") format("woff");
 }
 html {
   box-sizing: border-box;
@@ -323,6 +323,7 @@ button:not(:disabled) {
   font-size: 1.5rem;
   color: #ffffff;
   padding: 1rem;
+  text-align: center;
   text-decoration: none;
 }
 .buttonType__text, .buttonType__icon {
@@ -971,7 +972,7 @@ a {
 .edito__intro p:first-child {
   margin-top: 0;
 }
-.edito__intro + .edito__listLink {
+.edito__intro + .edito__wrappLink {
   margin-top: 2rem;
 }
 .edito .linedTitle {
@@ -984,9 +985,35 @@ a {
   margin-top: 0.75rem;
   line-height: 1.5rem;
 }
-.edito__listLink {
-  text-align: center;
+.edito__wrappLink {
+  display: flex;
   margin-top: 3rem;
+}
+@media screen and (max-width: 767px) {
+  .edito__wrappLink {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .edito__wrappLink {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .edito__wrappLink .buttonType {
+    width: 18rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .edito__wrappLink .buttonType:not(:first-child) {
+    margin-left: 3rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .edito__wrappLink .buttonType:not(:first-child) {
+    margin-top: 3rem;
+  }
 }
 
 .editoBlock {
