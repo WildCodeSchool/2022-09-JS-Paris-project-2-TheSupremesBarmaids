@@ -17,9 +17,9 @@ function FilterCategory({ setIsCategoryOpened }) {
     "Soft_Drink",
   ]; // Every filters c=
 
-  const handleClick = (e) => {
+  const handleClick = (category) => {
     setLoading(true);
-    fetchFilterCategoryApi(e)
+    fetchFilterCategoryApi(category)
       .then((resPosts) => {
         setPosts(resPosts);
         setLoading(false);
@@ -31,7 +31,7 @@ function FilterCategory({ setIsCategoryOpened }) {
       });
     setIsCategoryOpened(false);
     setIsActionBlockOpened(false);
-    setFilterSelected(e.replace("_/_", " / ").replace("_", " "));
+    setFilterSelected(category.replace("_/_", " / ").replace("_", " "));
     setSearchTerm("");
   };
 

@@ -21,9 +21,9 @@ function FilterIngredient({ setIsIngredientsOpened }) {
     "Yoghurt",
   ]; // Every filters i=
 
-  const handleClick = (e) => {
+  const handleClick = (ingredient) => {
     setLoading(true);
-    fetchFilterIngredientApi(e)
+    fetchFilterIngredientApi(ingredient)
       .then((resPosts) => {
         setPosts(resPosts);
         setLoading(false);
@@ -35,7 +35,7 @@ function FilterIngredient({ setIsIngredientsOpened }) {
       });
     setIsIngredientsOpened(false);
     setIsActionBlockOpened(false);
-    setFilterSelected(e);
+    setFilterSelected(ingredient);
     setSearchTerm("");
   };
 

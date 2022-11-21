@@ -10,12 +10,13 @@ function FilterDisplay() {
     fetchResetApi()
       .then((resPosts) => {
         setPosts(resPosts);
-        setLoading(false);
         setWrongFetch(false);
       })
       .catch(() => {
-        setLoading(false);
         setWrongFetch(true);
+      })
+      .finally(() => {
+        setLoading(false);
       });
     setFilterSelected("");
   };

@@ -10,9 +10,9 @@ function FilterAlcohol({ setIsAlcoholicOpened }) {
   // ALCOHOLIC FILTERS
   const alcoholicFilters = ["Alcoholic", "Non_alcoholic", "Optional_alcohol"]; // Every filters a=
 
-  const handleClick = (e) => {
+  const handleClick = (alcoholic) => {
     setLoading(true);
-    fetchFilterAlcoholicApi(e)
+    fetchFilterAlcoholicApi(alcoholic)
       .then((resPosts) => {
         setPosts(resPosts);
         setLoading(false);
@@ -24,7 +24,7 @@ function FilterAlcohol({ setIsAlcoholicOpened }) {
       });
     setIsAlcoholicOpened(false);
     setIsActionBlockOpened(false);
-    setFilterSelected(e.replace("_", " "));
+    setFilterSelected(alcoholic.replace("_", " "));
     setSearchTerm("");
   };
 
