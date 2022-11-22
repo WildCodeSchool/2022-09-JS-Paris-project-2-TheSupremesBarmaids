@@ -1,10 +1,12 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { PostContext, ToggleContext } from "../../services/Context";
 import fetchFilterIngredientApi from "../../utils/fetchFilterIngredientApi";
 
 function FilterIngredient({ setIsIngredientsOpened }) {
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
-  const { setIsActionblockOpened } = useContext(ToggleContext);
+  const { setIsActionBlockOpened, setFilterSelected, setSearchTerm } =
+    useContext(ToggleContext);
 
   // INGREDIENT FILTERS
   const ingredientFilter = [
@@ -20,9 +22,9 @@ function FilterIngredient({ setIsIngredientsOpened }) {
     "Yoghurt",
   ]; // Every filters i=
 
-  const handleClick = (e) => {
+  const handleClick = (ingredient) => {
     setLoading(true);
-    fetchFilterIngredientApi(e)
+    fetchFilterIngredientApi(ingredient)
       .then((resPosts) => {
         setPosts(resPosts);
         setLoading(false);
@@ -33,7 +35,9 @@ function FilterIngredient({ setIsIngredientsOpened }) {
         setWrongFetch(true);
       });
     setIsIngredientsOpened(false);
-    setIsActionblockOpened(false);
+    setIsActionBlockOpened(false);
+    setFilterSelected(ingredient);
+    setSearchTerm("");
   };
 
   return (
@@ -41,13 +45,13 @@ function FilterIngredient({ setIsIngredientsOpened }) {
       {ingredientFilter.map((ele) => (
         // Create a div for every alcoholic filters
         <li key={ele}>
-          <a
-            href={`#${ele}`}
+          <Link
+            to={`#${ele}`}
             className="button"
             onClick={() => handleClick(ele)}
           >
             {ele}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>

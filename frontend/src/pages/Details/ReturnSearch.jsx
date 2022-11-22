@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function ReturnSearch() {
   return (
-    <a href="/list" className="iconAction iconAction--list">
+    <Link to="/list" className="iconAction iconAction--list">
       <span className="srOnly">Back to List with opened Search</span>
-    </a>
+    </Link>
   );
 }
 

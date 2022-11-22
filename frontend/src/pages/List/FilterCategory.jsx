@@ -1,10 +1,12 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { PostContext, ToggleContext } from "../../services/Context";
 import fetchFilterCategoryApi from "../../utils/fetchFilterCategoryApi";
 
 function FilterCategory({ setIsCategoryOpened }) {
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
-  const { setIsActionblockOpened } = useContext(ToggleContext);
+  const { setIsActionBlockOpened, setFilterSelected, setSearchTerm } =
+    useContext(ToggleContext);
 
   // CATEGORY FILTERS
   const categoryFilters = [
@@ -16,9 +18,9 @@ function FilterCategory({ setIsCategoryOpened }) {
     "Soft_Drink",
   ]; // Every filters c=
 
-  const handleClick = (e) => {
+  const handleClick = (category) => {
     setLoading(true);
-    fetchFilterCategoryApi(e)
+    fetchFilterCategoryApi(category)
       .then((resPosts) => {
         setPosts(resPosts);
         setLoading(false);
@@ -29,7 +31,9 @@ function FilterCategory({ setIsCategoryOpened }) {
         setWrongFetch(true);
       });
     setIsCategoryOpened(false);
-    setIsActionblockOpened(false);
+    setIsActionBlockOpened(false);
+    setFilterSelected(category.replace("_/_", " / ").replace("_", " "));
+    setSearchTerm("");
   };
 
   return (
@@ -37,13 +41,13 @@ function FilterCategory({ setIsCategoryOpened }) {
       {categoryFilters.map((ele) => (
         // Create a div for every alcoholic filters
         <li key={ele}>
-          <a
-            href={`#${ele}`}
+          <Link
+            to={`#${ele}`}
             className="button"
             onClick={() => handleClick(ele)}
           >
             {ele.replace("_/_", " / ").replace("_", " ")}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>

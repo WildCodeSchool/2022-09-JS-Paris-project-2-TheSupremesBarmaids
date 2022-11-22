@@ -4,7 +4,7 @@ import fetchResetApi from "../../utils/fetchResetApi";
 
 function ResetButton() {
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
-  const { setIsActionblockOpened } = useContext(ToggleContext);
+  const { setIsActionBlockOpened } = useContext(ToggleContext);
 
   const handleClick = () => {
     setLoading(true);
@@ -18,7 +18,7 @@ function ResetButton() {
         setLoading(false);
         setWrongFetch(true);
       });
-    setIsActionblockOpened(false);
+    setIsActionBlockOpened(false);
   };
 
   return (
