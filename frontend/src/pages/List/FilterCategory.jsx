@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { PostContext, ToggleContext } from "../../services/Context";
 import fetchFilterCategoryApi from "../../utils/fetchFilterCategoryApi";
 
@@ -40,13 +41,13 @@ function FilterCategory({ setIsCategoryOpened }) {
       {categoryFilters.map((ele) => (
         // Create a div for every alcoholic filters
         <li key={ele}>
-          <a
-            href={`#${ele}`}
+          <Link
+            to={`#${ele}`}
             className="button"
             onClick={() => handleClick(ele)}
           >
             {ele.replace("_/_", " / ").replace("_", " ")}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>

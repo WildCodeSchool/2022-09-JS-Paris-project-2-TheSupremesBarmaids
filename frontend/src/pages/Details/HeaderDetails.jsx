@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import HomeLink from "../../components/HomeLink";
 import Logo from "../../components/Logo";
 import ReturnSearch from "./ReturnSearch";
@@ -9,9 +10,9 @@ function HeaderDetails() {
         <HomeLink />
         <ReturnSearch />
       </nav>
-      <a href="/" className="logoImg" title="Go Home">
+      <Link to="/" className="logoImg" title="Go Home">
         <Logo />
-      </a>
+      </Link>
     </header>
   );
 }
