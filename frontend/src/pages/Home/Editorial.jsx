@@ -1,4 +1,4 @@
-import React from "react";
+import { motion } from "framer-motion";
 import Intro from "./Intro";
 import Section1 from "./Section1";
 import Section2 from "./Section2";
@@ -8,7 +8,7 @@ import DoubleLink from "./DoubleLink";
 
 function Editorial() {
   return (
-    <div className="edito containerType1">
+    <motion.div exit={{ opacity: 0 }} className="edito containerType1">
       <Intro />
 
       <div className="edito__wrappLink">
@@ -24,7 +24,7 @@ function Editorial() {
       <Section3 />
 
       <DoubleLink />
-    </div>
+    </motion.div>
   );
 }
 
