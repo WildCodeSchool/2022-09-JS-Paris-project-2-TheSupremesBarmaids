@@ -10,9 +10,9 @@ function DropdownFilterAlcohol() {
       <button type="button" onClick={handleOpenAlcoholic}>
         Alcoholic
       </button>
-      {isAlcoholicOpened ? (
+      {isAlcoholicOpened && (
         <FilterAlcohol setIsAlcoholicOpened={setIsAlcoholicOpened} />
-      ) : null}
+      )}
     </div>
   );
 }

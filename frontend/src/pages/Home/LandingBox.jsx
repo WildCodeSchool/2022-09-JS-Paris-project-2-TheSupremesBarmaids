@@ -11,7 +11,7 @@ function LandingBox() {
           transform: { translateX: 0.6 },
           transition: { duration: 0.5 },
         }}
-        exit={{ width: "-100%", transition: { duration: 0.6 } }}
+        exit={{ opacity: 0, transition: { duration: 0.3 } }}
       >
         <h1 className="landingBox__title">
           <span>The art of</span>

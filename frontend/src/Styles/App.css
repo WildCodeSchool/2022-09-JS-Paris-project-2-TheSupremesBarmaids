@@ -828,6 +828,9 @@ a {
 .recipe__list li:not(:first-child) {
   margin-top: 0.5rem;
 }
+.recipe__text {
+  font-size: 1.25rem;
+}
 
 .cocktailListCards {
   display: flex;
@@ -1299,6 +1302,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 
 .header + .mainDetails {
