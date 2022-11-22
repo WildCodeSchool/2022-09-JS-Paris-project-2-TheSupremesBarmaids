@@ -20,17 +20,39 @@
 
     input {
       font-size: $textLG;
-      border: 0;
+      border: 1px solid $colorCrema;
       width: 100%;
-      height: $heightSearchBar;
-      padding: 0 1rem;
+      padding: 0.5rem;
       background-color: $colorCrema;
       transition: all 0.5s cubic-bezier(0, 0, 0.43, 1.049);
       transition-property: width;
       z-index: 1;
       position: relative;
-      appearance: none;
-      outline: none;
+      color: $colorCoffee;
+
+      &:focus-visible {
+        outline: 0;
+      }
+    }
+
+    input::-webkit-input-placeholder {
+      color: $colorLeather;
+      opacity: 1;
+    }
+
+    input::-moz-placeholder {
+      color: $colorLeather;
+      opacity: 1;
+    }
+
+    input::-ms-placeholder {
+      color: $colorLeather;
+      opacity: 1;
+    }
+
+    input::placeholder {
+      color: $colorLeather;
+      opacity: 1;
     }
 
     button {
@@ -40,8 +62,12 @@
       top: 0;
       right: 0;
       width: 60px;
-      height: $heightSearchBar;
       background: $colorCrema;
+      padding: 0.6rem;
+
+      img {
+        width: 32px;
+      }
     }
 
     input:not(:placeholder-shown) {
