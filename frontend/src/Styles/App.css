@@ -1223,7 +1223,7 @@ a {
   right: 0;
   width: 60px;
   background: #ffc65c;
-  padding: 0.6rem;
+  padding: 0.6rem 0.6rem 0;
 }
 .action-block .search-box button img {
   width: 32px;
