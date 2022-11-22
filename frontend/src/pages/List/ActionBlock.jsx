@@ -11,7 +11,7 @@ function ActionBlock() {
     <div className="action-block">
       <SearchBar />
       <Filter />
-      {filterSelected !== "" ? <FilterDisplay /> : null}
+      {filterSelected && <FilterDisplay />}
     </div>
   );
 }
