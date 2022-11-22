@@ -1,8 +1,11 @@
 import React, { useRef, useState } from "react";
 // eslint-disable-next-line import/no-cycle
 import { useOpenReply } from "../../Message/Message";
+import { useMainContext } from "../../../services/Context";
 
-function SubCommentsBox(props) {
+function SubCommentsBox({ parentKey }) {
+  const { setMessageUpdate } = useMainContext();
+
   const changeOpenReply = useOpenReply();
   const message = useRef(null);
   const [showCommentLine, setShowCommentLine] = useState(false);
@@ -26,6 +29,16 @@ function SubCommentsBox(props) {
 
   const sendComment = (event) => {
     event.preventDefault();
+    fetch("http://localhost:5000/new-sub-comment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        messageId: parentKey,
+        messageData: message.current.value,
+      }),
+    }).then(() => {
+      setMessageUpdate([1, parentKey]);
+    });
   };
   return (
     <form>

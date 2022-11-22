@@ -1,6 +1,10 @@
 import React, { useRef, useState } from "react";
 
+import { useMainContext } from "../../../services/Context";
+
+// eslint-disable-next-line no-unused-vars
 function TopCommentsBox(props) {
+  const { setMessageReset, setCommentIncrement } = useMainContext();
   const message = useRef(null);
   const [showCommentLine, setShowCommentLine] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
@@ -23,7 +27,20 @@ function TopCommentsBox(props) {
 
   const sendComment = (event) => {
     event.preventDefault();
+    fetch("http://localhost:5000/new-comment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messageData: message.current.value }),
+    }).then(() => {
+      // Reset entire comments and matching increment counter
+      setMessageReset((prevState) => !prevState);
+      setCommentIncrement(4);
+      // Delete Text Input, update comments and disable COMMENT Btn
+      message.current.value = "";
+      setEnableBtn(true);
+    });
   };
+
   return (
     <form>
       <section className="commentBox">

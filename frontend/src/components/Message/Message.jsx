@@ -4,7 +4,10 @@ import { FaUserCircle } from "react-icons/fa";
 import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
 // eslint-disable-next-line import/no-cycle
 import CommentsBox from "../CommentsBox/CommentsBox";
+// eslint-disable-next-line import/no-cycle
 import SubMessage from "./SubMessage/SubMessage";
+
+import { useMainContext } from "../../services/Context";
 
 const showReply = createContext();
 
@@ -12,7 +15,8 @@ export function useOpenReply() {
   return useContext(showReply);
 }
 // eslint-disable-next-line no-unused-vars
-function Message(props) {
+function Message({ message, user, id, editable, likes, replies, useKey }) {
+  const { setMessageUpdate } = useMainContext();
   const numLikes = useRef();
 
   const [arrowUp, setArrowUp] = useState(false);
@@ -38,41 +42,54 @@ function Message(props) {
     arrow = <BsCaretDownFill className="caret-down" />;
   }
   let toggleLike = false;
-  // eslint-disable-next-line prefer-destructuring, react/destructuring-assignment
-  let { likes } = props;
+  let like = likes;
   const likeComment = () => {
     toggleLike = !toggleLike;
     setLikeIcon(toggleLike);
     if (toggleLike) {
       // eslint-disable-next-line no-plusplus
-      likes++;
+      like++;
       // likeIcon.current.style.color = "blue";
     } else {
       // eslint-disable-next-line no-plusplus
-      likes--;
+      like--;
       // likeIcon.current.style.color = "gray";
     }
-    numLikes.current.innerHTML = likes;
+    numLikes.current.innerHTML = like;
+    fetch("http://localhost:5000/update-like", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      // eslint-disable-next-line object-shorthand
+      body: JSON.stringify({ messageId: useKey, likes: like }),
+    });
   };
 
-  const deleteMessage = () => {};
+  const deleteMessage = () => {
+    fetch("http://localhost:5000/delete-comment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messageId: useKey }),
+    }).then(() => {
+      setMessageUpdate([2, useKey]);
+    });
+  };
 
   return (
     <section className="messageContainer">
-      <div id={props.id} className="messageUser">
-        {props.user}
+      <div id={id} className="messageUser">
+        {user}
       </div>
       <FaUserCircle className="user-circle" />
-      <div className="messageText">{props.message}</div>
+      <div className="messageText">{message}</div>
       <section className="messageIconsContainer">
         <AiFillLike
           className="thumbs-up"
           onClick={likeComment}
           style={likeIcon ? { color: "#4688de" } : { color: "gray" }}
         />
-        <div ref={numLikes}>{props.likes}</div>
+        <div ref={numLikes}>{likes}</div>
         <AiFillDislike className="thumbs-down" />
-        {!props.editable ? (
+        {!editable ? (
           <div
             onClick={changeOpenReply}
             style={{ cursor: "pointer" }}
@@ -91,23 +108,33 @@ function Message(props) {
         )}
       </section>
       <showReply.Provider value={changeOpenReply}>
-        {openReply && <CommentsBox autoFocus />}
+        {openReply && <CommentsBox useKey={useKey} autoFocus />}
       </showReply.Provider>
-      <section
-        className="arrowReplies"
-        onClick={changeArrow}
-        aria-hidden="true"
-      >
-        {arrow}
-        <div>View 4 replies</div>
-      </section>
+      {replies.length > 0 && (
+        <section
+          className="arrowReplies"
+          onClick={changeArrow}
+          aria-hidden="true"
+        >
+          {arrow}
+          <div>View {replies.length} replies</div>
+        </section>
+      )}
       {arrowUp && (
         <section className="subMessages">
-          <SubMessage
-            user="Noob Reply"
-            message="THis is a noob reply"
-            likes={2}
-          />
+          {replies.map((reply) => (
+            <SubMessage
+              key={Math.random()}
+              parentKey={useKey}
+              // eslint-disable-next-line no-underscore-dangle
+              subId={reply._id}
+              user={reply.user}
+              editable={reply.editable}
+              replies={reply.replies}
+              message={reply.message}
+              likes={reply.likes}
+            />
+          ))}
         </section>
       )}
     </section>
