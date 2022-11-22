@@ -1,9 +1,12 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
 import HeaderDetails from "./Details/HeaderDetails";
 import MainDetails from "./Details/MainDetails";
 
 function Details() {
+  useEffect(() => window.scroll({ top: 0, left: 0 }), []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
