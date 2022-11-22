@@ -12,6 +12,7 @@ function MainList() {
   const POST_PER_PAGE = 12;
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
     setLoading(true);
     fetchResetApi()
       .then((resPosts) => {

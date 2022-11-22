@@ -1,12 +1,21 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import List from "./pages/List";
+import Home from "./pages/Home";
+import Details from "./pages/Details";
 import "./Styles/App.css";
-import AnimatedRoutes from "./AnimatedRoutes";
 
 function App() {
+  const location = useLocation();
+
   return (
-    <Router>
-      <AnimatedRoutes />
-    </Router>
+    <AnimatePresence mode="wait">
+      <Routes key={location.pathname} location={location}>
+        <Route path="/" element={<Home />} />
+        <Route path="/list" element={<List />} />
+        <Route path="/recipe/:slugCocktail" element={<Details />} />
+      </Routes>
+    </AnimatePresence>
   );
 }
 

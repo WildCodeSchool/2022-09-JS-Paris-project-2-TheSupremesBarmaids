@@ -7,8 +7,9 @@ function Home() {
   return (
     <motion.div
       initial={{ width: 0 }}
-      animate={{ width: "100%", transition: { duration: 0.5 } }}
-      exit={{ height: "-100%", transition: { duration: 0.6 } }}
+      animate={{ width: "100%" }}
+      exit={{ width: "-100%" }}
+      transition={{ duration: 0.5 }}
     >
       <HeaderHome />
       <MainHome />

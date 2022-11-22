@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { PostContext, ToggleContext } from "../../services/Context";
 import fetchFilterIngredientApi from "../../utils/fetchFilterIngredientApi";
 
@@ -44,13 +45,13 @@ function FilterIngredient({ setIsIngredientsOpened }) {
       {ingredientFilter.map((ele) => (
         // Create a div for every alcoholic filters
         <li key={ele}>
-          <a
-            href={`#${ele}`}
+          <Link
+            to={`#${ele}`}
             className="button"
             onClick={() => handleClick(ele)}
           >
             {ele}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>
