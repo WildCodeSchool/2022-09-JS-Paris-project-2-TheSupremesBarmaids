@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../../components/Logo";
 import HomeLink from "../../components/HomeLink";
 import ActionButton from "./ActionButton";
@@ -9,9 +10,9 @@ function HeaderList() {
         <HomeLink />
         <ActionButton />
       </nav>
-      <a href="/" className="logoImg" title="Go Home">
+      <Link to="/" className="logoImg" title="Go Home">
         <Logo />
-      </a>
+      </Link>
     </header>
   );
 }

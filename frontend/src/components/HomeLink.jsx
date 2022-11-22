@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function HomeLink() {
   return (
-    <a href="/" className="iconAction iconAction--home">
+    <Link to="/" className="iconAction iconAction--home">
       <span className="srOnly">Back to Home</span>
-    </a>
+    </Link>
   );
 }
 
