@@ -812,6 +812,9 @@ a {
 .recipe__list li:not(:first-child) {
   margin-top: 0.5rem;
 }
+.recipe__text {
+  font-size: 1.25rem;
+}
 
 .cocktailListCards {
   display: flex;
@@ -1146,19 +1149,42 @@ a {
 }
 .action-block .search-box input {
   font-size: 2rem;
-  border: 0;
+  border: 1px solid #ffc65c;
   width: 100%;
-  height: 60px;
-  padding: 0 1rem;
+  padding: 0.5rem;
   background-color: #ffc65c;
   transition: all 0.5s cubic-bezier(0, 0, 0.43, 1.049);
   transition-property: width;
   z-index: 1;
   position: relative;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
+  color: #362924;
+}
+.action-block .search-box input:focus-visible {
+  outline: 0;
+}
+.action-block .search-box input::-webkit-input-placeholder {
+  color: #852e01;
+  opacity: 1;
+}
+.action-block .search-box input::-moz-placeholder {
+  color: #852e01;
+  opacity: 1;
+}
+.action-block .search-box input::-ms-placeholder {
+  color: #852e01;
+  opacity: 1;
+}
+.action-block .search-box input::-moz-placeholder {
+  color: #852e01;
+  opacity: 1;
+}
+.action-block .search-box input:-ms-input-placeholder {
+  color: #852e01;
+  opacity: 1;
+}
+.action-block .search-box input::placeholder {
+  color: #852e01;
+  opacity: 1;
 }
 .action-block .search-box button {
   border: 0;
@@ -1167,8 +1193,11 @@ a {
   top: 0;
   right: 0;
   width: 60px;
-  height: 60px;
   background: #ffc65c;
+  padding: 0.6rem 0.6rem 0;
+}
+.action-block .search-box button img {
+  width: 32px;
 }
 .action-block .search-box input:not(:-moz-placeholder-shown) {
   width: calc(100% - 60px);
@@ -1288,6 +1317,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 
 .header + .mainDetails {

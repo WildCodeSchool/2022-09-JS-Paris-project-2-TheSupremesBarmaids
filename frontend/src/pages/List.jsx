@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { PostContext, ToggleContext } from "../services/Context";
 import Footer from "../components/Footer";
 import HeaderList from "./List/HeaderList";
@@ -14,7 +15,12 @@ function List() {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.1 } }}
+      transition={{ duration: 0.3 }}
+    >
       <ToggleContext.Provider
         value={{
           isActionBlockOpened,
@@ -40,7 +46,7 @@ function List() {
         </PostContext.Provider>
       </ToggleContext.Provider>
       <Footer />
-    </>
+    </motion.div>
   );
 }
 
