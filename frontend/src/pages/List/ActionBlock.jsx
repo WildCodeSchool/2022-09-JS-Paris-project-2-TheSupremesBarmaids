@@ -2,18 +2,16 @@ import { useContext } from "react";
 import { ToggleContext } from "../../services/Context";
 import SearchBar from "./SearchBar";
 import Filter from "./Filter";
+import FilterDisplay from "./FilterDisplay";
 
 function ActionBlock() {
-  const { isActionBlockOpened } = useContext(ToggleContext);
+  const { filterSelected } = useContext(ToggleContext);
 
   return (
-    <div
-      className={
-        isActionBlockOpened ? "actionBlockOpened action-block" : "action-block"
-      }
-    >
+    <div className="action-block">
       <SearchBar />
       <Filter />
+      {filterSelected !== "" ? <FilterDisplay /> : null}
     </div>
   );
 }

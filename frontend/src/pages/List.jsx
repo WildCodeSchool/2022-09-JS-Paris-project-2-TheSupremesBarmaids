@@ -10,11 +10,20 @@ function List() {
   const [loading, setLoading] = useState(false);
   const [wrongFetch, setWrongFetch] = useState(false);
   const [isActionBlockOpened, setIsActionBlockOpened] = useState(false);
+  const [filterSelected, setFilterSelected] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <>
       <ToggleContext.Provider
-        value={{ isActionBlockOpened, setIsActionBlockOpened }}
+        value={{
+          isActionBlockOpened,
+          setIsActionBlockOpened,
+          filterSelected,
+          setFilterSelected,
+          searchTerm,
+          setSearchTerm,
+        }}
       >
         <HeaderList />
         <PostContext.Provider

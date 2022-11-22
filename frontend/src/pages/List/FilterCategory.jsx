@@ -4,7 +4,8 @@ import fetchFilterCategoryApi from "../../utils/fetchFilterCategoryApi";
 
 function FilterCategory({ setIsCategoryOpened }) {
   const { setPosts, setLoading, setWrongFetch } = useContext(PostContext);
-  const { setIsActionBlockOpened } = useContext(ToggleContext);
+  const { setIsActionBlockOpened, setFilterSelected, setSearchTerm } =
+    useContext(ToggleContext);
 
   // CATEGORY FILTERS
   const categoryFilters = [
@@ -16,9 +17,9 @@ function FilterCategory({ setIsCategoryOpened }) {
     "Soft_Drink",
   ]; // Every filters c=
 
-  const handleClick = (e) => {
+  const handleClick = (category) => {
     setLoading(true);
-    fetchFilterCategoryApi(e)
+    fetchFilterCategoryApi(category)
       .then((resPosts) => {
         setPosts(resPosts);
         setLoading(false);
@@ -30,6 +31,8 @@ function FilterCategory({ setIsCategoryOpened }) {
       });
     setIsCategoryOpened(false);
     setIsActionBlockOpened(false);
+    setFilterSelected(category.replace("_/_", " / ").replace("_", " "));
+    setSearchTerm("");
   };
 
   return (

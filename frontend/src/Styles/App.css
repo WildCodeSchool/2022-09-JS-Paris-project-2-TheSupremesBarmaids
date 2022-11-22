@@ -368,15 +368,12 @@ button:not(:disabled) {
   background-image: url("/icones/return-crema-32.png");
 }
 .iconAction--filterSearch {
-  background-image: url("/icones/filter-search-white-32.png");
+  background-image: url("/icones/filter-white.png");
+  background-size: contain;
 }
 .iconAction--filterSearch:hover {
-  background-image: url("/icones/filter-search-crema-32.png");
-}
-@media only screen and (min-width: 600px) {
-  .iconAction--filterSearch {
-    display: none;
-  }
+  background-image: url("/icones/filter-crema.png");
+  background-size: contain;
 }
 
 a {
@@ -832,10 +829,6 @@ a {
   margin-top: 0.5rem;
 }
 
-.cocktailList {
-  margin-top: 1rem;
-}
-
 .cocktailListCards {
   display: flex;
   flex-direction: column;
@@ -1143,33 +1136,24 @@ a {
 .action-block {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
-  height: 0;
-  min-height: 0;
-  visibility: hidden;
-  opacity: 0;
-  transition: min-height 1s, opacity 1s, visibility 0s linear;
-}
-@media screen and (min-width: 600px) {
-  .action-block {
-    visibility: initial;
-    height: initial;
-    min-height: initial;
-    opacity: initial;
-  }
-}
-.action-block.actionBlockOpened {
-  height: initial;
-  min-height: 336px;
-  max-height: 1050px;
-  visibility: visible;
-  opacity: 1;
 }
 .action-block .search-box {
   position: relative;
   width: 100%;
   background-color: #ffc65c;
   margin: 1rem 0;
+}
+@media screen and (max-width: 430px) {
+  .action-block .search-box {
+    margin: 0 0 1rem 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  .action-block .search-box {
+    width: 560px;
+  }
 }
 .action-block .search-box input {
   font-size: 2rem;
@@ -1215,17 +1199,29 @@ a {
 .action-block .search-box input:not(:placeholder-shown) + button {
   display: block;
 }
-@media screen and (min-width: 600px) {
-  .action-block .search-box {
-    width: 560px;
-    left: calc(50% - 280px);
-  }
-}
 .action-block .filter-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  height: 0;
+  min-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: min-height 1s, opacity 1s, visibility 0s linear;
+}
+.action-block .filter-btn.filterBlockOpened {
+  height: initial;
+  width: 100%;
+  min-height: 244px;
+  max-height: 1050px;
+  visibility: visible;
+  opacity: 1;
+}
+@media screen and (min-width: 600px) {
+  .action-block .filter-btn.filterBlockOpened {
+    width: 560px;
+  }
 }
 .action-block .dropdown-filter {
   display: flex;
@@ -1266,8 +1262,33 @@ a {
 @media screen and (min-width: 600px) {
   .action-block .filter-btn {
     width: 560px;
-    left: calc(50% - 280px);
   }
+}
+.action-block .filterDisplay {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.action-block .filterDisplay {
+  font-size: 1.5rem;
+}
+.action-block .filterDisplay .filterText {
+  color: rgba(255, 255, 255, 0.666);
+}
+.action-block .filterDisplay button {
+  border: none;
+  background-color: rgba(255, 123, 0, 0.7058823529);
+  color: white;
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+.action-block .filterDisplay button .nameFilter {
+  padding-right: 5px;
+  border-right: 1px solid black;
+}
+.action-block .filterDisplay button .exitFilter {
+  padding-left: 5px;
 }
 
 .header + .mainList {
