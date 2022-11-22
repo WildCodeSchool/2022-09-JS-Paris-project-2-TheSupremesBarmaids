@@ -8,7 +8,10 @@ import DoubleLink from "./DoubleLink";
 
 function Editorial() {
   return (
-    <motion.div exit={{ opacity: 0 }} className="edito containerType1">
+    <motion.div
+      exit={{ opacity: 0, transition: { duration: 0.3 } }}
+      className="edito containerType1"
+    >
       <Intro />
 
       <div className="edito__wrappLink">
