@@ -12,7 +12,6 @@ function MessageScroll() {
   const commentIncrementRef = useRef(commentIncrement);
 
   const [messages, setMessages] = useState([]);
-  // console.log(messages);
   const [showBottomBar, setShowBottomBar] = useState(true);
 
   // Load up the comments
@@ -94,8 +93,8 @@ function MessageScroll() {
                 setShowBottomBar(false);
               }, 3000);
             }
-            // eslint-disable-next-line no-return-assign, no-param-reassign
-            setCommentIncrement((prevState) => (prevState += comments.length));
+            let num = commentIncrement;
+            setCommentIncrement((num += comments.length));
           });
       }
     }),

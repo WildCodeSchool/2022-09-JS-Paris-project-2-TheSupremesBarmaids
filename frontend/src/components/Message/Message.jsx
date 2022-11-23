@@ -1,20 +1,12 @@
-import React, { useRef, useState, useContext, createContext } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
 import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
-// eslint-disable-next-line import/no-cycle
 import CommentsBox from "../CommentsBox/CommentsBox";
-// eslint-disable-next-line import/no-cycle
 import SubMessage from "./SubMessage/SubMessage";
 
 import { useMainContext } from "../../services/Context";
 
-const showReply = createContext();
-
-export function useOpenReply() {
-  return useContext(showReply);
-}
-// eslint-disable-next-line no-unused-vars
 function Message({ message, user, id, editable, likes, replies, useKey }) {
   const { setMessageUpdate } = useMainContext();
   const numLikes = useRef();
@@ -23,17 +15,14 @@ function Message({ message, user, id, editable, likes, replies, useKey }) {
   const [openReply, setOpenReply] = useState(false);
   const [likeIcon, setLikeIcon] = useState(false);
 
-  // eslint-disable-next-line react/jsx-no-constructed-context-values
-  const changeOpenReply = () => {
-    // eslint-disable-next-line no-return-assign, no-param-reassign
-    setOpenReply((prevState) => (prevState = !prevState));
-  };
+  const changeOpenReply = useCallback(() => {
+    setOpenReply(!openReply);
+  }, [openReply]);
 
   let arrow = <BsCaretDownFill className="caret-down" />;
 
   const changeArrow = () => {
-    // eslint-disable-next-line no-return-assign, no-param-reassign
-    setArrowUp((prevState) => (prevState = !prevState));
+    setArrowUp(!arrowUp);
   };
 
   if (arrowUp) {
@@ -47,19 +36,14 @@ function Message({ message, user, id, editable, likes, replies, useKey }) {
     toggleLike = !toggleLike;
     setLikeIcon(toggleLike);
     if (toggleLike) {
-      // eslint-disable-next-line no-plusplus
-      like++;
-      // likeIcon.current.style.color = "blue";
+      like += 1;
     } else {
-      // eslint-disable-next-line no-plusplus
-      like--;
-      // likeIcon.current.style.color = "gray";
+      like -= 1;
     }
     numLikes.current.innerHTML = like;
     fetch("http://localhost:5000/update-like", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      // eslint-disable-next-line object-shorthand
       body: JSON.stringify({ messageId: useKey, likes: like }),
     });
   };
@@ -107,9 +91,13 @@ function Message({ message, user, id, editable, likes, replies, useKey }) {
           </div>
         )}
       </section>
-      <showReply.Provider value={changeOpenReply}>
-        {openReply && <CommentsBox useKey={useKey} autoFocus />}
-      </showReply.Provider>
+      {openReply && (
+        <CommentsBox
+          useKey={useKey}
+          changeOpenReply={changeOpenReply}
+          autoFocus
+        />
+      )}
       {replies.length > 0 && (
         <section
           className="arrowReplies"
@@ -124,6 +112,8 @@ function Message({ message, user, id, editable, likes, replies, useKey }) {
         <section className="subMessages">
           {replies.map((reply) => (
             <SubMessage
+              changeOpenReply={changeOpenReply}
+              openReply={openReply}
               key={Math.random()}
               parentKey={useKey}
               // eslint-disable-next-line no-underscore-dangle

@@ -1,52 +1,41 @@
-import React, { useRef, useState, useContext, createContext } from "react";
+import { useRef, useState } from "react";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
-// eslint-disable-next-line import/no-cycle
 import SubCommentsBox from "../../CommentsBox/SubCommentsBox/SubCommentsBox";
 
 import { useMainContext } from "../../../services/Context";
 
-const showReply = createContext();
-
-export function useOpenReply() {
-  return useContext(showReply);
-}
-// eslint-disable-next-line no-unused-vars
-function SubMessage({ message, user, id, likes, parentKey, subId }) {
+function SubMessage({
+  message,
+  user,
+  id,
+  likes,
+  parentKey,
+  subId,
+  changeOpenReply,
+  openReply,
+}) {
   const { setMessageUpdate } = useMainContext();
 
   const numLikes = useRef();
 
-  const [openReply, setOpenReply] = useState(false);
   const [likeIcon, setLikeIcon] = useState(false);
 
-  // eslint-disable-next-line react/jsx-no-constructed-context-values
-  const changeOpenReply = () => {
-    // eslint-disable-next-line no-return-assign, no-param-reassign
-    setOpenReply((prevState) => (prevState = !prevState));
-  };
-
   let toggleLike = false;
-  // eslint-disable-next-line prefer-destructuring, react/destructuring-assignment
   let like = likes;
   const likeComment = () => {
     toggleLike = !toggleLike;
     setLikeIcon(toggleLike);
     if (toggleLike) {
-      // eslint-disable-next-line no-plusplus
-      like++;
-      // likeIcon.current.style.color = "blue";
+      like += 1;
     } else {
-      // eslint-disable-next-line no-plusplus
-      like--;
-      // likeIcon.current.style.color = "gray";
+      like -= 1;
     }
     numLikes.current.innerHTML = like;
     fetch("http://localhost:5000/update-sub-like", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      // eslint-disable-next-line object-shorthand
-      body: JSON.stringify({ messageId: parentKey, subId: subId, likes: like }),
+      body: JSON.stringify({ messageId: parentKey, subId, likes: like }),
     });
   };
 
@@ -54,8 +43,7 @@ function SubMessage({ message, user, id, likes, parentKey, subId }) {
     fetch("http://localhost:5000/delete-sub-comment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      // eslint-disable-next-line object-shorthand
-      body: JSON.stringify({ messageId: parentKey, subId: subId }),
+      body: JSON.stringify({ messageId: parentKey, subId }),
     }).then(() => {
       setMessageUpdate([1, parentKey]);
     });
@@ -72,7 +60,6 @@ function SubMessage({ message, user, id, likes, parentKey, subId }) {
         <AiFillLike
           className="thumbs-up"
           onClick={likeComment}
-          // ref={likeIcon}
           style={likeIcon ? { color: "#4688de" } : { color: "gray" }}
         />
         <div ref={numLikes}>{likes}</div>
@@ -95,9 +82,13 @@ function SubMessage({ message, user, id, likes, parentKey, subId }) {
           </div>
         )}
       </section>
-      <showReply.Provider value={changeOpenReply}>
-        {openReply && <SubCommentsBox parentKey={parentKey} autoFocus />}
-      </showReply.Provider>
+      {openReply && (
+        <SubCommentsBox
+          parentKey={parentKey}
+          changeOpenReply={changeOpenReply}
+          autoFocus
+        />
+      )}
     </section>
   );
 }

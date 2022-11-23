@@ -1,12 +1,9 @@
 import React, { useRef, useState } from "react";
-// eslint-disable-next-line import/no-cycle
-import { useOpenReply } from "../../Message/Message";
 import { useMainContext } from "../../../services/Context";
 
-function SubCommentsBox({ parentKey }) {
+function SubCommentsBox({ parentKey, changeOpenReply }) {
   const { setMessageUpdate } = useMainContext();
 
-  const changeOpenReply = useOpenReply();
   const message = useRef(null);
   const [showCommentLine, setShowCommentLine] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
@@ -23,8 +20,8 @@ function SubCommentsBox({ parentKey }) {
 
   const commentStroke = (event) => {
     const currentMessage = event.target.value;
-    // eslint-disable-next-line no-unused-expressions
-    currentMessage ? setEnableBtn(false) : setEnableBtn(true);
+    if (currentMessage) setEnableBtn(false);
+    else setEnableBtn(true);
   };
 
   const sendComment = (event) => {

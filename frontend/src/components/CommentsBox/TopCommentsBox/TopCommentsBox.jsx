@@ -2,8 +2,7 @@ import React, { useRef, useState } from "react";
 
 import { useMainContext } from "../../../services/Context";
 
-// eslint-disable-next-line no-unused-vars
-function TopCommentsBox(props) {
+function TopCommentsBox() {
   const { setMessageReset, setCommentIncrement } = useMainContext();
   const message = useRef(null);
   const [showCommentLine, setShowCommentLine] = useState(false);
@@ -21,8 +20,8 @@ function TopCommentsBox(props) {
 
   const commentStroke = (event) => {
     const currentMessage = event.target.value;
-    // eslint-disable-next-line no-unused-expressions
-    currentMessage ? setEnableBtn(false) : setEnableBtn(true);
+    if (currentMessage) setEnableBtn(false);
+    else setEnableBtn(true);
   };
 
   const sendComment = (event) => {
@@ -45,7 +44,6 @@ function TopCommentsBox(props) {
     <form>
       <section className="commentBox">
         <input
-          // autoFocus={props.autoFocus}
           type="text"
           placeholder="Add your comments here..."
           ref={message}

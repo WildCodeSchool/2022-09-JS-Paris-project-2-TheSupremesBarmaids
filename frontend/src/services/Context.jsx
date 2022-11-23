@@ -1,6 +1,7 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 import { createContext, useContext, useState } from "react";
 
-const MainContext = createContext();
+export const MainContext = createContext();
 
 export const PostContext = createContext({});
 export const ToggleContext = createContext({});
@@ -17,7 +18,6 @@ export function ContextProvider({ children }) {
   // This state that holds the current increment value, is used by Observer when we fetch new comments
   const [commentIncrement, setCommentIncrement] = useState(4);
 
-  // eslint-disable-next-line react/jsx-no-constructed-context-values
   const value = {
     messageReset,
     setMessageReset,
@@ -27,6 +27,5 @@ export function ContextProvider({ children }) {
     setCommentIncrement,
   };
 
-  // eslint-disable-next-line react/jsx-filename-extension
   return <MainContext.Provider value={value}>{children}</MainContext.Provider>;
 }

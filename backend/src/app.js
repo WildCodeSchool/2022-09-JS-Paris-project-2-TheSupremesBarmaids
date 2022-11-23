@@ -17,8 +17,7 @@ mongoose.connect("mongodb://0.0.0.0:27017/mydb", {
 const db = mongoose.connection;
 db.on("error", error);
 db.once("open", () => {
-  // eslint-disable-next-line no-restricted-syntax
-  console.log("Connected to database");
+  console.warn("Connected to database");
 });
 
 const CommentSchema = mongoose.Schema({
@@ -66,8 +65,7 @@ app.use(router);
 app.post("/get-data", (req, res) => {
   CommentsModel.find({}, (err, data) => {
     if (err) {
-      // eslint-disable-next-line no-restricted-syntax
-      console.log(err);
+      console.error(err);
     } else {
       res.send(data);
     }
@@ -77,8 +75,7 @@ app.post("/get-data", (req, res) => {
 // User creates new comments from Top Comments
 app.post("/new-comment", (req, res) => {
   const item = req.body;
-  // eslint-disable-next-line no-unused-vars
-  const newMessage = new CommentsModel({
+  new CommentsModel({
     user: "Super User",
     message: item.messageData,
     likes: 0,
@@ -94,8 +91,7 @@ app.post("/get-more-data", (req, res) => {
   const item = req.body;
   CommentsModel.find({}, (err, data) => {
     if (err) {
-      // eslint-disable-next-line no-restricted-syntax
-      console.log(err);
+      console.error(err);
     } else {
       res.send(data);
     }
@@ -115,11 +111,9 @@ app.post("/new-sub-comment", (req, res) => {
   CommentsModel.updateOne(
     { _id: item.messageId },
     { $push: { replies: newSubMessage } },
-    // eslint-disable-next-line no-unused-vars
-    (err, data) => {
+    (err) => {
       if (err) {
-        // eslint-disable-next-line no-restricted-syntax
-        console.log(err);
+        console.error(err);
       }
       res.send("");
     }
@@ -137,10 +131,8 @@ app.post("/update-comment", (req, res) => {
 // User want to delete message
 app.post("/delete-comment", (req, res) => {
   const item = req.body;
-  // eslint-disable-next-line no-unused-vars
-  CommentsModel.deleteOne({ _id: item.messageId }, (err, data) => {
-    // eslint-disable-next-line no-restricted-syntax
-    if (err) console.log(err);
+  CommentsModel.deleteOne({ _id: item.messageId }, (err) => {
+    if (err) console.error(err);
     res.send("");
   });
 });
@@ -151,41 +143,33 @@ app.post("/delete-sub-comment", (req, res) => {
   CommentsModel.updateOne(
     { _id: item.messageId },
     { $pull: { replies: { _id: item.subId } } },
-    // eslint-disable-next-line no-unused-vars
-    (err, data) => {
-      // eslint-disable-next-line no-restricted-syntax
-      if (err) console.log(err);
+    (err) => {
+      if (err) console.error(err);
       res.send("");
     }
   );
 });
 
 // User hit like of dislike
-// eslint-disable-next-line no-unused-vars
-app.post("/update-like", (req, res) => {
+app.post("/update-like", (req) => {
   const item = req.body;
   CommentsModel.updateOne(
     { _id: item.messageId },
     { likes: item.likes },
-    // eslint-disable-next-line no-unused-vars
-    (err, data) => {
-      // eslint-disable-next-line no-restricted-syntax
-      if (err) console.log(err);
+    (err) => {
+      if (err) console.error(err);
     }
   );
 });
 
 // User hit like sub comment
-// eslint-disable-next-line no-unused-vars
-app.post("/update-sub-like", (req, res) => {
+app.post("/update-sub-like", (req) => {
   const item = req.body;
   CommentsModel.updateOne(
     { _id: item.messageId, "replies._id": item.subId },
     { $set: { "replies.$.likes": item.likes } },
-    // eslint-disable-next-line no-unused-vars
-    (err, data) => {
-      // eslint-disable-next-line no-restricted-syntax
-      if (err) console.log(err);
+    (err) => {
+      if (err) console.error(err);
     }
   );
 });

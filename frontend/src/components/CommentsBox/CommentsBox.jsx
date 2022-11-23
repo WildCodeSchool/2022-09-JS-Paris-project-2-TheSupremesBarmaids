@@ -1,12 +1,9 @@
 import React, { useRef, useState } from "react";
-// eslint-disable-next-line import/no-cycle
-import { useOpenReply } from "../Message/Message";
 import { useMainContext } from "../../services/Context";
 
-function CommentsBox({ useKey }) {
+function CommentsBox({ useKey, changeOpenReply }) {
   const { setMessageUpdate } = useMainContext();
 
-  const changeOpenReply = useOpenReply();
   const message = useRef(null);
   const [showCommentLine, setShowCommentLine] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
@@ -23,8 +20,8 @@ function CommentsBox({ useKey }) {
 
   const commentStroke = (event) => {
     const currentMessage = event.target.value;
-    // eslint-disable-next-line no-unused-expressions
-    currentMessage ? setEnableBtn(false) : setEnableBtn(true);
+    if (currentMessage) setEnableBtn(false);
+    else setEnableBtn(true);
   };
 
   const sendComment = (event) => {
@@ -48,8 +45,6 @@ function CommentsBox({ useKey }) {
     <form>
       <section className="commentBox">
         <input
-          // eslint-disable-next-line jsx-a11y/no-autofocus
-          autoFocus
           type="text"
           placeholder="Add your comments here..."
           ref={message}
