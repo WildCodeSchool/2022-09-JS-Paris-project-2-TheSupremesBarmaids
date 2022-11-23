@@ -76,7 +76,7 @@ app.post("/get-data", (req, res) => {
 app.post("/new-comment", (req, res) => {
   const item = req.body;
   new CommentsModel({
-    user: "Super User",
+    user: item.user,
     message: item.messageData,
     likes: 0,
     editable: true,
@@ -104,7 +104,7 @@ app.post("/get-more-data", (req, res) => {
 app.post("/new-sub-comment", (req, res) => {
   const item = req.body;
   const newSubMessage = {
-    user: "Super User",
+    user: item.user,
     message: item.messageData,
     likes: 0,
   };

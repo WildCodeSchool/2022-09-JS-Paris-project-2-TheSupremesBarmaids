@@ -58,6 +58,13 @@
       background-image: url("/icones/home-crema-32.png");
     }
   }
+  &--login {
+    font-size: 20px;
+    color: white;
+    &:hover {
+      color: $colorCinnamon;
+    }
+  }
 
   &--list {
     background-image: url("/icones/return-white-32.png");

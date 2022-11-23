@@ -363,6 +363,13 @@ button:not(:disabled) {
 .iconAction--home:hover {
   background-image: url("/icones/home-crema-32.png");
 }
+.iconAction--login {
+  font-size: 20px;
+  color: white;
+}
+.iconAction--login:hover {
+  color: #da9c41;
+}
 .iconAction--list {
   background-image: url("/icones/return-white-32.png");
 }
@@ -556,6 +563,9 @@ a {
 }
 .header .iconAction--home {
   float: left;
+}
+.header .iconAction--login {
+  padding-left: 1rem;
 }
 .header .iconAction--list,
 .header .iconAction--filterSearch {

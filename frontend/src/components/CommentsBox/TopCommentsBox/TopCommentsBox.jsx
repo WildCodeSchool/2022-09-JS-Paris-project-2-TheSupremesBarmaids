@@ -24,12 +24,19 @@ function TopCommentsBox() {
     else setEnableBtn(true);
   };
 
+  // take User name from Local storage
+
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
   const sendComment = (event) => {
     event.preventDefault();
     fetch("http://localhost:5000/new-comment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ messageData: message.current.value }),
+      body: JSON.stringify({
+        messageData: message.current.value,
+        user: currentUser.name,
+      }),
     }).then(() => {
       // Reset entire comments and matching increment counter
       setMessageReset((prevState) => !prevState);

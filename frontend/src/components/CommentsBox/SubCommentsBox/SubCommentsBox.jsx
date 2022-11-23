@@ -24,6 +24,10 @@ function SubCommentsBox({ parentKey, changeOpenReply }) {
     else setEnableBtn(true);
   };
 
+  // take User name from Local storage
+
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
   const sendComment = (event) => {
     event.preventDefault();
     fetch("http://localhost:5000/new-sub-comment", {
@@ -31,6 +35,7 @@ function SubCommentsBox({ parentKey, changeOpenReply }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         messageId: parentKey,
+        user: currentUser.name,
         messageData: message.current.value,
       }),
     }).then(() => {

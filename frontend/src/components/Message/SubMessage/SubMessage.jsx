@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
 import SubCommentsBox from "../../CommentsBox/SubCommentsBox/SubCommentsBox";
@@ -20,6 +20,8 @@ function SubMessage({
   const numLikes = useRef();
 
   const [likeIcon, setLikeIcon] = useState(false);
+
+  const [currentUser, setCurrentUser] = useState([]);
 
   let toggleLike = false;
   let like = likes;
@@ -49,6 +51,11 @@ function SubMessage({
     });
   };
 
+  useEffect(() => {
+    const userCurr = JSON.parse(localStorage.getItem("currentUser"));
+    setCurrentUser(userCurr);
+  }, []);
+
   return (
     <section className="messageContainer">
       <div id={id} className="messageUser">
@@ -64,7 +71,7 @@ function SubMessage({
         />
         <div ref={numLikes}>{likes}</div>
         <AiFillDislike className="thumbs-down" />
-        {user !== "Super User" ? (
+        {user !== currentUser.name ? (
           <div
             onClick={changeOpenReply}
             style={{ cursor: "pointer" }}
