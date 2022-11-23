@@ -1,20 +1,14 @@
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-
-import Note from "../../components/Note";
+import Stars from "../../components/Stars";
 import Ingredients from "./Ingredients";
 
 function Recipe({ recipeContent, ingredients }) {
   return (
     <div className="containerType1 containerType1--padd20">
       <h1 className="pageTitle">{recipeContent.name}</h1>
-      <Note />
+      <Stars />
       <div className="recipe">
         <div className="recipe__card card">
           <img className="cardImage" src={recipeContent.img} alt="cocktail" />
-          <div className="favoriteCocktail">
-            <AiFillHeart className="isFavorite" />
-            <AiOutlineHeart className="notFavorite" />
-          </div>
         </div>
         <div className="recipe__ingredients">
           <h2 className="subTitle">Ingredients</h2>

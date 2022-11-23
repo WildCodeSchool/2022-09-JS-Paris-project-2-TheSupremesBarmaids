@@ -11,37 +11,7 @@
   object-fit: fill;
 }
 
-.favoriteCocktail {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  height: 2.5rem;
-  width: 2.5rem;
-  background-color: $colorCinnamon;
-  color: $colorLeather;
-  padding: 0.25rem;
-  font-size: 2rem;
-
-  &:hover {
-    background-color: $colorLeather;
-    color: $colorCinnamon;
-  }
-}
-
-.notFavorite {
-  display: none;
-}
-
-.isFavorite {
-  display: block;
-}
-
 .cardTitle {
   font-size: $textMD;
-}
-
-.cardNote {
-  text-align: right;
-  color: $colorCrema;
-  font-size: 1.5rem;
+  margin-top: 0.5rem;
 }
