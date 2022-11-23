@@ -3,7 +3,6 @@ import { useMainContext } from "../../services/Context";
 
 function CommentsBox({ useKey, changeOpenReply }) {
   const { setMessageUpdate } = useMainContext();
-
   const message = useRef(null);
   const [showCommentLine, setShowCommentLine] = useState(false);
   const [showButtons, setShowButtons] = useState(false);

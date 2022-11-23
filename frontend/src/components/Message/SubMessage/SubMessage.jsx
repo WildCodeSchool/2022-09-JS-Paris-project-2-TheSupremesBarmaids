@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
 import SubCommentsBox from "../../CommentsBox/SubCommentsBox/SubCommentsBox";
@@ -13,15 +13,18 @@ function SubMessage({
   parentKey,
   subId,
   changeOpenReply,
-  openReply,
 }) {
   const { setMessageUpdate } = useMainContext();
 
   const numLikes = useRef();
 
   const [likeIcon, setLikeIcon] = useState(false);
-
+  const [openSubReply, setOpenSubReply] = useState(false);
   const [currentUser, setCurrentUser] = useState([]);
+
+  const changeOpenSubReply = useCallback(() => {
+    setOpenSubReply(!openSubReply);
+  }, [openSubReply]);
 
   let toggleLike = false;
   let like = likes;
@@ -73,7 +76,7 @@ function SubMessage({
         <AiFillDislike className="thumbs-down" />
         {user !== currentUser.name ? (
           <div
-            onClick={changeOpenReply}
+            onClick={changeOpenSubReply}
             style={{ cursor: "pointer" }}
             aria-hidden="true"
           >
@@ -89,7 +92,7 @@ function SubMessage({
           </div>
         )}
       </section>
-      {openReply && (
+      {openSubReply && (
         <SubCommentsBox
           parentKey={parentKey}
           changeOpenReply={changeOpenReply}
