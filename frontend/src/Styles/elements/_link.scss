@@ -66,6 +66,15 @@
     }
   }
 
+  &--login_user {
+    margin: auto;
+    font-size: 20px;
+    .user-logo {
+      width: 2.5rem;
+      border-radius: 50%;
+    }
+  }
+
   &--list {
     background-image: url("/icones/return-white-32.png");
 

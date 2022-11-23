@@ -54,7 +54,7 @@ function Login() {
           <span>Login</span>
         </button>
       ) : (
-        <div className="user">
+        <div className="iconAction iconAction--login_user">
           <img src={currentUser.picture} alt="logo" className="user-logo" />
           {currentUser.name}
         </div>
