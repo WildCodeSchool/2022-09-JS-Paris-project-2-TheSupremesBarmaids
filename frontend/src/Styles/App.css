@@ -983,14 +983,62 @@ a {
   margin: 20px 0;
   justify-content: center;
 }
-.commentaireBox .loader {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 5px solid #ffffff;
-  border-top: 5px solid #362924;
-  -webkit-animation: spin 1s linear infinite;
-          animation: spin 1s linear infinite;
+.commentaireBox .bottomBar .lp {
+  width: 8em;
+  height: 8em;
+}
+.commentaireBox .bottomBar .lp__drops,
+.commentaireBox .bottomBar .lp__fall-line,
+.commentaireBox .bottomBar .lp__worm {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  transform-origin: 64px 64px;
+}
+.commentaireBox .bottomBar .lp__drops {
+  -webkit-animation-name: drops;
+          animation-name: drops;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  stroke-dasharray: 22 307.85 22;
+  visibility: hidden;
+  transform: rotate(90deg);
+}
+.commentaireBox .bottomBar .lp__fall-line {
+  -webkit-animation-name: fallLine1;
+          animation-name: fallLine1;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  stroke-dasharray: 1 112;
+  stroke-dashoffset: 114;
+}
+.commentaireBox .bottomBar .lp__fall-line--delay1 {
+  -webkit-animation-name: fallLine2;
+          animation-name: fallLine2;
+}
+.commentaireBox .bottomBar .lp__fall-line--delay2 {
+  -webkit-animation-name: fallLine3;
+          animation-name: fallLine3;
+}
+.commentaireBox .bottomBar .lp__fall-line--delay3 {
+  -webkit-animation-name: fallLine4;
+          animation-name: fallLine4;
+}
+.commentaireBox .bottomBar .lp__fall-line--delay4 {
+  -webkit-animation-name: fallLine5;
+          animation-name: fallLine5;
+}
+.commentaireBox .bottomBar .lp__ring {
+  stroke: hsla(var(--hue), 90%, 5%, 0.1);
+  transition: stroke 0.3s;
+}
+.commentaireBox .bottomBar .lp__worm {
+  -webkit-animation-name: worm;
+          animation-name: worm;
+  stroke-dasharray: 43.98 307.87;
+  stroke-dashoffset: -131.94;
+  transform: rotate(-90deg);
 }
 .commentaireBox .messageContainer {
   position: relative;
@@ -1099,20 +1147,377 @@ a {
     transform: scaleX(1);
   }
 }
-@-webkit-keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  .lp__ring {
+    stroke: hsla(var(--hue), 90%, 95%, 0.1);
   }
 }
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+/* Animations */
+@-webkit-keyframes drops {
+  from {
+    -webkit-animation-timing-function: steps(1, end);
+            animation-timing-function: steps(1, end);
+    stroke-dasharray: 0 351.85 0;
+    visibility: hidden;
   }
-  100% {
-    transform: rotate(360deg);
+  25% {
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    stroke-dasharray: 0 351.85 0;
+    visibility: visible;
+  }
+  26% {
+    stroke-dasharray: 4 343.85 4;
+  }
+  27% {
+    stroke-dasharray: 8 335.85 8;
+  }
+  28% {
+    stroke-dasharray: 12 327.85 12;
+  }
+  29% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    stroke-dasharray: 17 317.85 17;
+  }
+  32% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    stroke-dasharray: 25 301.85 25;
+  }
+  35%, 47.5% {
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    stroke-dasharray: 22 307.85 22;
+    visibility: visible;
+  }
+  50% {
+    -webkit-animation-timing-function: steps(1, end);
+            animation-timing-function: steps(1, end);
+    stroke-dasharray: 0 307.85 43.98;
+    visibility: hidden;
+  }
+  75% {
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    stroke-dasharray: 0 351.85 0;
+    visibility: visible;
+  }
+  76% {
+    stroke-dasharray: 4 343.85 4;
+  }
+  77% {
+    stroke-dasharray: 8 335.85 8;
+  }
+  78% {
+    stroke-dasharray: 12 327.85 12;
+  }
+  79% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    stroke-dasharray: 17 317.85 17;
+  }
+  82% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    stroke-dasharray: 25 301.85 25;
+  }
+  85%, 97.5% {
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    stroke-dasharray: 22 307.85 22;
+    visibility: visible;
+  }
+  to {
+    stroke-dasharray: 43.98 307.85 0;
+    visibility: hidden;
+  }
+}
+@keyframes drops {
+  from {
+    -webkit-animation-timing-function: steps(1, end);
+            animation-timing-function: steps(1, end);
+    stroke-dasharray: 0 351.85 0;
+    visibility: hidden;
+  }
+  25% {
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    stroke-dasharray: 0 351.85 0;
+    visibility: visible;
+  }
+  26% {
+    stroke-dasharray: 4 343.85 4;
+  }
+  27% {
+    stroke-dasharray: 8 335.85 8;
+  }
+  28% {
+    stroke-dasharray: 12 327.85 12;
+  }
+  29% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    stroke-dasharray: 17 317.85 17;
+  }
+  32% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    stroke-dasharray: 25 301.85 25;
+  }
+  35%, 47.5% {
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    stroke-dasharray: 22 307.85 22;
+    visibility: visible;
+  }
+  50% {
+    -webkit-animation-timing-function: steps(1, end);
+            animation-timing-function: steps(1, end);
+    stroke-dasharray: 0 307.85 43.98;
+    visibility: hidden;
+  }
+  75% {
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    stroke-dasharray: 0 351.85 0;
+    visibility: visible;
+  }
+  76% {
+    stroke-dasharray: 4 343.85 4;
+  }
+  77% {
+    stroke-dasharray: 8 335.85 8;
+  }
+  78% {
+    stroke-dasharray: 12 327.85 12;
+  }
+  79% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    stroke-dasharray: 17 317.85 17;
+  }
+  82% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    stroke-dasharray: 25 301.85 25;
+  }
+  85%, 97.5% {
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    stroke-dasharray: 22 307.85 22;
+    visibility: visible;
+  }
+  to {
+    stroke-dasharray: 43.98 307.85 0;
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes fallLine1 {
+  from, 15% {
+    stroke-dashoffset: 114;
+  }
+  25%, 65% {
+    stroke-dashoffset: 1;
+  }
+  75%, to {
+    stroke-dashoffset: -112;
+  }
+}
+@keyframes fallLine1 {
+  from, 15% {
+    stroke-dashoffset: 114;
+  }
+  25%, 65% {
+    stroke-dashoffset: 1;
+  }
+  75%, to {
+    stroke-dashoffset: -112;
+  }
+}
+@-webkit-keyframes fallLine2 {
+  from, 16% {
+    stroke-dashoffset: 114;
+  }
+  26%, 66% {
+    stroke-dashoffset: 1;
+  }
+  76%, to {
+    stroke-dashoffset: -112;
+  }
+}
+@keyframes fallLine2 {
+  from, 16% {
+    stroke-dashoffset: 114;
+  }
+  26%, 66% {
+    stroke-dashoffset: 1;
+  }
+  76%, to {
+    stroke-dashoffset: -112;
+  }
+}
+@-webkit-keyframes fallLine3 {
+  from, 17% {
+    stroke-dashoffset: 114;
+  }
+  27%, 67% {
+    stroke-dashoffset: 1;
+  }
+  77%, to {
+    stroke-dashoffset: -112;
+  }
+}
+@keyframes fallLine3 {
+  from, 17% {
+    stroke-dashoffset: 114;
+  }
+  27%, 67% {
+    stroke-dashoffset: 1;
+  }
+  77%, to {
+    stroke-dashoffset: -112;
+  }
+}
+@-webkit-keyframes fallLine4 {
+  from, 18% {
+    stroke-dashoffset: 114;
+  }
+  28%, 68% {
+    stroke-dashoffset: 1;
+  }
+  78%, to {
+    stroke-dashoffset: -112;
+  }
+}
+@keyframes fallLine4 {
+  from, 18% {
+    stroke-dashoffset: 114;
+  }
+  28%, 68% {
+    stroke-dashoffset: 1;
+  }
+  78%, to {
+    stroke-dashoffset: -112;
+  }
+}
+@-webkit-keyframes fallLine5 {
+  from, 19% {
+    stroke-dashoffset: 114;
+  }
+  29%, 69% {
+    stroke-dashoffset: 1;
+  }
+  79%, to {
+    stroke-dashoffset: -112;
+  }
+}
+@keyframes fallLine5 {
+  from, 19% {
+    stroke-dashoffset: 114;
+  }
+  29%, 69% {
+    stroke-dashoffset: 1;
+  }
+  79%, to {
+    stroke-dashoffset: -112;
+  }
+}
+@-webkit-keyframes worm {
+  from {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    stroke-dasharray: 87.96 307.87;
+    stroke-dashoffset: -131.94;
+  }
+  25% {
+    -webkit-animation-timing-function: steps(1);
+            animation-timing-function: steps(1);
+    stroke-dasharray: 87.96 307.87;
+    stroke-dashoffset: -307.86;
+  }
+  25.01% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    stroke-dasharray: 43.98 307.87;
+    stroke-dashoffset: -307.86;
+  }
+  50% {
+    -webkit-animation-timing-function: steps(1);
+            animation-timing-function: steps(1);
+    stroke-dasharray: 43.98 307.87;
+    stroke-dashoffset: -175.92;
+  }
+  50.01% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    stroke-dasharray: 87.96 307.87;
+    stroke-dashoffset: -131.94;
+  }
+  75% {
+    -webkit-animation-timing-function: steps(1);
+            animation-timing-function: steps(1);
+    stroke-dasharray: 87.96 307.87;
+    stroke-dashoffset: 43.98;
+  }
+  75.01% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    stroke-dasharray: 43.98 307.87;
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dasharray: 43.98 307.87;
+    stroke-dashoffset: -131.94;
+  }
+}
+@keyframes worm {
+  from {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    stroke-dasharray: 87.96 307.87;
+    stroke-dashoffset: -131.94;
+  }
+  25% {
+    -webkit-animation-timing-function: steps(1);
+            animation-timing-function: steps(1);
+    stroke-dasharray: 87.96 307.87;
+    stroke-dashoffset: -307.86;
+  }
+  25.01% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    stroke-dasharray: 43.98 307.87;
+    stroke-dashoffset: -307.86;
+  }
+  50% {
+    -webkit-animation-timing-function: steps(1);
+            animation-timing-function: steps(1);
+    stroke-dasharray: 43.98 307.87;
+    stroke-dashoffset: -175.92;
+  }
+  50.01% {
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    stroke-dasharray: 87.96 307.87;
+    stroke-dashoffset: -131.94;
+  }
+  75% {
+    -webkit-animation-timing-function: steps(1);
+            animation-timing-function: steps(1);
+    stroke-dasharray: 87.96 307.87;
+    stroke-dashoffset: 43.98;
+  }
+  75.01% {
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    stroke-dasharray: 43.98 307.87;
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dasharray: 43.98 307.87;
+    stroke-dashoffset: -131.94;
   }
 }
 .edito {

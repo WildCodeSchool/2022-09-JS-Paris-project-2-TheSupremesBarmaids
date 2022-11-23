@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Message from "../../components/Message/Message";
+import Loader from "../../components/Message/Loader";
 
 import { useMainContext } from "../../services/Context";
 
@@ -139,7 +140,7 @@ function MessageScroll() {
       ))}
       {messages.length > 3 && showBottomBar ? (
         <div className="bottomBar" ref={setBottomBar}>
-          <div className="loader" />
+          <Loader />
         </div>
       ) : null}
     </>
