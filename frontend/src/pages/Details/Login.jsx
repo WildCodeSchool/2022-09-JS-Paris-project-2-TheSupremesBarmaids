@@ -3,12 +3,11 @@ import { FcGoogle } from "react-icons/fc";
 import jwtDecode from "jwt-decode";
 
 function Login() {
-  const [disabled, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(true);
   const [currentUser, setCurrentUser] = useState([]);
   const handleResponse = (response) => {
     const token = response.credential;
     const decodedToken = jwtDecode(token);
-    setCurrentUser(decodedToken);
     const { sub: id, name, picture: photoURL } = decodedToken;
     localStorage.setItem("currentUser", JSON.stringify({ id, name, photoURL }));
   };
@@ -37,8 +36,16 @@ function Login() {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("currentUser");
+    setDisabled(true);
+  };
   useEffect(() => {
-    if (currentUser) setDisabled(true);
+    const check = JSON.parse(localStorage.getItem("currentUser"));
+    if (check) {
+      setDisabled(false);
+      setCurrentUser(check);
+    }
   }, []);
 
   return (
@@ -55,8 +62,10 @@ function Login() {
         </button>
       ) : (
         <div className="iconAction iconAction--login_user">
-          <img src={currentUser.picture} alt="logo" className="user-logo" />
-          {currentUser.name}
+          <img src={currentUser.photoURL} alt="logo" className="user-logo" />
+          <a href="#top" className="logout" onClick={handleLogout}>
+            Logout
+          </a>
         </div>
       )}
     </>

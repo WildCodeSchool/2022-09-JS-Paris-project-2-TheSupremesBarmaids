@@ -1,30 +1,35 @@
-import React, { useRef, useState, useEffect, useCallback } from "react";
+/* eslint-disable import/no-cycle */
+import React, {
+  useRef,
+  useState,
+  useEffect,
+  useCallback,
+  useContext,
+  createContext,
+} from "react";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
 import SubCommentsBox from "../../CommentsBox/SubCommentsBox/SubCommentsBox";
-
 import { useMainContext } from "../../../services/Context";
 
-function SubMessage({
-  message,
-  user,
-  id,
-  likes,
-  parentKey,
-  subId,
-  changeOpenReply,
-}) {
+const showReply = createContext();
+
+export function useOpenReply() {
+  return useContext(showReply);
+}
+
+function SubMessage({ message, user, id, likes, parentKey, subId }) {
   const { setMessageUpdate } = useMainContext();
 
   const numLikes = useRef();
 
+  const [openReply, setOpenReply] = useState(false);
   const [likeIcon, setLikeIcon] = useState(false);
-  const [openSubReply, setOpenSubReply] = useState(false);
   const [currentUser, setCurrentUser] = useState([]);
 
-  const changeOpenSubReply = useCallback(() => {
-    setOpenSubReply(!openSubReply);
-  }, [openSubReply]);
+  const changeOpenReply = useCallback(() => {
+    setOpenReply(!openReply);
+  }, [openReply]);
 
   let toggleLike = false;
   let like = likes;
@@ -76,7 +81,7 @@ function SubMessage({
         <AiFillDislike className="thumbs-down" />
         {user !== currentUser.name ? (
           <div
-            onClick={changeOpenSubReply}
+            onClick={changeOpenReply}
             style={{ cursor: "pointer" }}
             aria-hidden="true"
           >
@@ -92,13 +97,9 @@ function SubMessage({
           </div>
         )}
       </section>
-      {openSubReply && (
-        <SubCommentsBox
-          parentKey={parentKey}
-          changeOpenReply={changeOpenReply}
-          autoFocus
-        />
-      )}
+      <showReply.Provider value={changeOpenReply}>
+        {openReply && <SubCommentsBox parentKey={parentKey} autoFocus />}
+      </showReply.Provider>
     </section>
   );
 }

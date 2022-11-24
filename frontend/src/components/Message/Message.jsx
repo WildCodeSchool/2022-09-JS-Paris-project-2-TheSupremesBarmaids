@@ -1,4 +1,13 @@
-import React, { useRef, useState, useCallback } from "react";
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable import/no-cycle */
+import {
+  useRef,
+  useState,
+  useCallback,
+  useContext,
+  useEffect,
+  createContext,
+} from "react";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
 import { BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
@@ -7,13 +16,20 @@ import SubMessage from "./SubMessage/SubMessage";
 
 import { useMainContext } from "../../services/Context";
 
-function Message({ message, user, id, editable, likes, replies, useKey }) {
+const showReply = createContext();
+
+export function useOpenReply() {
+  return useContext(showReply);
+}
+
+function Message({ message, user, id, likes, replies, useKey }) {
   const { setMessageUpdate } = useMainContext();
   const numLikes = useRef();
 
   const [arrowUp, setArrowUp] = useState(false);
   const [openReply, setOpenReply] = useState(false);
   const [likeIcon, setLikeIcon] = useState(false);
+  const [currentUser, setCurrentUser] = useState([]);
 
   const changeOpenReply = useCallback(() => {
     setOpenReply(!openReply);
@@ -58,6 +74,12 @@ function Message({ message, user, id, editable, likes, replies, useKey }) {
     });
   };
 
+  useEffect(() => {
+    const userCurr = JSON.parse(localStorage.getItem("currentUser"));
+    if (userCurr) setCurrentUser(userCurr);
+    else setCurrentUser(user);
+  }, []);
+
   return (
     <section className="messageContainer">
       <div id={id} className="messageUser">
@@ -73,7 +95,7 @@ function Message({ message, user, id, editable, likes, replies, useKey }) {
         />
         <div ref={numLikes}>{likes}</div>
         <AiFillDislike className="thumbs-down" />
-        {!editable ? (
+        {user !== currentUser.name ? (
           <div
             onClick={changeOpenReply}
             style={{ cursor: "pointer" }}
@@ -91,13 +113,9 @@ function Message({ message, user, id, editable, likes, replies, useKey }) {
           </div>
         )}
       </section>
-      {openReply && (
-        <CommentsBox
-          useKey={useKey}
-          changeOpenReply={changeOpenReply}
-          autoFocus
-        />
-      )}
+      <showReply.Provider value={changeOpenReply}>
+        {openReply && <CommentsBox useKey={useKey} autoFocus />}
+      </showReply.Provider>
       {replies.length > 0 && (
         <section
           className="arrowReplies"
@@ -112,11 +130,8 @@ function Message({ message, user, id, editable, likes, replies, useKey }) {
         <section className="subMessages">
           {replies.map((reply) => (
             <SubMessage
-              changeOpenReply={changeOpenReply}
-              openReply={openReply}
               key={Math.random()}
               parentKey={useKey}
-              // eslint-disable-next-line no-underscore-dangle
               subId={reply._id}
               user={reply.user}
               editable={reply.editable}

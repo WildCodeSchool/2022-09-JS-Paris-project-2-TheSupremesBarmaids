@@ -376,6 +376,9 @@ button:not(:disabled) {
   width: 2.5rem;
   border-radius: 50%;
 }
+.iconAction--login_user .logout:hover {
+  color: #da9c41;
+}
 .iconAction--list {
   background-image: url("/icones/return-white-32.png");
 }

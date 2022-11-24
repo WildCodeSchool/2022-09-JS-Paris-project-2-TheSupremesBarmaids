@@ -73,6 +73,10 @@
       width: 2.5rem;
       border-radius: 50%;
     }
+
+    .logout:hover {
+      color: $colorCinnamon;
+    }
   }
 
   &--list {

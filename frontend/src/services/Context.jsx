@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { createContext, useContext, useState } from "react";
 
-export const MainContext = createContext();
+const MainContext = createContext();
 
 export const PostContext = createContext({});
 export const ToggleContext = createContext({});

@@ -1,3 +1,6 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-return-assign */
+/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState, useRef } from "react";
 import Message from "../../components/Message/Message";
 import Loader from "../../components/Message/Loader";
@@ -34,7 +37,6 @@ function MessageScroll() {
     const currentMessage = [...messages];
     if (commentData) {
       const currentMessageIndex = currentMessage.findIndex(
-        // eslint-disable-next-line no-underscore-dangle
         (message) => message._id === commentData._id
       );
       currentMessage.splice(currentMessageIndex, 1, commentData);
@@ -45,7 +47,6 @@ function MessageScroll() {
   function deleteComment() {
     const currentMessage = [...messages];
     const currentMessageIndex = currentMessage.findIndex(
-      // eslint-disable-next-line no-underscore-dangle
       (message) => message._id === messageUpdate[1]
     );
     currentMessage.splice(currentMessageIndex, 1);
@@ -94,8 +95,7 @@ function MessageScroll() {
                 setShowBottomBar(false);
               }, 3000);
             }
-            let num = commentIncrement;
-            setCommentIncrement((num += comments.length));
+            setCommentIncrement((prevState) => (prevState += comments.length));
           });
       }
     }),
@@ -127,9 +127,7 @@ function MessageScroll() {
     <>
       {messages.map((message) => (
         <Message
-          // eslint-disable-next-line no-underscore-dangle
           key={message._id}
-          // eslint-disable-next-line no-underscore-dangle
           useKey={message._id}
           user={message.user}
           editable={message.editable}

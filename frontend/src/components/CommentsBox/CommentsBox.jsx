@@ -1,8 +1,11 @@
+/* eslint-disable import/no-cycle */
 import React, { useRef, useState } from "react";
+import { useOpenReply } from "../Message/Message";
 import { useMainContext } from "../../services/Context";
 
-function CommentsBox({ useKey, changeOpenReply }) {
+function CommentsBox({ useKey }) {
   const { setMessageUpdate } = useMainContext();
+  const changeOpenReply = useOpenReply();
   const message = useRef(null);
   const [showCommentLine, setShowCommentLine] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
