@@ -88,7 +88,7 @@ abbr[title] {
   border-bottom: none;
   text-decoration: underline;
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 b,
@@ -177,24 +177,24 @@ select {
 }
 
 button,
-html [type=button],
-[type=reset],
-[type=submit] {
+html [type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted #362924;
 }
 
@@ -220,24 +220,24 @@ textarea {
   overflow: auto;
 }
 
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type=search]::-webkit-search-cancel-button,
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -269,7 +269,8 @@ template {
 
 @font-face {
   font-family: "Nickainley";
-  src: url("/font/Nickainley-Normal.woff2") format("woff2"), url("/font/Nickainley-Normal.woff") format("woff");
+  src: url("/font/Nickainley-Normal.woff2") format("woff2"),
+    url("/font/Nickainley-Normal.woff") format("woff");
 }
 html {
   box-sizing: border-box;
@@ -326,7 +327,8 @@ button:not(:disabled) {
   text-align: center;
   text-decoration: none;
 }
-.buttonType__text, .buttonType__icon {
+.buttonType__text,
+.buttonType__icon {
   display: inline-block;
 }
 .buttonType__icon {
@@ -481,7 +483,7 @@ a {
 .cardImage {
   max-width: 100%;
   -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
 }
 
 .favoriteCocktail {
@@ -579,7 +581,8 @@ a {
 .header .iconAction--login_user {
   margin-right: 10rem;
 }
-.header .iconAction--list, .header .iconAction--filterSearch {
+.header .iconAction--list,
+.header .iconAction--filterSearch {
   float: right;
 }
 
@@ -601,7 +604,7 @@ a {
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
-      hyphens: auto;
+  hyphens: auto;
 }
 .footer__block:not(.logoFooter) {
   margin-top: 2rem;
@@ -641,7 +644,7 @@ a {
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
-      hyphens: auto;
+  hyphens: auto;
 }
 .footer a :hover {
   text-decoration: underline;
@@ -654,7 +657,14 @@ a {
   align-items: center;
   overflow: hidden;
   padding-bottom: 3rem;
-  background: linear-gradient(180deg, transparent 0%, transparent 20%, #852e01 50%, #da9c41 75%, #ffc65c 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 20%,
+    #852e01 50%,
+    #da9c41 75%,
+    #ffc65c 100%
+  );
 }
 .top h2 {
   max-width: 1256px;
@@ -673,7 +683,10 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
-  transform: rotateY(calc(var(--offset) * 50deg)) scaleY(calc(1 + var(--abs-offset) * -0.4)) translateZ(calc(var(--abs-offset) * -30rem)) translateX(calc(var(--direction) * -5rem));
+  transform: rotateY(calc(var(--offset) * 50deg))
+    scaleY(calc(1 + var(--abs-offset) * -0.4))
+    translateZ(calc(var(--abs-offset) * -30rem))
+    translateX(calc(var(--direction) * -5rem));
   filter: blur(calc(var(--abs-offset) * 1rem));
   transition: all 0.3s ease-out;
 }
@@ -689,9 +702,9 @@ a {
   z-index: 2;
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   background: unset;
   border-radius: 100%;
   border: unset;
@@ -883,7 +896,8 @@ a {
   transition: all 5s ease-in;
   margin: 0 20px;
 }
-.cocktailListCards .card::before, .cocktailListCards .card::after {
+.cocktailListCards .card::before,
+.cocktailListCards .card::after {
   content: "";
   display: block;
   position: absolute;
@@ -939,7 +953,7 @@ a {
 .commentaireBox form {
   overflow: auto;
 }
-.commentaireBox form input[type=text] {
+.commentaireBox form input[type="text"] {
   width: 100%;
   outline: none;
   border: none;
@@ -958,7 +972,7 @@ a {
   background-color: #000000;
   transform: scaleX(0);
   -webkit-animation: commentLineScaleIn 0.2s forwards;
-          animation: commentLineScaleIn 0.2s forwards;
+  animation: commentLineScaleIn 0.2s forwards;
 }
 .commentaireBox .commentButton {
   font-family: inherit;
@@ -994,43 +1008,43 @@ a {
 .commentaireBox .bottomBar .lp__fall-line,
 .commentaireBox .bottomBar .lp__worm {
   -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   transform-origin: 64px 64px;
 }
 .commentaireBox .bottomBar .lp__drops {
   -webkit-animation-name: drops;
-          animation-name: drops;
+  animation-name: drops;
   -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
   stroke-dasharray: 22 307.85 22;
   visibility: hidden;
   transform: rotate(90deg);
 }
 .commentaireBox .bottomBar .lp__fall-line {
   -webkit-animation-name: fallLine1;
-          animation-name: fallLine1;
+  animation-name: fallLine1;
   -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
   stroke-dasharray: 1 112;
   stroke-dashoffset: 114;
 }
 .commentaireBox .bottomBar .lp__fall-line--delay1 {
   -webkit-animation-name: fallLine2;
-          animation-name: fallLine2;
+  animation-name: fallLine2;
 }
 .commentaireBox .bottomBar .lp__fall-line--delay2 {
   -webkit-animation-name: fallLine3;
-          animation-name: fallLine3;
+  animation-name: fallLine3;
 }
 .commentaireBox .bottomBar .lp__fall-line--delay3 {
   -webkit-animation-name: fallLine4;
-          animation-name: fallLine4;
+  animation-name: fallLine4;
 }
 .commentaireBox .bottomBar .lp__fall-line--delay4 {
   -webkit-animation-name: fallLine5;
-          animation-name: fallLine5;
+  animation-name: fallLine5;
 }
 .commentaireBox .bottomBar .lp__ring {
   stroke: hsla(var(--hue), 90%, 5%, 0.1);
@@ -1038,7 +1052,7 @@ a {
 }
 .commentaireBox .bottomBar .lp__worm {
   -webkit-animation-name: worm;
-          animation-name: worm;
+  animation-name: worm;
   stroke-dasharray: 43.98 307.87;
   stroke-dashoffset: -131.94;
   transform: rotate(-90deg);
@@ -1160,13 +1174,13 @@ a {
 @-webkit-keyframes drops {
   from {
     -webkit-animation-timing-function: steps(1, end);
-            animation-timing-function: steps(1, end);
+    animation-timing-function: steps(1, end);
     stroke-dasharray: 0 351.85 0;
     visibility: hidden;
   }
   25% {
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
     stroke-dasharray: 0 351.85 0;
     visibility: visible;
   }
@@ -1181,29 +1195,30 @@ a {
   }
   29% {
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     stroke-dasharray: 17 317.85 17;
   }
   32% {
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     stroke-dasharray: 25 301.85 25;
   }
-  35%, 47.5% {
+  35%,
+  47.5% {
     -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
+    animation-timing-function: linear;
     stroke-dasharray: 22 307.85 22;
     visibility: visible;
   }
   50% {
     -webkit-animation-timing-function: steps(1, end);
-            animation-timing-function: steps(1, end);
+    animation-timing-function: steps(1, end);
     stroke-dasharray: 0 307.85 43.98;
     visibility: hidden;
   }
   75% {
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
     stroke-dasharray: 0 351.85 0;
     visibility: visible;
   }
@@ -1218,17 +1233,18 @@ a {
   }
   79% {
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     stroke-dasharray: 17 317.85 17;
   }
   82% {
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     stroke-dasharray: 25 301.85 25;
   }
-  85%, 97.5% {
+  85%,
+  97.5% {
     -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
+    animation-timing-function: linear;
     stroke-dasharray: 22 307.85 22;
     visibility: visible;
   }
@@ -1240,13 +1256,13 @@ a {
 @keyframes drops {
   from {
     -webkit-animation-timing-function: steps(1, end);
-            animation-timing-function: steps(1, end);
+    animation-timing-function: steps(1, end);
     stroke-dasharray: 0 351.85 0;
     visibility: hidden;
   }
   25% {
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
     stroke-dasharray: 0 351.85 0;
     visibility: visible;
   }
@@ -1261,29 +1277,30 @@ a {
   }
   29% {
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     stroke-dasharray: 17 317.85 17;
   }
   32% {
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     stroke-dasharray: 25 301.85 25;
   }
-  35%, 47.5% {
+  35%,
+  47.5% {
     -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
+    animation-timing-function: linear;
     stroke-dasharray: 22 307.85 22;
     visibility: visible;
   }
   50% {
     -webkit-animation-timing-function: steps(1, end);
-            animation-timing-function: steps(1, end);
+    animation-timing-function: steps(1, end);
     stroke-dasharray: 0 307.85 43.98;
     visibility: hidden;
   }
   75% {
     -webkit-animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
     stroke-dasharray: 0 351.85 0;
     visibility: visible;
   }
@@ -1298,17 +1315,18 @@ a {
   }
   79% {
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     stroke-dasharray: 17 317.85 17;
   }
   82% {
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     stroke-dasharray: 25 301.85 25;
   }
-  85%, 97.5% {
+  85%,
+  97.5% {
     -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
+    animation-timing-function: linear;
     stroke-dasharray: 22 307.85 22;
     visibility: visible;
   }
@@ -1318,155 +1336,185 @@ a {
   }
 }
 @-webkit-keyframes fallLine1 {
-  from, 15% {
+  from,
+  15% {
     stroke-dashoffset: 114;
   }
-  25%, 65% {
+  25%,
+  65% {
     stroke-dashoffset: 1;
   }
-  75%, to {
+  75%,
+  to {
     stroke-dashoffset: -112;
   }
 }
 @keyframes fallLine1 {
-  from, 15% {
+  from,
+  15% {
     stroke-dashoffset: 114;
   }
-  25%, 65% {
+  25%,
+  65% {
     stroke-dashoffset: 1;
   }
-  75%, to {
+  75%,
+  to {
     stroke-dashoffset: -112;
   }
 }
 @-webkit-keyframes fallLine2 {
-  from, 16% {
+  from,
+  16% {
     stroke-dashoffset: 114;
   }
-  26%, 66% {
+  26%,
+  66% {
     stroke-dashoffset: 1;
   }
-  76%, to {
+  76%,
+  to {
     stroke-dashoffset: -112;
   }
 }
 @keyframes fallLine2 {
-  from, 16% {
+  from,
+  16% {
     stroke-dashoffset: 114;
   }
-  26%, 66% {
+  26%,
+  66% {
     stroke-dashoffset: 1;
   }
-  76%, to {
+  76%,
+  to {
     stroke-dashoffset: -112;
   }
 }
 @-webkit-keyframes fallLine3 {
-  from, 17% {
+  from,
+  17% {
     stroke-dashoffset: 114;
   }
-  27%, 67% {
+  27%,
+  67% {
     stroke-dashoffset: 1;
   }
-  77%, to {
+  77%,
+  to {
     stroke-dashoffset: -112;
   }
 }
 @keyframes fallLine3 {
-  from, 17% {
+  from,
+  17% {
     stroke-dashoffset: 114;
   }
-  27%, 67% {
+  27%,
+  67% {
     stroke-dashoffset: 1;
   }
-  77%, to {
+  77%,
+  to {
     stroke-dashoffset: -112;
   }
 }
 @-webkit-keyframes fallLine4 {
-  from, 18% {
+  from,
+  18% {
     stroke-dashoffset: 114;
   }
-  28%, 68% {
+  28%,
+  68% {
     stroke-dashoffset: 1;
   }
-  78%, to {
+  78%,
+  to {
     stroke-dashoffset: -112;
   }
 }
 @keyframes fallLine4 {
-  from, 18% {
+  from,
+  18% {
     stroke-dashoffset: 114;
   }
-  28%, 68% {
+  28%,
+  68% {
     stroke-dashoffset: 1;
   }
-  78%, to {
+  78%,
+  to {
     stroke-dashoffset: -112;
   }
 }
 @-webkit-keyframes fallLine5 {
-  from, 19% {
+  from,
+  19% {
     stroke-dashoffset: 114;
   }
-  29%, 69% {
+  29%,
+  69% {
     stroke-dashoffset: 1;
   }
-  79%, to {
+  79%,
+  to {
     stroke-dashoffset: -112;
   }
 }
 @keyframes fallLine5 {
-  from, 19% {
+  from,
+  19% {
     stroke-dashoffset: 114;
   }
-  29%, 69% {
+  29%,
+  69% {
     stroke-dashoffset: 1;
   }
-  79%, to {
+  79%,
+  to {
     stroke-dashoffset: -112;
   }
 }
 @-webkit-keyframes worm {
   from {
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     stroke-dasharray: 87.96 307.87;
     stroke-dashoffset: -131.94;
   }
   25% {
     -webkit-animation-timing-function: steps(1);
-            animation-timing-function: steps(1);
+    animation-timing-function: steps(1);
     stroke-dasharray: 87.96 307.87;
     stroke-dashoffset: -307.86;
   }
   25.01% {
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     stroke-dasharray: 43.98 307.87;
     stroke-dashoffset: -307.86;
   }
   50% {
     -webkit-animation-timing-function: steps(1);
-            animation-timing-function: steps(1);
+    animation-timing-function: steps(1);
     stroke-dasharray: 43.98 307.87;
     stroke-dashoffset: -175.92;
   }
   50.01% {
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     stroke-dasharray: 87.96 307.87;
     stroke-dashoffset: -131.94;
   }
   75% {
     -webkit-animation-timing-function: steps(1);
-            animation-timing-function: steps(1);
+    animation-timing-function: steps(1);
     stroke-dasharray: 87.96 307.87;
     stroke-dashoffset: 43.98;
   }
   75.01% {
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     stroke-dasharray: 43.98 307.87;
     stroke-dashoffset: 0;
   }
@@ -1478,43 +1526,43 @@ a {
 @keyframes worm {
   from {
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     stroke-dasharray: 87.96 307.87;
     stroke-dashoffset: -131.94;
   }
   25% {
     -webkit-animation-timing-function: steps(1);
-            animation-timing-function: steps(1);
+    animation-timing-function: steps(1);
     stroke-dasharray: 87.96 307.87;
     stroke-dashoffset: -307.86;
   }
   25.01% {
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     stroke-dasharray: 43.98 307.87;
     stroke-dashoffset: -307.86;
   }
   50% {
     -webkit-animation-timing-function: steps(1);
-            animation-timing-function: steps(1);
+    animation-timing-function: steps(1);
     stroke-dasharray: 43.98 307.87;
     stroke-dashoffset: -175.92;
   }
   50.01% {
     -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
     stroke-dasharray: 87.96 307.87;
     stroke-dashoffset: -131.94;
   }
   75% {
     -webkit-animation-timing-function: steps(1);
-            animation-timing-function: steps(1);
+    animation-timing-function: steps(1);
     stroke-dasharray: 87.96 307.87;
     stroke-dashoffset: 43.98;
   }
   75.01% {
     -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
     stroke-dasharray: 43.98 307.87;
     stroke-dashoffset: 0;
   }
@@ -1596,7 +1644,8 @@ a {
   }
 }
 @media screen and (max-width: 599px) {
-  .editoBlock--second .editoBlock__article, .editoBlock--third .editoBlock__article {
+  .editoBlock--second .editoBlock__article,
+  .editoBlock--third .editoBlock__article {
     margin-top: 0;
   }
 }
@@ -1640,7 +1689,8 @@ a {
     flex: 1 1 60%;
   }
 }
-.editoBlock__illustration::before, .editoBlock__illustration::after {
+.editoBlock__illustration::before,
+.editoBlock__illustration::after {
   content: "";
   position: absolute;
   width: 305px;
@@ -1649,13 +1699,15 @@ a {
   z-index: -1;
 }
 @media screen and (min-width: 480px) {
-  .editoBlock__illustration::before, .editoBlock__illustration::after {
+  .editoBlock__illustration::before,
+  .editoBlock__illustration::after {
     width: 350px;
     height: 245px;
   }
 }
 @media screen and (min-width: 600px) {
-  .editoBlock__illustration::before, .editoBlock__illustration::after {
+  .editoBlock__illustration::before,
+  .editoBlock__illustration::after {
     height: 270px;
   }
 }
@@ -1902,4 +1954,4 @@ a {
 .mainDetails .listLinkDetails {
   margin-top: 4rem;
   text-align: center;
-}/*# sourceMappingURL=App.css.map */
+} /*# sourceMappingURL=App.css.map */

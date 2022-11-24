@@ -61,7 +61,8 @@ function SubMessage({ message, user, id, likes, parentKey, subId }) {
 
   useEffect(() => {
     const userCurr = JSON.parse(localStorage.getItem("currentUser"));
-    setCurrentUser(userCurr);
+    if (userCurr) setCurrentUser(userCurr);
+    else setCurrentUser(user);
   }, []);
 
   return (

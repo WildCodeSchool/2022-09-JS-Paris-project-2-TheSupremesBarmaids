@@ -1,5 +1,8 @@
 /* eslint-disable import/no-cycle */
 import React, { useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { useOpenReply } from "../Message/Message";
 import { useMainContext } from "../../services/Context";
 
@@ -12,6 +15,8 @@ function CommentsBox({ useKey }) {
   const [enableBtn, setEnableBtn] = useState(true);
   // When click on the Input => show the underline and button
   const commentFocus = () => {
+    const check = localStorage.getItem("currentUser");
+    if (!check) toast("You have to login!");
     setShowCommentLine(true);
     setShowButtons(true);
   };
@@ -45,12 +50,14 @@ function CommentsBox({ useKey }) {
       // reset everything
       message.current.value = "";
       setEnableBtn(false);
+      changeOpenReply();
     });
   };
 
   return (
     <form>
       <section className="commentBox">
+        <ToastContainer autoClose={1000} />
         <input
           type="text"
           placeholder="Add your comments here..."

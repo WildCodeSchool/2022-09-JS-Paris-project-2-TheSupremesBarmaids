@@ -1,5 +1,8 @@
 import React, { useRef, useState } from "react";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { useMainContext } from "../../../services/Context";
 
 function TopCommentsBox() {
@@ -10,6 +13,8 @@ function TopCommentsBox() {
   const [enableBtn, setEnableBtn] = useState(true);
   // When click on the Input => show the underline and button
   const commentFocus = () => {
+    const check = localStorage.getItem("currentUser");
+    if (!check) toast("You have to login!");
     setShowCommentLine(true);
     setShowButtons(true);
   };
@@ -44,12 +49,14 @@ function TopCommentsBox() {
       // Delete Text Input, update comments and disable COMMENT Btn
       message.current.value = "";
       setEnableBtn(true);
+      setShowButtons(false);
     });
   };
 
   return (
     <form>
       <section className="commentBox">
+        <ToastContainer autoClose={1000} />
         <input
           type="text"
           placeholder="Add your comments here..."

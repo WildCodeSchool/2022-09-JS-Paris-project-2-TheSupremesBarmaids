@@ -121,6 +121,7 @@ function Message({ message, user, id, likes, replies, useKey }) {
           className="arrowReplies"
           onClick={changeArrow}
           aria-hidden="true"
+          style={currentUser ? null : { display: "none" }}
         >
           {arrow}
           <div>View {replies.length} replies</div>
@@ -134,7 +135,6 @@ function Message({ message, user, id, likes, replies, useKey }) {
               parentKey={useKey}
               subId={reply._id}
               user={reply.user}
-              editable={reply.editable}
               replies={reply.replies}
               message={reply.message}
               likes={reply.likes}

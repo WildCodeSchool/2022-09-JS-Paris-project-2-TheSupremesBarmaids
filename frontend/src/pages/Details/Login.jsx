@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import jwtDecode from "jwt-decode";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function Login() {
   const [disabled, setDisabled] = useState(true);
   const [currentUser, setCurrentUser] = useState([]);
@@ -37,6 +40,7 @@ function Login() {
   };
 
   const handleLogout = () => {
+    toast("You have singed out!");
     localStorage.removeItem("currentUser");
     setDisabled(true);
   };
@@ -68,6 +72,7 @@ function Login() {
           </a>
         </div>
       )}
+      <ToastContainer autoClose={2000} />
     </>
   );
 }
