@@ -43,6 +43,7 @@ function CommentsBox({ useKey }) {
       body: JSON.stringify({
         messageId: useKey,
         user: currentUser.name,
+        photo: currentUser.photoURL,
         messageData: message.current.value,
       }),
     }).then(() => {

@@ -8,7 +8,9 @@ import React, {
   createContext,
 } from "react";
 import { AiFillLike, AiFillDislike } from "react-icons/ai";
-import { FaUserCircle } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import SubCommentsBox from "../../CommentsBox/SubCommentsBox/SubCommentsBox";
 import { useMainContext } from "../../../services/Context";
 
@@ -18,7 +20,7 @@ export function useOpenReply() {
   return useContext(showReply);
 }
 
-function SubMessage({ message, user, id, likes, parentKey, subId }) {
+function SubMessage({ message, user, id, likes, parentKey, subId, photo }) {
   const { setMessageUpdate } = useMainContext();
 
   const numLikes = useRef();
@@ -56,6 +58,10 @@ function SubMessage({ message, user, id, likes, parentKey, subId }) {
       body: JSON.stringify({ messageId: parentKey, subId }),
     }).then(() => {
       setMessageUpdate([1, parentKey]);
+      toast.warn("Reply Deleted", {
+        position: "bottom-right",
+        theme: "colored",
+      });
     });
   };
 
@@ -70,7 +76,7 @@ function SubMessage({ message, user, id, likes, parentKey, subId }) {
       <div id={id} className="messageUser">
         {user}
       </div>
-      <FaUserCircle className="user-circle" />
+      <img src={photo} alt="logo" className="user-circle" />
       <div className="messageText">{message}</div>
       <section className="messageIconsContainer">
         <AiFillLike
@@ -97,9 +103,12 @@ function SubMessage({ message, user, id, likes, parentKey, subId }) {
             DELETE
           </div>
         )}
+        <ToastContainer autoClose={2000} />
       </section>
       <showReply.Provider value={changeOpenReply}>
-        {openReply && <SubCommentsBox parentKey={parentKey} autoFocus />}
+        {openReply && (
+          <SubCommentsBox parentKey={parentKey} user={user} autoFocus />
+        )}
       </showReply.Provider>
     </section>
   );

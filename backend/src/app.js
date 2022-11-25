@@ -22,12 +22,14 @@ db.once("open", () => {
 
 const CommentSchema = mongoose.Schema({
   user: String,
+  photo: String,
   message: String,
   likes: Number,
   editable: Boolean,
   replies: [
     {
       user: String,
+      photo: String,
       message: String,
       likes: Number,
     },
@@ -77,6 +79,7 @@ app.post("/new-comment", (req, res) => {
   const item = req.body;
   new CommentsModel({
     user: item.user,
+    photo: item.photo,
     message: item.messageData,
     likes: 0,
     editable: true,
@@ -105,6 +108,7 @@ app.post("/new-sub-comment", (req, res) => {
   const item = req.body;
   const newSubMessage = {
     user: item.user,
+    photo: item.photo,
     message: item.messageData,
     likes: 0,
   };

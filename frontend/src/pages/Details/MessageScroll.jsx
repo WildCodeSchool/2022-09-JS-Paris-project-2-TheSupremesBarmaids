@@ -130,6 +130,7 @@ function MessageScroll() {
           key={message._id}
           useKey={message._id}
           user={message.user}
+          photo={message.photo}
           editable={message.editable}
           replies={message.replies}
           message={message.message}

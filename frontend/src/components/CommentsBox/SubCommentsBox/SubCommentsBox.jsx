@@ -3,14 +3,13 @@ import React, { useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { useOpenReply } from "../../Message/Message";
 import { useMainContext } from "../../../services/Context";
 
-function SubCommentsBox({ parentKey }) {
+function SubCommentsBox({ parentKey, user }) {
   const { setMessageUpdate } = useMainContext();
 
-  const changeOpenReply = useOpenReply();
   const message = useRef(null);
+  const [changeOpenReply, setChangeOpenReply] = useState(true);
   const [showCommentLine, setShowCommentLine] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
   const [enableBtn, setEnableBtn] = useState(true);
@@ -44,6 +43,7 @@ function SubCommentsBox({ parentKey }) {
       body: JSON.stringify({
         messageId: parentKey,
         user: currentUser.name,
+        photo: currentUser.photoURL,
         messageData: message.current.value,
       }),
     }).then(() => {
@@ -51,21 +51,28 @@ function SubCommentsBox({ parentKey }) {
       message.current.value = "";
     });
   };
+  const prefix = `@${user}  `;
   return (
     <form>
-      <section className="commentBox">
-        <ToastContainer autoClose={1000} />
-        <input
-          type="text"
-          placeholder="Add your comments here..."
-          ref={message}
-          onFocus={commentFocus}
-          onBlur={commentFocusOut}
-          onKeyUp={commentStroke}
-        />
-        {/* Underline begins here */}
-        {showCommentLine && <div className="commentLine" />}
-      </section>
+      {changeOpenReply && (
+        <section className="commentBox">
+          <ToastContainer autoClose={1000} />
+          <input
+            type="text"
+            placeholder={`@${user}`}
+            ref={message}
+            onChange={(e) => {
+              const input = e.target.value;
+              e.target.value = prefix + input.substr(prefix.length);
+            }}
+            onFocus={commentFocus}
+            onBlur={commentFocusOut}
+            onKeyUp={commentStroke}
+          />
+          {/* Underline begins here */}
+          {showCommentLine && <div className="commentLine" />}
+        </section>
+      )}
       {showButtons && (
         <>
           <button
@@ -82,7 +89,7 @@ function SubCommentsBox({ parentKey }) {
             style={{ color: "grey", backgroundColor: "transparent" }}
             onClick={() => {
               setShowButtons(false);
-              changeOpenReply();
+              setChangeOpenReply(false);
             }}
           >
             CANCEL

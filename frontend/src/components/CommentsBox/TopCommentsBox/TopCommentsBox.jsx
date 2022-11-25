@@ -41,6 +41,7 @@ function TopCommentsBox() {
       body: JSON.stringify({
         messageData: message.current.value,
         user: currentUser.name,
+        photo: currentUser.photoURL,
       }),
     }).then(() => {
       // Reset entire comments and matching increment counter

@@ -13,6 +13,7 @@ function Login() {
     const decodedToken = jwtDecode(token);
     const { sub: id, name, picture: photoURL } = decodedToken;
     localStorage.setItem("currentUser", JSON.stringify({ id, name, photoURL }));
+    setCurrentUser(photoURL);
   };
 
   const handleLogin = () => {
@@ -48,7 +49,7 @@ function Login() {
     const check = JSON.parse(localStorage.getItem("currentUser"));
     if (check) {
       setDisabled(false);
-      setCurrentUser(check);
+      setCurrentUser(check.photoURL);
     }
   }, []);
 
@@ -66,7 +67,7 @@ function Login() {
         </button>
       ) : (
         <div className="iconAction iconAction--login_user">
-          <img src={currentUser.photoURL} alt="logo" className="user-logo" />
+          <img src={currentUser} alt="logo" className="user-logo" />
           <a href="#top" className="logout" onClick={handleLogout}>
             Logout
           </a>
