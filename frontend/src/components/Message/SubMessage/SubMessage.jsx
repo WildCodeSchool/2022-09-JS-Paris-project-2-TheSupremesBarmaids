@@ -27,14 +27,19 @@ function SubMessage({ message, user, id, likes, parentKey, subId, photo }) {
 
   const [openReply, setOpenReply] = useState(false);
   const [likeIcon, setLikeIcon] = useState(false);
+  const [dislikeIcon, setDislikeIcon] = useState(false);
   const [currentUser, setCurrentUser] = useState([]);
 
   const changeOpenReply = useCallback(() => {
     setOpenReply(!openReply);
   }, [openReply]);
 
-  let toggleLike = false;
   let like = likes;
+  let toggleLike = false;
+  const dislikeComment = () => {
+    toggleLike = !likeIcon;
+    setDislikeIcon(toggleLike);
+  };
   const likeComment = () => {
     toggleLike = !toggleLike;
     setLikeIcon(toggleLike);
@@ -85,7 +90,11 @@ function SubMessage({ message, user, id, likes, parentKey, subId, photo }) {
           style={likeIcon ? { color: "#4688de" } : { color: "gray" }}
         />
         <div ref={numLikes}>{likes}</div>
-        <AiFillDislike className="thumbs-down" />
+        <AiFillDislike
+          className="thumbs-down"
+          onClick={dislikeComment}
+          style={dislikeIcon ? { color: "#4688de" } : { color: "gray" }}
+        />
         {user !== currentUser.name ? (
           <div
             onClick={changeOpenReply}

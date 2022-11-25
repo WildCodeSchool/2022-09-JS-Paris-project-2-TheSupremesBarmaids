@@ -100,7 +100,10 @@ function Message({ message, user, id, likes, replies, useKey, photo }) {
           style={likeIcon ? { color: "#4688de" } : { color: "gray" }}
         />
         <div ref={numLikes}>{likes}</div>
-        <AiFillDislike className="thumbs-down" />
+        <AiFillDislike
+          className="thumbs-down"
+          style={likeIcon ? { color: "#4688de" } : { color: "gray" }}
+        />
         {user !== currentUser.name ? (
           <div
             onClick={changeOpenReply}
