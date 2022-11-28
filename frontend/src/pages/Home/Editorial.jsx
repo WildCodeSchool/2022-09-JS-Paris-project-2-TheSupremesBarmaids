@@ -1,31 +1,33 @@
-import React from "react";
+import { motion } from "framer-motion";
 import Intro from "./Intro";
 import Section1 from "./Section1";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
 import ListLink from "../../components/ListLink";
+import DoubleLink from "./DoubleLink";
 
 function Editorial() {
   return (
-    <div className="edito containerType1">
+    <motion.div
+      exit={{ opacity: 0, transition: { duration: 0.3 } }}
+      className="edito containerType1"
+    >
       <Intro />
 
-      <div className="edito__listLink">
+      <div className="edito__wrappLink">
         <ListLink />
       </div>
 
       <h2 className="linedTitle">
-        <span className="linedTitle__text">Découvrez, shakez et dégustez</span>
+        <span className="linedTitle__text">Discover, shake and taste</span>
       </h2>
 
       <Section1 />
       <Section2 />
       <Section3 />
 
-      <div className="edito__listLink">
-        <ListLink />
-      </div>
-    </div>
+      <DoubleLink />
+    </motion.div>
   );
 }
 

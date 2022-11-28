@@ -15,9 +15,9 @@
 @import "components/_logo", "components/_card", "components/_pagination";
 
 // OBJECTS (bigs components made of multiples tags components)
-@import "objects/_header", "objects/_footer", "objects/_search",
-  "objects/_filter", "objects/_top", "objects/_landingBox", "objects/_recipe",
-  "objects/cocktailList", "objects/commentaire", "objects/editorial";
+@import "objects/_header", "objects/_footer", "objects/_top",
+  "objects/_landingBox", "objects/_recipe", "objects/cocktailList",
+  "objects/commentaire", "objects/editorial", "objects/actionBlock";
 
 // PAGES
 @import "pages/_home", "pages/_list", "pages/_details";

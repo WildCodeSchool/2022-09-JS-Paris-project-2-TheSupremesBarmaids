@@ -1,25 +1,26 @@
-import fetchResetApi from "../../utils/fetchResetApi";
-import FilterAlcohol from "./FilterAlcohol";
-import FilterCategory from "./FilterCategory";
-import FilterIngredient from "./FilterIngredient";
+import { useContext } from "react";
+import { ToggleContext } from "../../services/Context";
+import DropdownFilterAlcohol from "./DropdownFilterAlcohol";
+import DropdownFilterCategory from "./DropdownFilterCategory";
+import DropdownFilterIngredient from "./DropdownFilterIngredient";
+import ResetButton from "./ResetButton";
 
-function Filter({ renderApi }) {
+function Filter() {
+  const { isActionBlockOpened } = useContext(ToggleContext);
+
   return (
-    <div className="filter-btn">
-      <FilterAlcohol renderApi={renderApi} />
-      <FilterCategory renderApi={renderApi} />
-      <FilterIngredient renderApi={renderApi} />
+    <div
+      className={
+        isActionBlockOpened ? "filterBlockOpened filter-btn" : "filter-btn"
+      }
+    >
+      <DropdownFilterAlcohol />
 
-      {/* RESET BUTTON */}
-      <div className="btn1">
-        <a
-          href="#ingredient_filter"
-          className="button"
-          onClick={() => fetchResetApi().then((resPost) => renderApi(resPost))}
-        >
-          RESET FILTER
-        </a>
-      </div>
+      <DropdownFilterCategory />
+
+      <DropdownFilterIngredient />
+
+      <ResetButton />
     </div>
   );
 }

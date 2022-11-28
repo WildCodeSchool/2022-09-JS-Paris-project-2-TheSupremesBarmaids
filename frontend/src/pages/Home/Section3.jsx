@@ -5,19 +5,18 @@ function Section3() {
         <img src="/images/presentation-330.jpg" alt="imagePresentation" />
       </div>
       <div className="editoBlock__article">
-        <h3 className="subTitle">Présentation</h3>
+        <h3 className="subTitle">Presentation</h3>
         <p>
-          Le cocktail est un ravissement pour les papilles mais doit l’être
-          aussi pour les yeux! Il mettra en avant votre mélange et le rendra
-          encore plus attrayant.
+          The cocktail is a delight for the taste buds but must be also for the
+          eyes! It will highlight your blend and make it even more attractive.
         </p>
         <p>
-          Quelques bonbons sur un cure-dent adouciront un cocktail charpenté et
-          un verre givré au sucre habillera délicatement une Margarita.
+          A few candies on a toothpick will sweeten a robust cocktail and a
+          sugar-frosted glass will delicately dress a Margarita.
         </p>
         <p>
-          Vous pouvez aussi ajouter des feuilles de menthe dans votre bac à
-          glaçons pour rafraîchir avec élégance des cocktails fruités.
+          You can also add mint leaves to your tray, ice cubes to elegantly
+          refresh fruity cocktails.
         </p>
       </div>
     </section>

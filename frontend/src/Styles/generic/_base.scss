@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Nickainley";
-  src: url("/public/font/Nickainley-Normal.woff2") format("woff2"),
-    url("/public/font/Nickainley-Normal.woff") format("woff");
+  src: url("/font/Nickainley-Normal.woff2") format("woff2"),
+    url("/font/Nickainley-Normal.woff") format("woff");
 }
 
 html {
@@ -23,6 +23,7 @@ html {
 body {
   position: relative;
   background-color: $colorCoffee;
+  font-family: $fontText;
 }
 
 h1,

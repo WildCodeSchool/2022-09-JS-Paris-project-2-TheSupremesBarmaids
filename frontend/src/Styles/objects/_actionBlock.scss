@@ -1,0 +1,186 @@
+.action-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .search-box {
+    position: relative;
+    width: 100%;
+    background-color: $colorCrema;
+    margin: 1rem 0;
+
+    @media screen and (max-width: 430px) {
+      margin: 0 0 1rem 0;
+    }
+
+    @media screen and (min-width: 600px) {
+      width: 560px;
+    }
+
+    input {
+      font-size: $textLG;
+      border: 1px solid $colorCrema;
+      width: 100%;
+      padding: 0.5rem;
+      background-color: $colorCrema;
+      transition: all 0.5s cubic-bezier(0, 0, 0.43, 1.049);
+      transition-property: width;
+      z-index: 1;
+      position: relative;
+      color: $colorCoffee;
+
+      &:focus-visible {
+        outline: 0;
+      }
+    }
+
+    input::-webkit-input-placeholder {
+      color: $colorLeather;
+      opacity: 1;
+    }
+
+    input::-moz-placeholder {
+      color: $colorLeather;
+      opacity: 1;
+    }
+
+    input::-ms-placeholder {
+      color: $colorLeather;
+      opacity: 1;
+    }
+
+    input::placeholder {
+      color: $colorLeather;
+      opacity: 1;
+    }
+
+    button {
+      border: 0;
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      background: $colorCrema;
+      padding: 0.6rem 0.6rem 0;
+
+      img {
+        width: 32px;
+      }
+    }
+
+    input:not(:placeholder-shown) {
+      width: calc(100% - 60px);
+      + button {
+        display: block;
+      }
+    }
+  }
+
+  .filter-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 0;
+    min-height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: min-height 1s, opacity 1s, visibility 0s linear;
+
+    &.filterBlockOpened {
+      height: initial;
+      width: 100%;
+      min-height: 244px;
+      max-height: 1050px;
+      visibility: visible;
+      opacity: 1;
+
+      @media screen and (min-width: 600px) {
+        width: 560px;
+      }
+    }
+  }
+
+  .dropdown-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    button {
+      border: 0;
+      background: $colorCrema;
+      border-bottom: 1px solid $colorCoffee;
+      padding: 10px 17px;
+      width: 100%;
+      text-align: left;
+      font-size: $textMD;
+    }
+
+    .filter-list {
+      width: 100%;
+      list-style-type: none;
+
+      li {
+        margin: 0;
+        background-color: $colorLeather;
+        display: flex;
+        justify-content: flex-start;
+
+        a {
+          font-size: $textSM;
+          padding: 7px 28px;
+          width: 100%;
+        }
+      }
+
+      li:hover {
+        background-color: #672200;
+      }
+    }
+  }
+
+  .reset-filter {
+    margin: 1rem 0 1rem 0;
+  }
+
+  @media screen and (min-width: 600px) {
+    .filter-btn {
+      width: 560px;
+    }
+  }
+
+  .filterDisplay {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filterDisplay {
+    font-size: $textMD;
+
+    .filterText {
+      color: rgba(255, 255, 255, 0.666);
+    }
+
+    button {
+      border: none;
+      background-color: $colorCointreauOpacity7;
+      color: white;
+      padding: 5px 10px;
+      margin-top: 10px;
+
+      .nameFilter {
+        padding-right: 5px;
+        border-right: 1px solid black;
+      }
+
+      .exitFilter {
+        padding-left: 5px;
+      }
+    }
+  }
+}

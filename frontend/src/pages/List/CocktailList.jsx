@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Card from "../../components/Card";
 
 function CocktailList({ posts, loading, wrongFetch }) {
@@ -8,8 +9,13 @@ function CocktailList({ posts, loading, wrongFetch }) {
   return wrongFetch ? (
     <div>Cocktail not found</div>
   ) : (
-    <div className="cocktailList">
-      <h1 className="pageTitle">Nos Cocktails</h1>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className="cocktailList"
+    >
+      <h1 className="pageTitle">Our Cocktails</h1>
       <div className="cocktailListCards">
         {posts.map((post) => (
           <Card
@@ -21,7 +27,7 @@ function CocktailList({ posts, loading, wrongFetch }) {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

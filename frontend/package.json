@@ -10,8 +10,8 @@
     "fix": "prettier --write . && eslint --fix --ext .jsx ."
   },
   "dependencies": {
-    "framer-motion": "^7.6.5",
     "axios": "^1.1.3",
+    "framer-motion": "^7.6.5",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

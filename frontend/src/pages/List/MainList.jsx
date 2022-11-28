@@ -1,33 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { PostContext } from "../../services/Context";
 import fetchResetApi from "../../utils/fetchResetApi";
 import CocktailList from "./CocktailList";
 import ActionBlock from "./ActionBlock";
 import Pagination from "./Pagination";
 
 function MainList() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { posts, setPosts, loading, setLoading, wrongFetch, setWrongFetch } =
+    useContext(PostContext);
   const [currentPage, setCurrentPage] = useState(1);
   const POST_PER_PAGE = 12;
-  const [wrongFetch, setWrongFetch] = useState(false);
-
-  // Put the result of the fetch in posts and handle wrong fetch
-  const renderApi = (data) => {
-    setLoading(true);
-
-    if (data !== null) {
-      setPosts(data);
-      setLoading(false);
-      setWrongFetch(false);
-    } else {
-      setLoading(false);
-      setWrongFetch(true);
-    }
-  };
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
     setLoading(true);
-    fetchResetApi().then((resPosts) => renderApi(resPosts));
+    fetchResetApi()
+      .then((resPosts) => {
+        setPosts(resPosts);
+        setLoading(false);
+        setWrongFetch(false);
+      })
+      .catch(() => {
+        setLoading(false);
+        setWrongFetch(true);
+      });
   }, []);
 
   const indexOfLastPost = currentPage * POST_PER_PAGE;
@@ -41,7 +37,7 @@ function MainList() {
 
   return (
     <main className="mainList containerType1 containerType1--padd20">
-      <ActionBlock renderApi={renderApi} />
+      <ActionBlock />
       <CocktailList
         posts={currentPosts}
         loading={loading}

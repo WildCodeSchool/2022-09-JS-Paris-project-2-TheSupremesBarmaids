@@ -8,11 +8,11 @@
   display: inline-block;
   background-color: $colorCinnamon;
   border: 2px solid $colorCinnamon;
-  font-family: $fontText;
   font-weight: 700;
   font-size: $textMD;
   color: $colorWhite;
   padding: 1rem;
+  text-align: center;
   text-decoration: none;
 
   &__text,
@@ -68,10 +68,12 @@
   }
 
   &--filterSearch {
-    background-image: url("/icones/filter-search-white-32.png");
+    background-image: url("/icones/filter-white.png");
+    background-size: contain;
 
     &:hover {
-      background-image: url("/icones/filter-search-crema-32.png");
+      background-image: url("/icones/filter-crema.png");
+      background-size: contain;
     }
   }
 }

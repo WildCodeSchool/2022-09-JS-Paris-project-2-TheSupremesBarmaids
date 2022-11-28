@@ -1,5 +1,4 @@
 .edito {
-  font-family: $fontText;
   font-size: $textSM;
   margin-top: 4rem;
 
@@ -12,7 +11,7 @@
       margin-top: 0;
     }
 
-    + .edito__listLink {
+    + .edito__wrappLink {
       margin-top: 2rem;
     }
   }
@@ -30,9 +29,35 @@
     line-height: 1.5rem;
   }
 
-  &__listLink {
-    text-align: center;
+  &__wrappLink {
+    //text-align: center;
+    display: flex;
     margin-top: 3rem;
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media screen and (min-width: 768px) {
+      justify-content: center;
+    }
+
+    .buttonType {
+      @media screen and (max-width: 767px) {
+        width: 18rem;
+      }
+
+      &:not(:first-child) {
+        @media screen and (min-width: 768px) {
+          margin-left: 3rem;
+        }
+
+        @media screen and (max-width: 767px) {
+          margin-top: 3rem;
+        }
+      }
+    }
   }
 }
 

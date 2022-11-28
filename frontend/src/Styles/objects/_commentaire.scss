@@ -1,4 +1,5 @@
 .commentaireComponent {
+  display: none;
   margin-top: 4rem;
 }
 
@@ -17,7 +18,6 @@
 .commentaireBox {
   background-color: $colorCinnamon;
   color: $colorBlack;
-  font-family: $fontText;
   list-style-type: none;
   border-radius: 30px;
   padding: 5px 20px;

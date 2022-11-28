@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 function ListLink() {
   return (
-    <a className="buttonType" href="/list">
-      <span className="buttonType__text">Tous les cocktails</span>
+    <Link to="/list" className="buttonType">
+      <span className="buttonType__text">All our cocktails</span>
       <span className="buttonType__icon" />
-    </a>
+    </Link>
   );
 }
 
