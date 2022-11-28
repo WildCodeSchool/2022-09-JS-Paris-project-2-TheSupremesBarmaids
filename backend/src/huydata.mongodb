@@ -8,25 +8,158 @@ const collection = 'Comments';
 use(database);
 
 // Create a new collection.
-db.collection.find( 
-    {
-        "user": "Pascaline",
-        "message": "I think this cocktail is great",
-        "likes": 30,
-        "editable": false,
-        "replies": [
-        {
-            user: "Casandra",
-            message: "I don't think so",
-            likes: 100,
-        },
-        {
-            user: "Celia",
-            message: "I want to drink all cocktails",
-            likes: 10,
-        },
-        ],
-    });
+db.comments.find();
+
+const comments = [
+  {
+    "_id": {
+      "$oid": "6376e5562c4de51db28f5d1c"
+    },
+    "user": "Laser",
+    "photo": "https://i.postimg.cc/kGwLMSdc/Anh-CV-TRINH.png",
+    "message": "I loves all cocktails",
+    "likes": 27,
+    "editable": false,
+    "replies": [
+      {
+        "user": "Casandra",
+        "photo": "https://i.postimg.cc/FHyNCy3c/Casandra.jpg",
+        "message": "Me too hehe",
+        "likes": 67,
+        "_id": {
+          "$oid": "637cd087f4dc63d4b00718ae"
+        }
+      },
+      {
+        "user": "Eric",
+        "photo": "https://i.postimg.cc/7hhZp5w4/Eric.jpg",
+        "message": "I cant drinks",
+        "likes": 6,
+        "_id": {
+          "$oid": "637cd087f4dc63d4b00720be"
+        }
+      },
+      {
+        "user": "Cyril",
+        "photo": "https://i.postimg.cc/sxLgy3gh/Cyril.jpg",
+        "message": "I loves Margarita",
+        "likes": 24,
+        "_id": {
+          "$oid": "637cd087f4dc68e4b00720be"
+        }
+      },
+      {
+        "user": "DinhHuy Trinh",
+        "photo": "https://lh3.googleusercontent.com/a/ALm5wu3s3tnnLvHc2RsJeOWybkq1wria17458eZyFlWklA=s96-c",
+        "message": "@Casandra  kok",
+        "likes": 0,
+        "_id": {
+          "$oid": "63803f5fb33f5c55382ce532"
+        }
+      },
+      {
+        "user": "DinhHuy Trinh",
+        "photo": "https://lh3.googleusercontent.com/a/ALm5wu3s3tnnLvHc2RsJeOWybkq1wria17458eZyFlWklA=s96-c",
+        "message": "@Eric  lplp",
+        "likes": 0,
+        "_id": {
+          "$oid": "63803f68b33f5c55382ce539"
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6376e5efa875a548bdc4510f"
+    },
+    "user": "Pascaline",
+    "photo": "https://avatars.githubusercontent.com/u/113342389?v=4",
+    "message": "I think this cocktail is great",
+    "likes": 35,
+    "editable": false,
+    "replies": [
+      {
+        "user": "Casandra",
+        "photo": "https://i.postimg.cc/FHyNCy3c/Casandra.jpg",
+        "message": "I don't think so",
+        "likes": 102,
+        "_id": {
+          "$oid": "637cd087f4dc63d4b89718ae"
+        }
+      },
+      {
+        "user": "Celia",
+        "photo": "https://i.postimg.cc/SNwxvQ50/Celia.jpg",
+        "message": "I want to drink all cocktails",
+        "likes": 10,
+        "_id": {
+          "$oid": "637cd387f4d868d4b89718ae"
+        }
+      },
+      {
+        "user": "SaS VN",
+        "photo": "https://lh3.googleusercontent.com/a/ALm5wu1cD2W00Yr9l9W2-1gmcGnuoQJqKvZQMlx9pKT0=s96-c",
+        "message": "@Casandra  which one u like best",
+        "likes": 0,
+        "_id": {
+          "$oid": "63802f78b33f5c55382ce44b"
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6376e7c2e26a2e71a5a93fc6"
+    },
+    "user": "Quentin",
+    "photo": "https://i.postimg.cc/66b3Cffp/Quentin.png",
+    "message": "This one is great",
+    "likes": 28,
+    "editable": false,
+    "replies": [
+      {
+        "user": "Mago",
+        "photo": "https://i.postimg.cc/13w3hhh8/Mago.jpg",
+        "message": "I never drinks before",
+        "editable": true,
+        "likes": 2,
+        "_id": {
+          "$oid": "637cd087f4de78d4b89718ae"
+        }
+      },
+      {
+        "user": "Celia",
+        "photo": "https://i.postimg.cc/SNwxvQ50/Celia.jpg",
+        "message": "no way U r just a baby",
+        "likes": 11,
+        "_id": {
+          "$oid": "637cd087f4de78d47898e8ae"
+        }
+      },
+      {
+        "user": "Cyril",
+        "photo": "https://i.postimg.cc/sxLgy3gh/Cyril.jpg",
+        "message": "Give me all your drinks",
+        "likes": 102,
+        "_id": {
+          "$oid": "637cd087f4de78d7812718e9"
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "63803399b33f5c55382ce465"
+    },
+    "user": "DinhHuy Trinh",
+    "photo": "https://lh3.googleusercontent.com/a/ALm5wu3s3tnnLvHc2RsJeOWybkq1wria17458eZyFlWklA=s96-c",
+    "message": "ok nice cocktail",
+    "likes": 0,
+    "editable": true,
+    "replies": [],
+    "__v": 0
+  }
+];
 
 // The prototype form to create a collection:
 /* db.createCollection( <name>,
